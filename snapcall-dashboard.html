@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnapCall Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root{
+  --bg:#06080d;--s1:#0d1017;--s2:#131720;--s3:#1a2030;--s4:#222840;
+  --b1:rgba(255,255,255,0.06);--b2:rgba(255,255,255,0.11);--b3:rgba(255,255,255,0.2);
+  --t1:#f0f2f8;--t2:#7e8799;--t3:#3d4558;
+  --accent:#5b8af5;--adim:rgba(91,138,245,0.13);
+  --green:#2dd4a0;--gdim:rgba(45,212,160,0.1);
+  --amber:#f5a623;--ydim:rgba(245,166,35,0.1);
+  --red:#f06060;--rdim:rgba(240,96,96,0.1);
+  --core:#b48cf7;--cdim:rgba(180,140,247,0.1);
+  --omni:#3cc8f0;--odim:rgba(60,200,240,0.1);
+  --r:8px;--r2:13px;
+  --font:'Inter',sans-serif;--head:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:14px;min-height:100vh;line-height:1.5}
+select option{background:var(--s2)}
+
+/* LOGIN */
+#login{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;align-items:center;justify-content:center}
+.lbox{width:430px;background:var(--s1);border:1px solid var(--b2);border-radius:var(--r2);overflow:hidden}
+.lhead{background:var(--s2);padding:28px 32px 22px;border-bottom:1px solid var(--b1)}
+.llogo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.lmark{width:34px;height:34px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:700;font-size:14px;color:#fff}
+.llogo span{font-family:var(--head);font-size:17px;font-weight:700}
+.lhead h2{font-family:var(--head);font-size:21px;font-weight:700;margin-bottom:4px}
+.lhead p{font-size:13px;color:var(--t2)}
+.lbody{padding:24px 32px 28px}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.rb{background:var(--s2);border:1px solid var(--b1);border-radius:var(--r);padding:14px 14px 12px;cursor:pointer;text-align:left;transition:border-color .15s;color:var(--t1)}
+.rb:hover{border-color:var(--b3)}
+.rb.sel{border-color:var(--accent);background:var(--adim)}
+.rb-ic{font-size:18px;margin-bottom:6px}
+.rb-title{font-size:13px;font-weight:500;font-family:var(--head)}
+.rb-sub{font-size:11px;color:var(--t2);margin-top:2px}
+.lf{margin-bottom:14px}
+.lf label{display:block;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:6px}
+.lf input,.lf select{width:100%;background:var(--s3);border:1px solid var(--b2);border-radius:var(--r);padding:10px 12px;color:var(--t1);font-family:var(--font);font-size:13px}
+.lf input:focus,.lf select:focus{outline:none;border-color:var(--accent)}
+.lbtn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--r);padding:12px;font-family:var(--head);font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s;margin-top:4px}
+.lbtn:hover{opacity:.88}
+.lhint{font-size:11px;color:var(--t3);text-align:center;margin-top:9px}
+
+/* SHELL */
+#app{display:none;flex-direction:column;min-height:100vh}
+.bar{position:sticky;top:0;z-index:50;height:54px;background:rgba(6,8,13,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--b1);display:flex;align-items:center;padding:0 24px}
+.blogo{display:flex;align-items:center;gap:8px;margin-right:28px;cursor:pointer}
+.bmark{width:26px;height:26px;background:var(--accent);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:700;font-size:11px;color:#fff}
+.bname{font-family:var(--head);font-size:15px;font-weight:700;color:var(--t1);letter-spacing:-.2px}
+.bnav{display:flex;gap:2px;flex:1}
+.nt{background:none;border:none;font-family:var(--font);font-size:13px;font-weight:500;color:var(--t2);padding:6px 13px;border-radius:6px;cursor:pointer;transition:all .15s}
+.nt:hover{color:var(--t1);background:var(--s2)}
+.nt.on{color:var(--t1);background:var(--s3)}
+.br{display:flex;align-items:center;gap:10px;margin-left:auto}
+.psel{background:var(--s2);border:1px solid var(--b1);border-radius:6px;padding:5px 9px;color:var(--t1);font-family:var(--font);font-size:12px}
+.ubadge{display:flex;align-items:center;gap:7px;background:var(--s2);border:1px solid var(--b1);border-radius:20px;padding:4px 11px 4px 6px;font-size:12px}
+.uav{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:#fff}
+.obtn{background:none;border:1px solid var(--b1);border-radius:6px;padding:5px 10px;color:var(--t2);font-family:var(--font);font-size:12px;cursor:pointer;transition:all .15s}
+.obtn:hover{color:var(--t1);border-color:var(--b2)}
+
+/* LAYOUT */
+.main{padding:28px;max-width:1320px;margin:0 auto;width:100%}
+.pg{display:none}.pg.on{display:block}
+.ph{margin-bottom:26px}
+.ph h1{font-family:var(--head);font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:3px}
+.ph p{font-size:13px;color:var(--t2)}
+.card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r2);padding:20px}
+.ctit{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:16px}
+
+/* KPI */
+.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+.kc{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r2);padding:18px 20px}
+.kl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:8px}
+.kv{font-family:var(--head);font-size:30px;font-weight:700;letter-spacing:-1.5px;line-height:1}
+.ks{font-size:12px;color:var(--t2);margin-top:5px}
+.kbg{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;margin-top:7px}
+.up{background:var(--gdim);color:var(--green)}
+.wn{background:var(--ydim);color:var(--amber)}
+.dn{background:var(--rdim);color:var(--red)}
+
+/* GRIDS */
+.g12{display:grid;grid-template-columns:1fr 2fr;gap:14px;margin-bottom:22px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.g11{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* RING */
+.rw{display:flex;flex-direction:column;align-items:center;padding:8px 0}
+.rm{width:100%;margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.rmr{display:flex;justify-content:space-between;font-size:12px;align-items:center}
+.rmr span:first-child{color:var(--t2)}
+.rmr strong{font-family:var(--mono);font-size:12px}
+
+/* PRODUCT CARDS */
+.pcards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.pcard{border-radius:var(--r2);padding:22px;border:1px solid}
+.pcard.core{background:rgba(180,140,247,.04);border-color:rgba(180,140,247,.2)}
+.pcard.omni{background:rgba(60,200,240,.04);border-color:rgba(60,200,240,.2)}
+.ptag{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.9px;margin-bottom:4px}
+.pcard.core .ptag{color:var(--core)}
+.pcard.omni .ptag{color:var(--omni)}
+.pbrand{font-size:13px;color:var(--t2);margin-bottom:12px}
+.pnum{font-family:var(--head);font-size:36px;font-weight:700;letter-spacing:-2px;line-height:1;margin-bottom:4px}
+.pcard.core .pnum{color:var(--core)}
+.pcard.omni .pnum{color:var(--omni)}
+.prow{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap}
+.ps .pl{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:2px}
+.ps .pv{font-size:14px;font-weight:500}
+
+/* TABLE */
+.dt{width:100%;border-collapse:collapse}
+.dt th{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.6px;color:var(--t3);text-align:left;padding:8px 14px;border-bottom:1px solid var(--b1)}
+.dt td{padding:10px 14px;border-bottom:1px solid var(--b1);font-size:13px}
+.dt tr:last-child td{border-bottom:none}
+.dt tbody tr:hover td{background:var(--s2)}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px}
+.badge.core{background:var(--cdim);color:var(--core)}
+.badge.omni{background:var(--odim);color:var(--omni)}
+.rc{display:flex;align-items:center;gap:8px}
+.rc .rbg{width:70px;flex:none}
+.rbg{flex:1;height:3px;background:var(--s4);border-radius:2px;overflow:hidden}
+.rbf{height:100%;border-radius:2px}
+.mono{font-family:var(--mono);font-size:12px}
+
+/* ADMIN */
+.tabs{display:flex;gap:3px;background:var(--s2);border-radius:var(--r);padding:4px;width:fit-content;margin-bottom:20px}
+.tp{background:none;border:none;font-family:var(--font);font-size:13px;font-weight:500;color:var(--t2);padding:6px 14px;border-radius:6px;cursor:pointer;transition:all .15s}
+.tp.on{background:var(--s1);color:var(--t1)}
+.import-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.dz{border:2px dashed var(--b2);border-radius:var(--r2);padding:28px 24px;text-align:center;cursor:pointer;transition:all .15s}
+.dz:hover,.dz.drag{border-color:var(--accent);background:var(--adim)}
+.dz.loaded{border-color:var(--green);background:var(--gdim)}
+.dz-ic{font-size:28px;margin-bottom:10px}
+.dz-chip{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:20px;margin-bottom:8px}
+.dz-chip.sc{background:var(--adim);color:var(--accent)}
+.dz-chip.tt{background:var(--gdim);color:var(--green)}
+.dz-title{font-family:var(--head);font-size:14px;font-weight:600;margin-bottom:6px}
+.dz-cols{font-size:11px;color:var(--t2);line-height:1.9;font-family:var(--mono)}
+.dz-status{font-size:12px;margin-top:10px;font-weight:500}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.ff{display:flex;flex-direction:column;gap:5px}
+.ff label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.6px;color:var(--t2)}
+.ff input,.ff select{background:var(--s2);border:1px solid var(--b2);border-radius:var(--r);padding:9px 12px;color:var(--t1);font-family:var(--font);font-size:13px}
+.ff input:focus,.ff select:focus{outline:none;border-color:var(--accent)}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:var(--r);padding:10px 18px;font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.sec{background:var(--s3);color:var(--t1);border:1px solid var(--b2)}
+.btn.sec:hover{background:var(--s4)}
+.btn.del{background:var(--rdim);color:var(--red);border:none;font-size:11px;padding:3px 9px}
+.btn.del:hover{background:rgba(240,96,96,.2)}
+.notif{padding:10px 14px;border-radius:var(--r);font-size:13px;margin-bottom:14px;display:none}
+.notif.ok{background:var(--gdim);color:var(--green);border:1px solid rgba(45,212,160,.2);display:block}
+.notif.err{background:var(--rdim);color:var(--red);border:1px solid rgba(240,96,96,.2);display:block}
+.saved{font-size:12px;color:var(--green);margin-left:10px;display:none}
+.info-box{background:var(--s2);border-left:3px solid var(--accent);border-radius:var(--r);padding:14px 16px;font-size:13px;color:var(--t2);margin-bottom:18px;line-height:1.7}
+.info-box strong{color:var(--t1)}
+.cpills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.cpill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:20px;border:1px solid}
+.cpill.ok{background:var(--gdim);color:var(--green);border-color:rgba(45,212,160,.2)}
+.cpill.dim{background:var(--s2);color:var(--t3);border-color:var(--b1)}
+
+/* FILTERS */
+.fbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.fbar label{font-size:12px;color:var(--t2)}
+.fbar select{background:var(--s2);border:1px solid var(--b1);border-radius:6px;padding:6px 10px;color:var(--t1);font-family:var(--font);font-size:12px}
+
+/* MISC */
+.empty{text-align:center;padding:44px;color:var(--t2)}
+.divider{height:1px;background:var(--b1);margin:20px 0}
+.cwrap{position:relative;width:100%}
+.stag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);margin-bottom:12px}
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+.li{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--t2)}
+.ld{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.prevscroll{overflow-x:auto;margin-top:4px}
+.prevscroll table{min-width:400px}
+
+@media(max-width:900px){
+  .g12,.g2,.pcards,.fg,.g11,.import-grid{grid-template-columns:1fr}
+  .main{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="lbox">
+    <div class="lhead">
+      <div class="llogo"><div class="lmark">SC</div><span>SnapCall</span></div>
+      <h2>Welcome back</h2>
+      <p>Select your role to view SnapCall adoption metrics</p>
+    </div>
+    <div class="lbody">
+      <div class="rgrid">
+        <div class="rb" data-role="admin"><div class="rb-ic">🔑</div><div class="rb-title">Admin</div><div class="rb-sub">Full access + data import</div></div>
+        <div class="rb" data-role="executive"><div class="rb-ic">📊</div><div class="rb-title">Executive</div><div class="rb-sub">Read-only overview</div></div>
+        <div class="rb" data-role="manager"><div class="rb-ic">👥</div><div class="rb-title">Team Manager</div><div class="rb-sub">Name + product selection</div></div>
+        <div class="rb" data-role="agent"><div class="rb-ic">🎧</div><div class="rb-title">Specialist</div><div class="rb-sub">My personal stats</div></div>
+      </div>
+      <div id="lf-name" class="lf" style="display:none">
+        <label>Your Name</label>
+        <input type="text" id="li-name" placeholder="Full name as it appears in the SnapCall CSV">
+      </div>
+      <div id="lf-team" class="lf" style="display:none">
+        <label>Your Product</label>
+        <select id="li-team">
+          <option value="">— select —</option>
+          <option value="Core">Cin7 Core</option>
+          <option value="Omni">Cin7 Omni</option>
+        </select>
+      </div>
+      <div id="lf-pin" class="lf" style="display:none">
+        <label>Admin PIN</label>
+        <input type="password" id="li-pin" placeholder="Enter PIN" maxlength="6" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <button class="lbtn" id="lgo" style="display:none" onclick="doLogin()">Enter Dashboard →</button>
+      <p class="lhint" id="lpinhint" style="display:none">Default PIN: <strong>1234</strong> — change in Admin › Settings</p>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <nav class="bar">
+    <div class="blogo" onclick="goto('overview')"><div class="bmark">SC</div><span class="bname">SnapCall</span></div>
+    <div class="bnav">
+      <button class="nt on"  onclick="goto('overview')">Overview</button>
+      <button class="nt"     onclick="goto('agents')">Agents</button>
+      <button class="nt"     onclick="goto('products')">Products</button>
+      <button class="nt" id="admin-tab" onclick="goto('admin')" style="display:none">Admin</button>
+    </div>
+    <div class="br">
+      <select class="psel" id="psel" onchange="renderAll()"><option value="all">All time</option></select>
+      <div class="ubadge"><div class="uav" id="uav">?</div><span id="ulbl">—</span></div>
+      <button class="obtn" onclick="doLogout()">Sign out</button>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <div id="pg-overview" class="pg on">
+      <div class="ph"><h1 id="ov-title">Adoption Overview</h1><p id="ov-sub">SnapCall usage across Cin7 Core and Cin7 Omni · rate = SnapCall sessions ÷ total tickets</p></div>
+      <div class="kg" id="ov-kpis"></div>
+      <div class="g12">
+        <div class="card"><div class="ctit">Overall goal progress</div><div class="rw" id="ov-ring"></div></div>
+        <div class="card">
+          <div class="ctit">Overall adoption trend</div>
+          <div class="leg" id="trend-leg"></div>
+          <div class="cwrap" style="height:220px"><canvas id="trend-chart" role="img" aria-label="Monthly adoption trend"></canvas></div>
+        </div>
+      </div>
+      <div class="pcards" id="ov-pcards"></div>
+      <div class="g2">
+        <div class="card"><div class="ctit">Cin7 Core — monthly trend</div><div class="cwrap" style="height:175px"><canvas id="core-ov-trend" role="img" aria-label="Core monthly trend"></canvas></div></div>
+        <div class="card"><div class="ctit">Cin7 Omni — monthly trend</div><div class="cwrap" style="height:175px"><canvas id="omni-ov-trend" role="img" aria-label="Omni monthly trend"></canvas></div></div>
+      </div>
+    </div>
+
+    <!-- AGENTS -->
+    <div id="pg-agents" class="pg">
+      <div class="ph"><h1>Agent Leaderboard</h1><p>Individual SnapCall sessions, CSAT and resolution time · product assigned automatically from Ticket brand</p></div>
+      <div class="fbar">
+        <label>Product:</label>
+        <select id="af-prod" onchange="renderAgents()">
+          <option value="all">All</option>
+          <option value="Core">Cin7 Core</option>
+          <option value="Omni">Cin7 Omni</option>
+        </select>
+        <label>Team:</label>
+        <select id="af-team" onchange="renderAgents()"><option value="all">All teams</option></select>
+        <label>Sort:</label>
+        <select id="af-sort" onchange="renderAgents()">
+          <option value="snaps_d">SnapCalls ↓</option>
+          <option value="rate_d">Rate ↓</option>
+          <option value="rate_a">Rate ↑</option>
+          <option value="name">Name A–Z</option>
+          <option value="csat_d">CSAT ↓</option>
+          <option value="res_a">Resolution ↑</option>
+        </select>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <table class="dt">
+          <thead><tr><th>#</th><th>Agent</th><th>Product</th><th>Team</th><th>SnapCalls</th><th>Adoption Rate</th><th>CSAT</th><th>Avg Resolution (days)</th><th>vs Goal</th></tr></thead>
+          <tbody id="agents-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div id="pg-products" class="pg">
+      <div class="ph"><h1>Cin7 Core vs Cin7 Omni</h1><p>Product adoption joined on Ticket brand + Month across both CSVs</p></div>
+      <div class="pcards" id="prod-cards"></div>
+      <div class="g2">
+        <div class="card"><div class="ctit">Cin7 Core — monthly trend</div><div class="cwrap" style="height:200px"><canvas id="core-trend" role="img" aria-label="Core adoption trend"></canvas></div></div>
+        <div class="card"><div class="ctit">Cin7 Omni — monthly trend</div><div class="cwrap" style="height:200px"><canvas id="omni-trend" role="img" aria-label="Omni adoption trend"></canvas></div></div>
+      </div>
+      <div class="card">
+        <div class="ctit">Top performers by product</div>
+        <div class="g11" style="margin-bottom:0">
+          <div>
+            <div class="stag" style="color:var(--core)">Cin7 Core specialists</div>
+            <table class="dt" style="font-size:12px"><thead><tr><th>Agent</th><th>SnapCalls</th><th>CSAT</th><th>Avg Res.</th><th>Rate</th></tr></thead><tbody id="core-top"></tbody></table>
+          </div>
+          <div>
+            <div class="stag" style="color:var(--omni)">Cin7 Omni specialists</div>
+            <table class="dt" style="font-size:12px"><thead><tr><th>Agent</th><th>SnapCalls</th><th>CSAT</th><th>Avg Res.</th><th>Rate</th></tr></thead><tbody id="omni-top"></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN -->
+    <div id="pg-admin" class="pg">
+      <div class="ph"><h1>Admin Panel</h1><p>Import data, manage team assignments, set goals and configure the dashboard</p></div>
+      <div class="tabs">
+        <button class="tp on" onclick="atab('import',this)">Import Data</button>
+        <button class="tp" onclick="atab('teams',this)">Team Assignments</button>
+        <button class="tp" onclick="atab('goals',this)">Goals</button>
+        <button class="tp" onclick="atab('settings',this)">Settings</button>
+      </div>
+
+      <!-- IMPORT -->
+      <div id="at-import">
+        <div class="info-box">
+          <strong>How the data joins:</strong> Both CSVs contain <strong>Ticket brand</strong> (Cin7 Core / Cin7 Omni) and a <strong>Month</strong> column. The dashboard joins them on brand + month to compute <strong>Adoption Rate = SnapCall sessions ÷ total tickets</strong> for each product. Agent product is read directly from the SnapCall CSV — no manual mapping needed.
+        </div>
+        <div id="imp-notif" class="notif"></div>
+        <div class="import-grid">
+          <div>
+            <div class="dz" id="dz-sc" onclick="document.getElementById('f-sc').click()">
+              <div class="dz-ic">🎥</div>
+              <div class="dz-chip sc">SnapCall Usage CSV</div>
+              <div class="dz-title">Per-agent SnapCall data</div>
+              <div class="dz-cols">Ticket solved - Month<br>Assignee name<br>Tickets <span style="color:var(--t3)">(SnapCall sessions)</span><br>CSAT Score<br>First resolution time (days)<br>Ticket brand</div>
+              <div class="dz-status" id="sc-status" style="color:var(--t3)">No file loaded</div>
+              <input type="file" id="f-sc" accept=".csv" style="display:none" onchange="handleSC(event)">
+            </div>
+          </div>
+          <div>
+            <div class="dz" id="dz-tt" onclick="document.getElementById('f-tt').click()">
+              <div class="dz-ic">📋</div>
+              <div class="dz-chip tt">Total Tickets CSV</div>
+              <div class="dz-title">Monthly ticket volume by brand</div>
+              <div class="dz-cols">Ticket created - Month<br>Ticket brand <span style="color:var(--t3)">(Cin7 Core / Cin7 Omni)</span><br>Tickets <span style="color:var(--t3)">(total volume)</span></div>
+              <div class="dz-status" id="tt-status" style="color:var(--t3)">No file loaded</div>
+              <input type="file" id="f-tt" accept=".csv" style="display:none" onchange="handleTT(event)">
+            </div>
+          </div>
+        </div>
+        <div id="confirm-row" style="display:none;margin-bottom:20px">
+          <div class="cpills" id="cpills"></div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" onclick="confirmImport()">✓ Confirm &amp; Save</button>
+            <button class="btn sec" onclick="cancelImport()">Cancel</button>
+          </div>
+        </div>
+        <div id="prev-wrap" style="display:none">
+          <div class="g2">
+            <div id="psc-card" class="card" style="display:none"><div class="ctit">SnapCall CSV preview</div><div class="prevscroll"><table class="dt" id="psc-tbl"></table></div></div>
+            <div id="ptt-card" class="card" style="display:none"><div class="ctit">Total Tickets CSV preview</div><div class="prevscroll"><table class="dt" id="ptt-tbl"></table></div></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn sec" onclick="clearAll()">🗑 Clear all data</button>
+          <span id="data-status" style="font-size:12px;color:var(--t2)"></span>
+        </div>
+      </div>
+
+      <!-- TEAM ASSIGNMENTS -->
+      <div id="at-teams" style="display:none">
+        <div class="info-box">
+          Agents are auto-created from the SnapCall CSV with their product (Cin7 Core / Cin7 Omni) assigned automatically. Use this tab to assign agents to <strong>team groups</strong> within each product — e.g. "Core Team A", "Omni Team 1". Teams appear as filter options on the Agents page.
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <table class="dt"><thead><tr><th>Agent</th><th>Product (from CSV)</th><th>Team assignment</th><th>Email</th></tr></thead><tbody id="team-tbody"></tbody></table>
+        </div>
+      </div>
+
+      <!-- GOALS -->
+      <div id="at-goals" style="display:none">
+        <div class="card">
+          <div class="ctit">Adoption rate targets</div>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:18px">Green = at or above goal · Amber = within 70% of goal · Red = below that.</p>
+          <div class="fg">
+            <div class="ff"><label>Overall adoption goal (%)</label><input type="number" id="g-overall" min="0" max="100"></div>
+            <div class="ff"><label>Cin7 Core goal (%)</label><input type="number" id="g-core" min="0" max="100"></div>
+            <div class="ff"><label>Cin7 Omni goal (%)</label><input type="number" id="g-omni" min="0" max="100"></div>
+            <div class="ff"><label>CSAT target (%)</label><input type="number" id="g-csat" min="0" max="100"></div>
+          </div>
+          <button class="btn" onclick="saveGoals()">Save Goals</button>
+          <span class="saved" id="g-saved">✓ Saved</span>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="at-settings" style="display:none">
+        <div class="card">
+          <div class="ctit">Dashboard settings</div>
+          <div class="fg" style="margin-bottom:16px">
+            <div class="ff"><label>Organisation name</label><input type="text" id="s-org" placeholder="e.g. Cin7 Support"></div>
+            <div class="ff"><label>New admin PIN (leave blank to keep current)</label><input type="password" id="s-pin" placeholder="4–6 digits"></div>
+          </div>
+          <button class="btn" onclick="saveSettings()">Save Settings</button>
+          <span class="saved" id="s-saved">✓ Saved</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+// ══ STORAGE ══
+const S={
+  g:k=>{try{return JSON.parse(localStorage.getItem('sc7_'+k))}catch(e){return null}},
+  s:(k,v)=>localStorage.setItem('sc7_'+k,JSON.stringify(v)),
+  d:k=>localStorage.removeItem('sc7_'+k)
+};
+const def=(k,fb)=>{const v=S.g(k);return v!=null?v:fb};
+const DGOALS={overall:20,core:25,omni:15,csat:90};
+
+// sc rows: {month, name, snaps, csat, resolution, brand, product}
+// tt rows: {month, brand, tickets, product}
+// agents:  {name, product, team, email}   — team is editable, product from CSV
+
+let staged={sc:null,tt:null};
+let ME=null,CI={};
+
+// ══ PRODUCT NORMALISATION ══
+// Maps any brand string to 'Core' or 'Omni' key
+function normProd(brand){
+  if(!brand) return '';
+  const b=brand.toLowerCase();
+  if(b.includes('omni')) return 'Omni';
+  if(b.includes('core')) return 'Core';
+  return '';
+}
+// Full display label
+function prodLabel(key){return key==='Core'?'Cin7 Core':key==='Omni'?'Cin7 Omni':key}
+
+// ══ LOGIN ══
+let selRole=null;
+document.querySelectorAll('.rb').forEach(b=>b.addEventListener('click',function(){
+  document.querySelectorAll('.rb').forEach(x=>x.classList.remove('sel'));
+  this.classList.add('sel'); selRole=this.dataset.role;
+  const n=selRole==='manager'||selRole==='agent';
+  ge('lf-name').style.display=n?'block':'none';
+  ge('lf-team').style.display=selRole==='manager'?'block':'none';
+  ge('lf-pin').style.display=selRole==='admin'?'block':'none';
+  ge('lpinhint').style.display=selRole==='admin'?'block':'none';
+  ge('lgo').style.display='block';
+}));
+
+function doLogin(){
+  if(!selRole) return;
+  const name=ge('li-name').value.trim(), team=ge('li-team').value, pin=ge('li-pin').value.trim();
+  if(selRole==='admin'&&pin!==def('pin','1234')){alert('Incorrect PIN.');return}
+  if((selRole==='manager'||selRole==='agent')&&!name){alert('Please enter your name.');return}
+  if(selRole==='manager'&&!team){alert('Please select your product.');return}
+  ME={role:selRole,name:name||(selRole==='admin'?'Admin':'Executive'),team:team||null};
+  ge('login').style.display='none'; ge('app').style.display='flex';
+  if(selRole==='admin') ge('admin-tab').style.display='inline-block';
+  ge('ulbl').textContent=ME.name+(ME.role==='admin'?' · Admin':ME.role==='executive'?' · Exec':'');
+  ge('uav').textContent=ME.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+  if(selRole==='manager'){
+    ge('ov-title').textContent=prodLabel(ME.team)+' Team Overview';
+    ge('ov-sub').textContent='SnapCall adoption for '+prodLabel(ME.team);
+  }
+  buildPeriodSelect(); renderAll();
+}
+
+function doLogout(){
+  ME=null; selRole=null;
+  ge('app').style.display='none'; ge('login').style.display='flex';
+  document.querySelectorAll('.rb').forEach(b=>b.classList.remove('sel'));
+  ge('lgo').style.display='none';
+  ['lf-name','lf-team','lf-pin','lpinhint'].forEach(x=>ge(x).style.display='none');
+  ge('li-name').value=''; ge('li-pin').value=''; ge('admin-tab').style.display='none';
+  Object.values(CI).forEach(c=>{try{c.destroy()}catch(e){}});CI={};
+}
+
+// ══ NAV ══
+function goto(pg){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nt').forEach(t=>t.classList.remove('on'));
+  ge('pg-'+pg).classList.add('on');
+  document.querySelector(`[onclick="goto('${pg}')"]`).classList.add('on');
+  renderPage(pg);
+}
+
+// ══ PERIOD ══
+function buildPeriodSelect(){
+  const sc=S.g('sc')||[], tt=S.g('tt')||[];
+  const months=[...new Set([...sc.map(r=>r.month),...tt.map(r=>r.month)].filter(Boolean))].sort();
+  const cur=ge('psel').value;
+  ge('psel').innerHTML='<option value="all">All time</option>'+months.map(m=>`<option value="${m}" ${m===cur?'selected':''}>${m}</option>`).join('');
+}
+const getPeriod=()=>ge('psel').value;
+
+// ══ DATA LAYER ══
+function getAgentMap(){const m={};(S.g('agents')||[]).forEach(a=>m[a.name]=a);return m}
+
+// Scoped SC rows (period + role)
+function getSC(){
+  let r=S.g('sc')||[];
+  const p=getPeriod(); if(p!=='all') r=r.filter(x=>x.month===p);
+  if(ME?.role==='manager'&&ME.team) r=r.filter(x=>x.product===ME.team);
+  if(ME?.role==='agent'&&ME.name) r=r.filter(x=>x.name?.toLowerCase()===ME.name.toLowerCase());
+  return r;
+}
+// Scoped TT rows
+function getTT(){
+  let r=S.g('tt')||[];
+  const p=getPeriod(); if(p!=='all') r=r.filter(x=>x.month===p);
+  if(ME?.role==='manager'&&ME.team) r=r.filter(x=>x.product===ME.team);
+  return r;
+}
+// Full history, role-scoped (for trends)
+function getAllSC(){
+  let r=S.g('sc')||[];
+  if(ME?.role==='manager'&&ME.team) r=r.filter(x=>x.product===ME.team);
+  if(ME?.role==='agent'&&ME.name) r=r.filter(x=>x.name?.toLowerCase()===ME.name.toLowerCase());
+  return r;
+}
+function getAllTT(){
+  let r=S.g('tt')||[];
+  if(ME?.role==='manager'&&ME.team) r=r.filter(x=>x.product===ME.team);
+  return r;
+}
+
+// Total tickets per product key from a set of tt rows
+function ttByProd(ttRows){
+  const m={};
+  ttRows.forEach(r=>{m[r.product]=(m[r.product]||0)+(+(r.tickets)||0)});
+  return m;
+}
+
+// Per-agent stats
+function buildAgentStats(scRows,ttRows){
+  const am=getAgentMap();
+  const totals=ttByProd(ttRows); // {Core:N, Omni:N}
+  const totAll=Object.values(totals).reduce((s,v)=>s+v,0);
+  const m={};
+  scRows.forEach(r=>{
+    const k=r.name;
+    if(!m[k]) m[k]={name:k,product:r.product,snaps:0,cs:0,cn:0,res:0,rn:0,team:am[k]?.team||''};
+    m[k].snaps+=+(r.snaps)||0;
+    // product: prefer CSV value, keep most recent
+    if(r.product) m[k].product=r.product;
+    m[k].team=am[k]?.team||m[k].team;
+    const c=+(r.csat); if(!isNaN(c)&&c>0){m[k].cs+=c;m[k].cn++}
+    const res=+(r.resolution); if(!isNaN(res)&&res>0){m[k].res+=res;m[k].rn++}
+  });
+  return Object.values(m).map(a=>{
+    const denom=a.product?totals[a.product]||0:totAll;
+    return{...a,
+      rate:denom>0?a.snaps/denom*100:0,
+      csat:a.cn>0?a.cs/a.cn:0,
+      avgRes:a.rn>0?a.res/a.rn:0
+    };
+  });
+}
+
+// Monthly trend joined on brand+month
+function buildTrend(product){
+  const scAll=product?getAllSC().filter(r=>r.product===product):getAllSC();
+  const ttAll=product?getAllTT().filter(r=>r.product===product):getAllTT();
+  const mm={};
+  ttAll.forEach(r=>{if(!r.month) return;if(!mm[r.month]) mm[r.month]={t:0,s:0};mm[r.month].t+=+(r.tickets)||0});
+  scAll.forEach(r=>{if(!r.month) return;if(!mm[r.month]) mm[r.month]={t:0,s:0};mm[r.month].s+=+(r.snaps)||0});
+  const months=Object.keys(mm).sort();
+  return{months,rates:months.map(mo=>mm[mo].t>0?+(mm[mo].s/mm[mo].t*100).toFixed(1):0)};
+}
+
+// ══ RENDER ══
+function renderAll(){const pg=document.querySelector('.pg.on');if(pg) renderPage(pg.id.replace('pg-',''))}
+function renderPage(pg){
+  const sc=getSC(),tt=getTT(),agents=buildAgentStats(sc,tt),goals=def('goals',DGOALS);
+  if(pg==='overview') renderOverview(sc,tt,agents,goals);
+  else if(pg==='agents') renderAgents();
+  else if(pg==='products') renderProducts(tt,agents,goals);
+  else if(pg==='admin') renderAdmin();
+}
+
+// ── OVERVIEW ──
+function renderOverview(sc,tt,agents,goals){
+  const totSnaps=agents.reduce((s,a)=>s+a.snaps,0);
+  const totTix=tt.reduce((s,r)=>s+(+(r.tickets)||0),0);
+  const rate=totTix>0?totSnaps/totTix*100:0;
+  const ca=agents.filter(a=>a.csat>0);
+  const avgC=ca.length?ca.reduce((s,a)=>s+a.csat,0)/ca.length:0;
+  const ra=agents.filter(a=>a.avgRes>0);
+  const avgRes=ra.length?ra.reduce((s,a)=>s+a.avgRes,0)/ra.length:0;
+  const totals=ttByProd(tt);
+  const cSnaps=agents.filter(a=>a.product==='Core').reduce((s,a)=>s+a.snaps,0);
+  const oSnaps=agents.filter(a=>a.product==='Omni').reduce((s,a)=>s+a.snaps,0);
+  const cT=totals['Core']||0, oT=totals['Omni']||0;
+  const cR=cT>0?cSnaps/cT*100:0, oR=oT>0?oSnaps/oT*100:0;
+  const rc=rcolor(rate,goals.overall);
+
+  ge('ov-kpis').innerHTML=
+    kpi('Overall Adoption',rate.toFixed(1)+'%',`Goal: ${goals.overall}%`,rbadge(rate,goals.overall),rc)+
+    kpi('SnapCalls Initiated',fmt(totSnaps),`of ${fmt(totTix)} total tickets`,'','var(--accent)')+
+    kpi('Avg CSAT',avgC>0?avgC.toFixed(1)+'%':'—',`Target: ${goals.csat}%`,avgC>0?`<span class="kbg ${avgC>=goals.csat?'up':'wn'}">${avgC>=goals.csat?'▲ On target':'⬤ Near target'}</span>`:'','var(--t1)')+
+    kpi('Avg Resolution',avgRes>0?avgRes.toFixed(1)+'d':'—','Time to first resolution','','var(--t1)');
+
+  // Ring
+  const pct=Math.min(rate/goals.overall*100,100),R=65,circ=2*Math.PI*R,dash=circ*pct/100;
+  ge('ov-ring').innerHTML=`
+    <svg width="170" height="170" viewBox="0 0 170 170">
+      <circle cx="85" cy="85" r="${R}" fill="none" stroke="var(--s4)" stroke-width="11"/>
+      <circle cx="85" cy="85" r="${R}" fill="none" stroke="${rc}" stroke-width="11"
+        stroke-dasharray="${dash.toFixed(1)} ${circ.toFixed(1)}"
+        stroke-dashoffset="${(circ/4).toFixed(1)}" stroke-linecap="round" transform="rotate(-90 85 85)"/>
+      <text x="85" y="80" text-anchor="middle" fill="var(--t1)" font-size="22" font-weight="700" font-family="Syne,sans-serif">${rate.toFixed(1)}%</text>
+      <text x="85" y="100" text-anchor="middle" fill="var(--t2)" font-size="11" font-family="Inter,sans-serif">of ${goals.overall}% goal</text>
+    </svg>
+    <div class="rm">
+      <div class="rmr"><span>Cin7 Core</span><strong style="color:var(--core)">${cT>0?cR.toFixed(1)+'%':'—'}</strong></div>
+      <div class="rmr"><span>Cin7 Omni</span><strong style="color:var(--omni)">${oT>0?oR.toFixed(1)+'%':'—'}</strong></div>
+      <div class="rmr"><span>CSAT avg</span><strong>${avgC>0?avgC.toFixed(1)+'%':'—'}</strong></div>
+      <div class="rmr"><span>Agents on target</span><strong style="color:var(--green)">${agents.filter(a=>a.rate>=goals.overall).length} / ${agents.length}</strong></div>
+    </div>`;
+
+  // Overall trend
+  const{months,rates}=buildTrend();
+  ge('trend-leg').innerHTML=`<div class="li"><span class="ld" style="background:var(--accent)"></span>Overall %</div><div class="li"><span class="ld" style="background:rgba(45,212,160,.4)"></span>Goal ${goals.overall}%</div>`;
+  dc('trend-chart');
+  CI['trend-chart']=new Chart(ge('trend-chart').getContext('2d'),{type:'line',data:{
+    labels:months.length?months:['No data yet'],
+    datasets:[
+      {label:'Adoption %',data:rates,borderColor:'#5b8af5',backgroundColor:'rgba(91,138,245,0.07)',borderWidth:2,pointBackgroundColor:'#5b8af5',pointRadius:3,tension:.38,fill:true},
+      {label:'Goal',data:Array(Math.max(months.length,1)).fill(goals.overall),borderColor:'rgba(45,212,160,.4)',borderDash:[5,4],borderWidth:1.5,pointRadius:0}
+    ]},options:cOpts('line')});
+
+  // Product mini-cards
+  ge('ov-pcards').innerHTML=pCardHTML('Core',cSnaps,cT,cR,agents.filter(a=>a.product==='Core').length,goals.core)+
+    pCardHTML('Omni',oSnaps,oT,oR,agents.filter(a=>a.product==='Omni').length,goals.omni);
+
+  // Mini trends
+  miniTrend('core-ov-trend','Core','#b48cf7',goals.core);
+  miniTrend('omni-ov-trend','Omni','#3cc8f0',goals.omni);
+}
+
+function pCardHTML(prod,snaps,total,rate,agentCount,goal){
+  const cls=prod.toLowerCase();
+  return`<div class="pcard ${cls}">
+    <div class="ptag">${prod}</div>
+    <div class="pbrand">${prodLabel(prod)}</div>
+    <div class="pnum">${total>0?rate.toFixed(1)+'%':'—'}</div>
+    <div style="font-size:12px;color:var(--t2);margin-top:2px">adoption rate · goal ${goal}% &nbsp;${total>0?rbadge(rate,goal):''}</div>
+    <div class="prow">
+      <div class="ps"><div class="pl">SnapCalls</div><div class="pv">${fmt(snaps)}</div></div>
+      <div class="ps"><div class="pl">Total Tickets</div><div class="pv">${fmt(total)}</div></div>
+      <div class="ps"><div class="pl">Agents</div><div class="pv">${agentCount}</div></div>
+    </div>
+  </div>`;
+}
+
+function miniTrend(cid,prod,col,goal){
+  dc(cid);
+  const{months,rates}=buildTrend(prod);
+  CI[cid]=new Chart(ge(cid).getContext('2d'),{type:'line',data:{
+    labels:months.length?months:['—'],
+    datasets:[
+      {data:rates,borderColor:col,backgroundColor:col+'22',borderWidth:2,pointRadius:3,tension:.38,fill:true},
+      {data:Array(Math.max(months.length,1)).fill(goal),borderColor:'rgba(255,255,255,.12)',borderDash:[4,4],borderWidth:1,pointRadius:0}
+    ]},options:cOpts('line')});
+}
+
+// ── AGENTS ──
+function renderAgents(){
+  const sc=getSC(),tt=getTT();
+  let agents=buildAgentStats(sc,tt);
+  const goals=def('goals',DGOALS);
+  const pf=ge('af-prod').value,tf=ge('af-team').value,sf=ge('af-sort').value;
+  const teams=[...new Set(agents.map(a=>a.team).filter(Boolean))].sort();
+  const prev=tf;
+  ge('af-team').innerHTML='<option value="all">All teams</option>'+teams.map(t=>`<option value="${t}" ${t===prev?'selected':''}>${t}</option>`).join('');
+  if(pf!=='all') agents=agents.filter(a=>a.product===pf);
+  if(tf!=='all') agents=agents.filter(a=>a.team===tf);
+  const sf_map={snaps_d:(a,b)=>b.snaps-a.snaps,rate_d:(a,b)=>b.rate-a.rate,rate_a:(a,b)=>a.rate-b.rate,name:(a,b)=>a.name.localeCompare(b.name),csat_d:(a,b)=>b.csat-a.csat,res_a:(a,b)=>a.avgRes-b.avgRes};
+  agents.sort(sf_map[sf]||sf_map.snaps_d);
+  ge('agents-tbody').innerHTML=agents.length?agents.map((a,i)=>{
+    const rc=rcolor(a.rate,goals.overall);
+    return`<tr>
+      <td class="mono" style="color:var(--t3)">${i+1}</td>
+      <td style="font-weight:500">${a.name}</td>
+      <td><span class="badge ${(a.product||'').toLowerCase()}">${prodLabel(a.product)||'—'}</span></td>
+      <td style="color:var(--t2)">${a.team||'—'}</td>
+      <td style="font-weight:500">${fmt(a.snaps)}</td>
+      <td><div class="rc"><div class="rbg"><div class="rbf" style="width:${Math.min(a.rate,100).toFixed(0)}%;background:${rc}"></div></div><span class="mono" style="color:${rc}">${a.rate.toFixed(1)}%</span></div></td>
+      <td style="color:var(--t2)">${a.csat>0?a.csat.toFixed(1)+'%':'—'}</td>
+      <td style="color:var(--t2)">${a.avgRes>0?a.avgRes.toFixed(1):'—'}</td>
+      <td>${rbadge(a.rate,goals.overall)}</td></tr>`;
+  }).join(''):`<tr><td colspan="9"><div class="empty">No agent data — import the SnapCall CSV in Admin to get started</div></td></tr>`;
+}
+
+// ── PRODUCTS ──
+function renderProducts(tt,agents,goals){
+  const totals=ttByProd(tt);
+  const core=agents.filter(a=>a.product==='Core'), omni=agents.filter(a=>a.product==='Omni');
+  const cS=core.reduce((s,a)=>s+a.snaps,0),cT=totals['Core']||0;
+  const oS=omni.reduce((s,a)=>s+a.snaps,0),oT=totals['Omni']||0;
+  const cR=cT>0?cS/cT*100:0, oR=oT>0?oS/oT*100:0;
+  const cca=core.filter(a=>a.csat>0), oca=omni.filter(a=>a.csat>0);
+  const cCA=cca.length?cca.reduce((s,a)=>s+a.csat,0)/cca.length:0;
+  const oCA=oca.length?oca.reduce((s,a)=>s+a.csat,0)/oca.length:0;
+  const cra=core.filter(a=>a.avgRes>0), ora=omni.filter(a=>a.avgRes>0);
+  const cRes=cra.length?cra.reduce((s,a)=>s+a.avgRes,0)/cra.length:0;
+  const oRes=ora.length?ora.reduce((s,a)=>s+a.avgRes,0)/ora.length:0;
+
+  ge('prod-cards').innerHTML=`
+    <div class="pcard core">
+      <div class="ptag">Core</div><div class="pbrand">Cin7 Core</div>
+      <div class="pnum">${cT>0?cR.toFixed(1)+'%':'—'}</div>
+      <div style="font-size:12px;color:var(--t2);margin-top:2px">adoption rate · goal ${goals.core}% &nbsp;${cT>0?rbadge(cR,goals.core):''}</div>
+      <div class="prow">
+        <div class="ps"><div class="pl">SnapCalls</div><div class="pv">${fmt(cS)}</div></div>
+        <div class="ps"><div class="pl">Total Tickets</div><div class="pv">${fmt(cT)}</div></div>
+        <div class="ps"><div class="pl">CSAT avg</div><div class="pv">${cCA>0?cCA.toFixed(1)+'%':'—'}</div></div>
+        <div class="ps"><div class="pl">Avg Res.</div><div class="pv">${cRes>0?cRes.toFixed(1)+'d':'—'}</div></div>
+        <div class="ps"><div class="pl">Agents</div><div class="pv">${core.length}</div></div>
+      </div>
+    </div>
+    <div class="pcard omni">
+      <div class="ptag">Omni</div><div class="pbrand">Cin7 Omni</div>
+      <div class="pnum">${oT>0?oR.toFixed(1)+'%':'—'}</div>
+      <div style="font-size:12px;color:var(--t2);margin-top:2px">adoption rate · goal ${goals.omni}% &nbsp;${oT>0?rbadge(oR,goals.omni):''}</div>
+      <div class="prow">
+        <div class="ps"><div class="pl">SnapCalls</div><div class="pv">${fmt(oS)}</div></div>
+        <div class="ps"><div class="pl">Total Tickets</div><div class="pv">${fmt(oT)}</div></div>
+        <div class="ps"><div class="pl">CSAT avg</div><div class="pv">${oCA>0?oCA.toFixed(1)+'%':'—'}</div></div>
+        <div class="ps"><div class="pl">Avg Res.</div><div class="pv">${oRes>0?oRes.toFixed(1)+'d':'—'}</div></div>
+        <div class="ps"><div class="pl">Agents</div><div class="pv">${omni.length}</div></div>
+      </div>
+    </div>`;
+
+  miniTrend('core-trend','Core','#b48cf7',goals.core);
+  miniTrend('omni-trend','Omni','#3cc8f0',goals.omni);
+
+  const t5=arr=>[...arr].sort((a,b)=>b.snaps-a.snaps).slice(0,5);
+  const tr=(a,col)=>`<tr><td>${a.name}</td><td>${fmt(a.snaps)}</td><td>${a.csat>0?a.csat.toFixed(1)+'%':'—'}</td><td style="color:var(--t2)">${a.avgRes>0?a.avgRes.toFixed(1)+'d':'—'}</td><td class="mono" style="color:${col}">${a.rate.toFixed(1)}%</td></tr>`;
+  ge('core-top').innerHTML=t5(core).map(a=>tr(a,'var(--core)')).join('')||'<tr><td colspan="5" class="empty">No data</td></tr>';
+  ge('omni-top').innerHTML=t5(omni).map(a=>tr(a,'var(--omni)')).join('')||'<tr><td colspan="5" class="empty">No data</td></tr>';
+}
+
+// ══ ADMIN ══
+function renderAdmin(){updateDS();renderTeamTable();loadGoals();loadSettings()}
+function atab(name,btn){
+  ['import','teams','goals','settings'].forEach(t=>ge('at-'+t).style.display='none');
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('on'));
+  ge('at-'+name).style.display='block'; btn.classList.add('on');
+  if(name==='teams') renderTeamTable();
+}
+function updateDS(){
+  const sc=S.g('sc')||[],tt=S.g('tt')||[];
+  ge('data-status').textContent=sc.length||tt.length?`${fmt(sc.length)} SnapCall rows · ${fmt(tt.length)} ticket volume rows`:'No data loaded yet';
+}
+
+// ── CSV IMPORT ──
+function handleSC(e){
+  const f=e.target.files[0];if(!f) return;
+  readCSV(f,rows=>{
+    const parsed=rows.map(r=>({
+      month:      r['ticket solved - month']||r['month']||'',
+      name:       r['assignee name']||r['name']||'',
+      snaps:      r['tickets']||'0',
+      csat:       r['csat score']||r['csat']||'0',
+      resolution: r['first resolution time (days)']||r['first resolution time']||r['resolution time (days)']||'0',
+      brand:      r['ticket brand']||r['brand']||'',
+      product:    normProd(r['ticket brand']||r['brand']||'')
+    })).filter(r=>r.name.trim()&&r.month.trim());
+    if(!parsed.length){showN('imp-notif','err','Could not parse SnapCall CSV. Check that all column headers match exactly.');return}
+    staged.sc=parsed;
+    ge('dz-sc').classList.add('loaded');
+    ge('sc-status').style.color='var(--green)';
+    ge('sc-status').textContent=`✓ ${parsed.length} rows · ${[...new Set(parsed.map(r=>r.brand))].join(', ')}`;
+    showPrev('psc-tbl','psc-card',parsed.slice(0,5));
+    checkReady();
+  });
+}
+
+function handleTT(e){
+  const f=e.target.files[0];if(!f) return;
+  readCSV(f,rows=>{
+    const parsed=rows.map(r=>({
+      month:   r['ticket created - month']||r['month']||'',
+      brand:   r['ticket brand']||r['brand']||'',
+      tickets: r['tickets']||'0',
+      product: normProd(r['ticket brand']||r['brand']||'')
+    })).filter(r=>r.brand.trim()&&r.month.trim());
+    if(!parsed.length){showN('imp-notif','err','Could not parse Total Tickets CSV. Check column headers match exactly.');return}
+    staged.tt=parsed;
+    ge('dz-tt').classList.add('loaded');
+    ge('tt-status').style.color='var(--green)';
+    // Show summary: brands + total tickets
+    const sum={};parsed.forEach(r=>{sum[r.brand]=(sum[r.brand]||0)+(+(r.tickets)||0)});
+    ge('tt-status').textContent=`✓ ${parsed.length} rows · `+Object.entries(sum).map(([b,n])=>`${b}: ${fmt(n)}`).join(' · ');
+    showPrev('ptt-tbl','ptt-card',parsed.slice(0,5));
+    checkReady();
+  });
+}
+
+function checkReady(){
+  const hasSC=!!staged.sc,hasTT=!!staged.tt;
+  ge('prev-wrap').style.display=(hasSC||hasTT)?'block':'none';
+  ge('confirm-row').style.display=(hasSC||hasTT)?'block':'none';
+  ge('cpills').innerHTML=
+    (hasSC?`<span class="cpill ok">🎥 SnapCall: ${staged.sc.length} rows</span>`:`<span class="cpill dim">🎥 SnapCall: not loaded</span>`)+
+    (hasTT?`<span class="cpill ok">📋 Total Tickets: ${staged.tt.length} rows</span>`:`<span class="cpill dim">📋 Total Tickets: not loaded</span>`);
+}
+
+function confirmImport(){
+  if(staged.sc){
+    const existing=S.g('sc')||[];
+    const newMonths=[...new Set(staged.sc.map(r=>r.month))];
+    S.s('sc',[...existing.filter(r=>!newMonths.includes(r.month)),...staged.sc]);
+    // Auto-register / update agents — product comes from CSV
+    const am=getAgentMap();
+    staged.sc.forEach(r=>{
+      if(!am[r.name]) am[r.name]={name:r.name,product:r.product,team:'',email:''};
+      else am[r.name].product=r.product; // always trust CSV for product
+    });
+    S.s('agents',Object.values(am));
+  }
+  if(staged.tt){
+    const existing=S.g('tt')||[];
+    const newMonths=[...new Set(staged.tt.map(r=>r.month))];
+    S.s('tt',[...existing.filter(r=>!newMonths.includes(r.month)),...staged.tt]);
+  }
+  showN('imp-notif','ok',`✓ Data saved — ${staged.sc?staged.sc.length+' SnapCall rows':'—'} · ${staged.tt?staged.tt.length+' ticket volume rows':'—'}`);
+  resetDZ(); buildPeriodSelect(); updateDS(); renderAll();
+}
+
+function cancelImport(){staged={sc:null,tt:null};resetDZ()}
+function resetDZ(){
+  staged={sc:null,tt:null};
+  ge('confirm-row').style.display='none'; ge('prev-wrap').style.display='none';
+  ge('dz-sc').classList.remove('loaded'); ge('sc-status').textContent='No file loaded'; ge('sc-status').style.color='var(--t3)'; ge('f-sc').value='';
+  ge('dz-tt').classList.remove('loaded'); ge('tt-status').textContent='No file loaded'; ge('tt-status').style.color='var(--t3)'; ge('f-tt').value='';
+}
+function clearAll(){
+  if(!confirm('Delete all imported data? Team assignments and goals will be kept.')) return;
+  S.d('sc');S.d('tt');buildPeriodSelect();updateDS();renderAll();showN('imp-notif','ok','All data cleared.');
+}
+
+// ── TEAM ASSIGNMENTS ──
+// Product is locked from CSV; team grouping is editable here
+function renderTeamTable(){
+  const agents=S.g('agents')||[];
+  ge('team-tbody').innerHTML=agents.length?agents.map((a,i)=>`<tr>
+    <td style="font-weight:500">${a.name}</td>
+    <td><span class="badge ${(a.product||'').toLowerCase()}">${prodLabel(a.product)||'—'}</span></td>
+    <td>
+      <input type="text" value="${a.team||''}" placeholder="e.g. Core Team A"
+        onchange="saveTeam(${i},this.value)"
+        style="background:var(--s2);border:1px solid var(--b2);border-radius:6px;padding:5px 10px;color:var(--t1);font-family:var(--font);font-size:12px;width:180px">
+    </td>
+    <td style="color:var(--t2);font-size:12px">
+      <input type="text" value="${a.email||''}" placeholder="optional"
+        onchange="saveEmail(${i},this.value)"
+        style="background:var(--s2);border:1px solid var(--b2);border-radius:6px;padding:5px 10px;color:var(--t1);font-family:var(--font);font-size:12px;width:180px">
+    </td>
+  </tr>`).join(''):`<tr><td colspan="4"><div class="empty">No agents yet — import the SnapCall CSV first</div></td></tr>`;
+}
+function saveTeam(i,val){const a=S.g('agents')||[];a[i].team=val;S.s('agents',a)}
+function saveEmail(i,val){const a=S.g('agents')||[];a[i].email=val;S.s('agents',a)}
+
+// ── GOALS ──
+function loadGoals(){const g=def('goals',DGOALS);ge('g-overall').value=g.overall;ge('g-core').value=g.core;ge('g-omni').value=g.omni;ge('g-csat').value=g.csat}
+function saveGoals(){S.s('goals',{overall:+(ge('g-overall').value)||20,core:+(ge('g-core').value)||25,omni:+(ge('g-omni').value)||15,csat:+(ge('g-csat').value)||90});flash('g-saved');renderAll()}
+
+// ── SETTINGS ──
+function loadSettings(){ge('s-org').value=def('org','Cin7 Support')}
+function saveSettings(){const p=ge('s-pin').value.trim();if(p) S.s('pin',p);S.s('org',ge('s-org').value.trim()||'Cin7 Support');ge('s-pin').value='';flash('s-saved')}
+
+// ══ UTILITIES ══
+function ge(x){return document.getElementById(x)}
+function fmt(n){return(+(n)||0).toLocaleString()}
+function rcolor(r,g){return r>=g?'var(--green)':r>=g*.7?'var(--amber)':'var(--red)'}
+function rbadge(r,g){
+  if(r>=g) return`<span class="kbg up">▲ On target</span>`;
+  if(r>=g*.7) return`<span class="kbg wn">⬤ Near goal</span>`;
+  return`<span class="kbg dn">▼ Below goal</span>`;
+}
+function kpi(label,val,sub,badge,color){return`<div class="kc"><div class="kl">${label}</div><div class="kv" style="color:${color}">${val}</div><div class="ks">${sub}</div>${badge}</div>`}
+function dc(cid){if(CI[cid]){try{CI[cid].destroy()}catch(e){}delete CI[cid]}}
+function cOpts(t){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#3d4558',font:{size:11}},grid:{display:false}},y:{ticks:{color:'#3d4558',font:{size:11},callback:v=>v+'%'},grid:{color:'rgba(255,255,255,0.04)'}}}}}
+function showN(id,type,msg){const e=ge(id);e.className='notif '+type;e.textContent=msg;setTimeout(()=>{e.className='notif'},9000)}
+function flash(id){const e=ge(id);e.style.display='inline';setTimeout(()=>e.style.display='none',2500)}
+
+function readCSV(file,cb){
+  const rd=new FileReader();
+  rd.onload=e=>{
+    const lines=e.target.result.trim().split(/\r?\n/);if(lines.length<2){cb([]);return}
+    const hdrs=csvSplit(lines[0]).map(h=>h.trim().replace(/^"|"$/g,'').toLowerCase());
+    cb(lines.slice(1).map(line=>{
+      const v=csvSplit(line),o={};
+      hdrs.forEach((h,i)=>o[h]=(v[i]||'').trim().replace(/^"|"$/g,''));
+      return o;
+    }).filter(r=>Object.values(r).some(v=>v)));
+  };
+  rd.readAsText(file);
+}
+function csvSplit(line){
+  const r=[];let c='',q=false;
+  for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){q=!q}else if(ch===','&&!q){r.push(c);c=''}else c+=ch}
+  r.push(c);return r;
+}
+function showPrev(tblId,cardId,rows){
+  if(!rows.length) return;
+  const keys=Object.keys(rows[0]);
+  ge(tblId).innerHTML=`<thead><tr>${keys.map(k=>`<th>${k}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${keys.map(k=>`<td style="font-size:11px;white-space:nowrap">${r[k]||''}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  ge(cardId).style.display='block';
+}
+
+// Drag & drop
+['dz-sc','dz-tt'].forEach(id=>{
+  const dz=ge(id);
+  dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag')});
+  dz.addEventListener('dragleave',()=>dz.classList.remove('drag'));
+  dz.addEventListener('drop',e=>{
+    e.preventDefault();dz.classList.remove('drag');
+    const f=e.dataTransfer.files[0];if(!f) return;
+    id==='dz-sc'?handleSC({target:{files:[f]}}):handleTT({target:{files:[f]}});
+  });
+});
+</script>
+</body>
+</html>

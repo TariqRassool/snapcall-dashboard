@@ -1017,25 +1017,52 @@ function renderChannels() {
   try {
     const sc = getSC(), tt = getTT();
     const goals = def('goals', GOALS);
-    const CH_ICONS  = { API:'⚙️', Email:'✉️', Messaging:'💬', Web:'🌐' };
+    const CH_ICONS  = { API:'⚙️', Api:'⚙️', Email:'✉️', Messaging:'💬', Web:'🌐' };
     const CH_COLORS = ['#05cbbf','#002e6e','#f5a623','#4a6fa0','#c97c3a'];
 
-    // Build channel map from SC rows — use stored channel field
+    const agentChannels = {};
     const cm = {};
+
     sc.forEach(r => {
       const ch = (r.channel || '').trim() || 'Unknown';
-      if (!cm[ch]) cm[ch] = { snaps: 0 };
+      const name = (r.name || '').trim();
+      if (!cm[ch]) cm[ch] = { snaps: 0, agents: new Set() };
       cm[ch].snaps += +(r.snaps) || 0;
+      if (name) cm[ch].agents.add(name);
+      if (name) {
+        if (!agentChannels[name]) agentChannels[name] = new Set();
+        agentChannels[name].add(ch);
+      }
     });
 
-    // Distribute total TT tickets proportionally across channels by SnapCall share
-    const totTickets = tt.reduce((s, r) => s + (+(r.tickets) || 0), 0);
-    const totSnaps   = Object.values(cm).reduce((s, v) => s + v.snaps, 0);
+    const agentTickets = {};
+    tt.forEach(r => {
+      const name = (r.name || '').trim();
+      if (!name) return;
+      agentTickets[name] = (agentTickets[name] || 0) + (+(r.tickets) || 0);
+    });
+
     Object.keys(cm).forEach(ch => {
-      const share = totSnaps > 0 ? cm[ch].snaps / totSnaps : 0;
-      cm[ch].totalTickets = Math.round(totTickets * share);
+      let chTickets = 0;
+      cm[ch].agents.forEach(name => {
+        const agTix = agentTickets[name] || 0;
+        const numChannels = agentChannels[name] ? agentChannels[name].size : 1;
+        chTickets += agTix / numChannels;
+      });
+      cm[ch].totalTickets = Math.round(chTickets);
       cm[ch].rate = cm[ch].totalTickets > 0 ? cm[ch].snaps / cm[ch].totalTickets * 100 : 0;
     });
+
+    const hasTTAgents = Object.keys(agentTickets).length > 0;
+    if (!hasTTAgents) {
+      const totTickets = tt.reduce((s, r) => s + (+(r.tickets) || 0), 0);
+      const totSnaps   = Object.values(cm).reduce((s, v) => s + v.snaps, 0);
+      Object.keys(cm).forEach(ch => {
+        const share = totSnaps > 0 ? cm[ch].snaps / totSnaps : 0;
+        cm[ch].totalTickets = Math.round(totTickets * share);
+        cm[ch].rate = cm[ch].totalTickets > 0 ? cm[ch].snaps / cm[ch].totalTickets * 100 : 0;
+      });
+    }
 
     const channels = Object.keys(cm).sort((a, b) => cm[b].snaps - cm[a].snaps);
 

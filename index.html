@@ -1185,17 +1185,22 @@ function renderChannels() {
 
     // ── USAGE SPLIT DONUT ───────────────────────────────────────────
     dc('usage-donut');
+    const donutCard = ge('usage-donut') ? ge('usage-donut').closest('.card') : null;
+    if (donutCard) { const old = donutCard.querySelector('.empty'); if (old) old.remove(); }
     if (ge('usage-donut') && totAll > 0) {
+      ge('usage-donut').style.display = '';
       const uLabels = ['Calls','Clips','Flows','Other'];
-      const uData   = [callInitiated, totClip, totFlow, Math.max(0, totAll - callInitiated - totClip - totFlow)].filter((_,i)=>true);
+      const uData   = [callInitiated, totClip, totFlow, Math.max(0, totAll - callInitiated - totClip - totFlow)];
       const uColors = ['#05cbbf','#002e6e','#f5a623','#8fadd4'];
+      const filtered = uLabels.map((l,i) => ({l, d: uData[i], c: uColors[i]})).filter(x => x.d > 0);
       charts['usage-donut'] = new Chart(ge('usage-donut').getContext('2d'), {
         type: 'doughnut',
-        data: { labels: uLabels, datasets: [{ data: uData, backgroundColor: uColors, borderWidth: 2, borderColor: '#fff' }] },
+        data: { labels: filtered.map(x=>x.l), datasets: [{ data: filtered.map(x=>x.d), backgroundColor: filtered.map(x=>x.c), borderWidth: 2, borderColor: '#fff' }] },
         options: { responsive:true, maintainAspectRatio:false, cutout:'62%', plugins:{ legend:{ display:true, position:'right', labels:{ color:'#002e6e', font:{ size:12 }, padding:14, boxWidth:12 } } } }
       });
     } else if (ge('usage-donut') && totAll === 0) {
-      ge('usage-donut').closest('.card').querySelector('.ctit').insertAdjacentHTML('afterend','<div class="empty">No tag data — re-import SnapCall CSV with Ticket tags column</div>');
+      ge('usage-donut').style.display = 'none';
+      if (donutCard) donutCard.insertAdjacentHTML('beforeend','<div class="empty" style="padding:40px 0">No tag data — re-import SnapCall CSV with Ticket tags column</div>');
     }
 
     // ── CALL OUTCOMES ───────────────────────────────────────────────
@@ -1322,6 +1327,7 @@ function handleSC(e) {
         brand:      r['ticket brand'] || r['brand'] || '',
         product:    normProd(r['ticket brand'] || r['brand'] || ''),
         channel:    r['ticket channel'] || r['channel'] || '',
+        tag:        (r['ticket tags'] || r['tags'] || '').trim().toLowerCase()
         tag:        (r['ticket tags'] || r['tags'] || '').trim().toLowerCase()
       };
     }).filter(r => r.name.trim() && r.month);

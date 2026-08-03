@@ -1564,11 +1564,14 @@ function confirmImport() {
   }
 
   if (staged.wm) {
-    // Merge WM data — replace months covered by this file, keep others
     const existingWM = S.g('wm') || [];
     const newMonths  = staged.wm_months || [];
+    // Remove existing entries that either:
+    // (a) overlap with months in this file, OR
+    // (b) have no months at all (stale data from broken earlier imports)
     const merged = existingWM.filter(a => {
       const aMonths = a.months || [];
+      if (aMonths.length === 0) return false; // remove stale month-less entries
       return !aMonths.some(m => newMonths.includes(m));
     });
     staged.wm.forEach(newEntry => {
@@ -1974,6 +1977,18 @@ ge('btn-settings').addEventListener('click', saveSettings);
 
 // ─────────────────────────────────────────────
 // ─────────────────────────────────────────────
+// ── ONE-TIME MIGRATION: remove stale WM entries with no months ──
+// These came from broken earlier imports and corrupt the initiated % calculation
+(function migrateWM() {
+  const wm = S.g('wm');
+  if (!wm || !wm.length) return;
+  const cleaned = wm.filter(a => a.months && a.months.length > 0);
+  if (cleaned.length !== wm.length) {
+    S.s('wm', cleaned);
+    console.log('[SnapCall] Cleaned ' + (wm.length - cleaned.length) + ' stale WM entries with no months');
+  }
+})();
+
 // INIT — fetch shared data from GitHub first, then render
 // ─────────────────────────────────────────────
 loadFromGitHub().then(() => {

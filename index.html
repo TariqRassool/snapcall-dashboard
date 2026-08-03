@@ -1672,7 +1672,8 @@ function nameTokens(s) {
   // If email — extract local part before @
   if (s.includes('@')) s = s.split('@')[0];
   // Split on dots, spaces, underscores, hyphens
-  return s.split(/[\s._\-]+/).filter(t => t.length > 1);
+  // Only keep tokens of 3+ chars to avoid matching short words like 'so', 'de', 'al'
+  return s.split(/[\s._\-]+/).filter(t => t.length >= 3);
 }
 
 // Score similarity between two agent name strings (0–1)
@@ -1681,7 +1682,10 @@ function nameSimilarity(a, b) {
   if (!ta.length || !tb.length) return 0;
   let matches = 0;
   ta.forEach(t => { if (tb.includes(t)) matches++; });
-  return matches / Math.max(ta.length, tb.length);
+  const score = matches / Math.max(ta.length, tb.length);
+  // Require at least 2 matching tokens OR a single long token (6+ chars) to avoid false positives
+  const hasStrongMatch = matches >= 2 || ta.some(t => tb.includes(t) && t.length >= 6);
+  return hasStrongMatch ? score : 0;
 }
 
 // Find likely duplicates for a list of new agent names against existing agents

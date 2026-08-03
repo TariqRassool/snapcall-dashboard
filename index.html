@@ -1457,7 +1457,7 @@ function handleWM(e) {
 
     const specMap = {};
     parsed.forEach(r => {
-      const name = r.specialist || r.commentOwner;
+      const name = r.specialist; // Ticket Owner only — not commentOwner
       if (!name || name.toLowerCase() === 'snapcall') return;
       if (!specMap[name]) specMap[name] = { initiated: new Set(), total: new Set(), months: new Set() };
       specMap[name].total.add(r.ticketId);
@@ -1478,9 +1478,10 @@ function handleWM(e) {
     staged.wm_months   = monthsInFile;
 
     // Check WM specialist names against existing SC agents for duplicates
-    const scAgents = S.g('agents') || [];
-    const wmNames  = summary.map(s => s.name);
-    const wmNewNames = wmNames.filter(n => !scAgents.some(a => a.name === n));
+    // Only check Ticket Owner column — not Ticket Comment Owner
+    const scAgents   = S.g('agents') || [];
+    const wmNames    = summary.filter(s => s.name).map(s => s.name);
+    const wmNewNames = wmNames.filter(n => n && n.toLowerCase() !== 'snapcall' && !scAgents.some(a => a.name === n));
     if (wmNewNames.length > 0 && scAgents.length > 0) {
       const wmCandidates = findDuplicateCandidates(wmNewNames, scAgents);
       if (wmCandidates.length > 0) showDuplicateBanner(wmCandidates);

@@ -1625,9 +1625,22 @@ function deleteUpload(idx) {
   const parts = [];
   if (log.sc) parts.push('SnapCall data for: ' + log.sc.months.map(ymLabel).join(', '));
   if (log.tt) parts.push('Total Tickets data for: ' + log.tt.months.map(ymLabel).join(', '));
+  if (log.wm) parts.push('Word Mention data for: ' + (log.wm.months||[]).map(ymLabel).join(', '));
   if (!confirm('Delete this upload?\n\n' + parts.join('\n') + '\n\nThis cannot be undone.')) return;
   if (log.sc) { const sc = S.g('sc') || []; S.s('sc', sc.filter(r => !log.sc.months.includes(r.month))); }
   if (log.tt) { const tt = S.g('tt') || []; S.s('tt', tt.filter(r => !log.tt.months.includes(r.month))); }
+  if (log.wm && log.wm.months && log.wm.months.length) {
+    const wm = S.g('wm') || [];
+    // Remove specialist entries that only had data in the deleted months
+    // and trim months from entries that span multiple uploads
+    const updated = wm.map(a => {
+      const remaining = (a.months || []).filter(m => !log.wm.months.includes(m));
+      if (remaining.length === 0) return null; // fully covered by this upload — remove
+      // Partial overlap — keep but we can't perfectly recalculate counts, so just update months
+      return { ...a, months: remaining };
+    }).filter(Boolean);
+    S.s('wm', updated);
+  }
   logs.splice(idx, 1);
   S.s('uploadLogs', logs);
   showN('imp-notif', 'ok', '✓ Upload deleted. Re-import the corrected file to replace the data.');

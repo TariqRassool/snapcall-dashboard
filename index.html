@@ -1716,7 +1716,6 @@ ge('btn-settings').addEventListener('click', saveSettings);
   dz.addEventListener('drop', e => {
     e.preventDefault(); dz.classList.remove('drag');
     const f = e.dataTransfer.files[0]; if (!f) return;
-    const f = e.dataTransfer.files[0]; if (!f) return;
     if (id === 'dz-sc') handleSC({ target: { files: [f] } });
     else if (id === 'dz-tt') handleTT({ target: { files: [f] } });
     else handleWM({ target: { files: [f] } });

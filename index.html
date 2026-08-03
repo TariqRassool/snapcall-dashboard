@@ -863,8 +863,8 @@ function buildAgents(scRows, ttRows) {
   });
 }
 function buildTrend(product) {
-  const sc = S.g('sc') || [];
-  const tt = S.g('tt') || [];
+  const sc = getSC();
+  const tt = getTT();
   const scF = product ? sc.filter(r => r.product === product) : sc;
   const ttF = product ? tt.filter(r => r.product === product) : tt;
 

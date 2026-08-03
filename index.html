@@ -1409,12 +1409,13 @@ function handleTT(e) {
 }
 
 function checkReady() {
-  const hasSC = !!staged.sc, hasTT = !!staged.tt;
+  const hasSC = !!staged.sc, hasTT = !!staged.tt, hasWM = !!staged.wm;
   ge('prev-wrap').style.display = (hasSC || hasTT) ? 'block' : 'none';
-  ge('confirm-row').style.display = (hasSC || hasTT) ? 'block' : 'none';
+  ge('confirm-row').style.display = (hasSC || hasTT || hasWM) ? 'block' : 'none';
   ge('cpills').innerHTML =
     (hasSC ? `<span class="cpill ok">🎥 SnapCall: ${staged.sc.length} rows</span>` : `<span class="cpill dim">🎥 SnapCall: not loaded</span>`) +
-    (hasTT ? `<span class="cpill ok">📋 Total Tickets: ${staged.tt.length} rows</span>` : `<span class="cpill dim">📋 Total Tickets: not loaded</span>`);
+    (hasTT ? `<span class="cpill ok">📋 Total Tickets: ${staged.tt.length} rows</span>` : `<span class="cpill dim">📋 Total Tickets: not loaded</span>`) +
+    (hasWM ? `<span class="cpill ok">✍️ Word Mention: ${staged.wm.length} specialists</span>` : `<span class="cpill dim">✍️ Word Mention: not loaded</span>`);
 }
 
 function handleWM(e) {
@@ -1499,6 +1500,8 @@ function handleWM(e) {
     }).join(', ');
     ge('wm-st').textContent = '\u2713 ' + summary.length + ' specialists \u00b7 ' + overallPct + '% initiated \u00b7 ' + (monthLabels || 'unknown period');
 
+    checkReady();
+
     const pills = ge('cpills');
     if (pills) {
       const existing = pills.querySelector('.wm-pill');
@@ -1560,24 +1563,17 @@ function confirmImport() {
     uploadLog.tt = { filename: staged.tt_filename || 'Total Tickets CSV', rows: staged.tt.length, months: nm.sort() };
   }
 
-  const logs = S.g('uploadLogs') || [];
-  logs.unshift(uploadLog);
-  S.s('uploadLogs', logs);
-
   if (staged.wm) {
     // Merge WM data — replace months covered by this file, keep others
     const existingWM = S.g('wm') || [];
     const newMonths  = staged.wm_months || [];
-    // Remove existing entries whose months overlap with this file
     const merged = existingWM.filter(a => {
       const aMonths = a.months || [];
       return !aMonths.some(m => newMonths.includes(m));
     });
-    // Merge in new entries
     staged.wm.forEach(newEntry => {
       const existing = merged.find(a => a.name === newEntry.name);
       if (existing) {
-        // Combine counts
         existing.initiatedCount += newEntry.initiatedCount;
         existing.totalCount     += newEntry.totalCount;
         existing.initiatedPct    = existing.totalCount > 0 ? Math.round(existing.initiatedCount / existing.totalCount * 100) : 0;
@@ -1589,6 +1585,11 @@ function confirmImport() {
     S.s('wm', merged);
     uploadLog.wm = { filename: staged.wm_filename || 'Word Mention file', count: staged.wm.length, months: newMonths };
   }
+
+  // Save log AFTER all three blocks so WM is included
+  const logs = S.g('uploadLogs') || [];
+  logs.unshift(uploadLog);
+  S.s('uploadLogs', logs);
 
   const scMsg = staged.sc ? staged.sc.length + ' SnapCall rows' : '—';
   const ttMsg = staged.tt ? staged.tt.length + ' ticket rows' : '—';

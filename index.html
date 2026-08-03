@@ -1477,6 +1477,15 @@ function handleWM(e) {
     staged.wm_filename = f.name || 'Word Mention file';
     staged.wm_months   = monthsInFile;
 
+    // Check WM specialist names against existing SC agents for duplicates
+    const scAgents = S.g('agents') || [];
+    const wmNames  = summary.map(s => s.name);
+    const wmNewNames = wmNames.filter(n => !scAgents.some(a => a.name === n));
+    if (wmNewNames.length > 0 && scAgents.length > 0) {
+      const wmCandidates = findDuplicateCandidates(wmNewNames, scAgents);
+      if (wmCandidates.length > 0) showDuplicateBanner(wmCandidates);
+    }
+
     ge('dz-wm').classList.add('loaded');
     ge('wm-st').style.color = 'var(--teal)';
     const totalInitiated = summary.reduce((s, a) => s + a.initiatedCount, 0);
@@ -1586,6 +1595,12 @@ function confirmImport() {
   showN('imp-notif', 'ok', `✓ Saved — ${scMsg} · ${ttMsg}${wmMsg ? ' · ' + wmMsg : ''} · Now export data.json and commit it to GitHub so everyone sees the update.`);
 
   if (newAgentNames.length > 0) showNewAgentBanner(newAgentNames);
+
+  // Check for duplicate agents (name/email format mismatches)
+  const allAgents = S.g('agents') || [];
+  const existingAgents = allAgents.filter(a => !newAgentNames.includes(a.name));
+  const candidates = findDuplicateCandidates(newAgentNames, existingAgents);
+  if (candidates.length > 0) showDuplicateBanner(candidates);
   resetDZ(); initDateRange(); updateDataStatus(); renderUploadHistory(); renderAll();
 }
 
@@ -1648,6 +1663,155 @@ function deleteUpload(idx) {
 }
 
 
+// ── DUPLICATE DETECTION ──
+// Extract name tokens from a name or email string
+function nameTokens(s) {
+  if (!s) return [];
+  s = s.toLowerCase().trim();
+  // If email — extract local part before @
+  if (s.includes('@')) s = s.split('@')[0];
+  // Split on dots, spaces, underscores, hyphens
+  return s.split(/[\s._\-]+/).filter(t => t.length > 1);
+}
+
+// Score similarity between two agent name strings (0–1)
+function nameSimilarity(a, b) {
+  const ta = nameTokens(a), tb = nameTokens(b);
+  if (!ta.length || !tb.length) return 0;
+  let matches = 0;
+  ta.forEach(t => { if (tb.includes(t)) matches++; });
+  return matches / Math.max(ta.length, tb.length);
+}
+
+// Find likely duplicates for a list of new agent names against existing agents
+// Returns array of { newName, existingName, score, product }
+function findDuplicateCandidates(newNames, existingAgents) {
+  const candidates = [];
+  newNames.forEach(newName => {
+    existingAgents.forEach(ex => {
+      if (ex.name === newName) return; // exact match already handled
+      const score = nameSimilarity(newName, ex.name);
+      if (score >= 0.5) {
+        candidates.push({ newName, existingName: ex.name, score, product: ex.product });
+      }
+    });
+  });
+  // Sort by score desc, dedupe newName (keep best match only)
+  const seen = new Set();
+  return candidates
+    .sort((a, b) => b.score - a.score)
+    .filter(c => { if (seen.has(c.newName)) return false; seen.add(c.newName); return true; });
+}
+
+// Merge agent data: combine SC/TT rows from duplicate into existing, remove duplicate entry
+function mergeAgents(keepName, removeName) {
+  // Update SC rows
+  const sc = S.g('sc') || [];
+  sc.forEach(r => { if (r.name === removeName) r.name = keepName; });
+  S.s('sc', sc);
+  // Update TT rows
+  const tt = S.g('tt') || [];
+  tt.forEach(r => { if (r.name === removeName) r.name = keepName; });
+  S.s('tt', tt);
+  // Update WM data
+  const wm = S.g('wm') || [];
+  const removeWM = wm.find(w => w.name === removeName);
+  const keepWM   = wm.find(w => w.name === keepName);
+  if (removeWM && keepWM) {
+    keepWM.initiatedCount += removeWM.initiatedCount;
+    keepWM.totalCount     += removeWM.totalCount;
+    keepWM.initiatedPct    = keepWM.totalCount > 0 ? Math.round(keepWM.initiatedCount / keepWM.totalCount * 100) : 0;
+    keepWM.months          = [...new Set([...(keepWM.months||[]), ...(removeWM.months||[])])].sort();
+    S.s('wm', wm.filter(w => w.name !== removeName));
+  } else if (removeWM) {
+    removeWM.name = keepName;
+    S.s('wm', wm);
+  }
+  // Update agents list
+  const agents = S.g('agents') || [];
+  const removeAgent = agents.find(a => a.name === removeName);
+  const keepAgent   = agents.find(a => a.name === keepName);
+  if (keepAgent && removeAgent) {
+    // Preserve team/email from whichever has it set
+    if (!keepAgent.team  && removeAgent.team)  keepAgent.team  = removeAgent.team;
+    if (!keepAgent.email && removeAgent.email) keepAgent.email = removeAgent.email;
+  }
+  S.s('agents', agents.filter(a => a.name !== removeName));
+  renderAll();
+}
+
+function showDuplicateBanner(candidates) {
+  const old = ge('duplicate-banner');
+  if (old) old.remove();
+
+  const banner = document.createElement('div');
+  banner.id = 'duplicate-banner';
+  banner.style.cssText = 'background:#fff;border:1.5px solid var(--navy);border-radius:var(--r);padding:16px;margin-bottom:16px';
+
+  const rows = candidates.map((c, i) => `
+    <div id="dup-row-${i}" style="border:0.5px solid var(--b1);border-radius:var(--r);padding:12px 14px;margin-bottom:10px;background:var(--s3)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:11px;background:rgba(245,166,35,.15);color:#7a5000;font-weight:600;padding:2px 8px;border-radius:20px">Possible duplicate</span>
+        <span style="font-size:11px;color:var(--t2)">${Math.round(c.score*100)}% name match</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div style="background:var(--s2);border-radius:6px;padding:10px 12px">
+          <div style="font-size:10px;color:var(--t3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Existing agent</div>
+          <div style="font-size:13px;font-weight:600;color:var(--navy)">${c.existingName}</div>
+          <div style="font-size:11px;color:var(--t2);margin-top:2px">${c.product || ''}</div>
+        </div>
+        <div style="background:var(--s2);border-radius:6px;padding:10px 12px">
+          <div style="font-size:10px;color:var(--t3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">New agent</div>
+          <div style="font-size:13px;font-weight:600;color:var(--navy)">${c.newName}</div>
+          <div style="font-size:11px;color:var(--t2);margin-top:2px">${c.product || ''}</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--t2);margin-bottom:8px">Which name should be kept?</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="dup-keep-existing-${i}" style="background:var(--navy);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer">Keep "${c.existingName}"</button>
+        <button id="dup-keep-new-${i}" style="background:var(--navy);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer">Keep "${c.newName}"</button>
+        <button id="dup-different-${i}" style="background:none;border:1.5px solid var(--b2);color:var(--t1);border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer">Different people — keep both</button>
+      </div>
+    </div>
+  `).join('');
+
+  banner.innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <span style="font-size:20px">🔍</span>
+      <div>
+        <div style="font-weight:700;color:var(--navy)">${candidates.length} possible duplicate${candidates.length > 1 ? 's' : ''} found</div>
+        <div style="font-size:12px;color:var(--t2)">Review and confirm whether these are the same person before proceeding</div>
+      </div>
+      <button id="dup-dismiss" style="margin-left:auto;background:none;border:none;font-size:18px;cursor:pointer;color:var(--t2);line-height:1;padding:0;flex-shrink:0">✕</button>
+    </div>
+    ${rows}
+  `;
+
+  const impNotif = ge('imp-notif');
+  impNotif.parentNode.insertBefore(banner, impNotif.nextSibling);
+
+  // Wire dismiss
+  ge('dup-dismiss').addEventListener('click', () => banner.remove());
+
+  // Wire per-row buttons
+  candidates.forEach((c, i) => {
+    ge('dup-keep-existing-' + i).addEventListener('click', () => {
+      mergeAgents(c.existingName, c.newName);
+      ge('dup-row-' + i).innerHTML = `<div style="font-size:12px;color:var(--teal)">✓ Merged — all data moved to <strong>${c.existingName}</strong></div>`;
+      showN('imp-notif', 'ok', `✓ Merged "${c.newName}" into "${c.existingName}"`);
+    });
+    ge('dup-keep-new-' + i).addEventListener('click', () => {
+      mergeAgents(c.newName, c.existingName);
+      ge('dup-row-' + i).innerHTML = `<div style="font-size:12px;color:var(--teal)">✓ Merged — all data moved to <strong>${c.newName}</strong></div>`;
+      showN('imp-notif', 'ok', `✓ Merged "${c.existingName}" into "${c.newName}"`);
+    });
+    ge('dup-different-' + i).addEventListener('click', () => {
+      ge('dup-row-' + i).innerHTML = `<div style="font-size:12px;color:var(--t2)">✓ Kept as separate agents</div>`;
+    });
+  });
+}
+
+
 function showNewAgentBanner(names) {
   // Remove any existing banner
   const old = ge('new-agent-banner');
@@ -1676,7 +1840,7 @@ function showNewAgentBanner(names) {
   });
 }
 
-function cancelImport() { staged = { sc: null, tt: null }; resetDZ(); }
+function cancelImport() { staged = { sc: null, tt: null, wm: null }; resetDZ(); }
 
 function resetDZ() {
   staged = { sc: null, tt: null };

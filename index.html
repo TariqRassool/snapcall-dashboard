@@ -425,6 +425,7 @@ select,option{background:#fff;color:var(--t1)}
         <div class="divider"></div>
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
           <button class="btn-sec" id="btn-clear">🗑 Clear all data</button>
+          <button class="btn-sec" id="btn-clear-wm" style="border-color:var(--navy);color:var(--navy)">✍️ Clear word mention data</button>
           <button class="btn" id="btn-export" style="background:var(--navy)">⬇ Export data.json for GitHub</button>
           <span id="data-st" style="font-size:12px;color:var(--t2)"></span>
         </div>
@@ -975,12 +976,18 @@ function renderOverview(sc, tt, agents, goals) {
   const wmTotInit  = wmAll.reduce((s, w) => s + (w.initiatedCount || 0), 0);
   const wmTotTotal = wmAll.reduce((s, w) => s + (w.totalCount    || 0), 0);
   const wmOverall  = wmTotTotal > 0 ? Math.round(wmTotInit / wmTotTotal * 100) : null;
+  // Get months covered by WM data for the subtitle
+  const wmMonths = [...new Set(wmAll.flatMap(w => w.months || []))].sort();
+  const MSHORT2 = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const wmMonthLabel = wmMonths.length > 0
+    ? wmMonths.map(ym => { const [yr,mn]=ym.split('-').map(Number); return MSHORT2[mn-1]+' '+yr; }).join(', ')
+    : null;
 
   ge('ov-kpis').innerHTML =
     kpi('Overall Adoption', rate.toFixed(1) + '%', `Goal: ${goals.overall}%`, rbadge(rate, goals.overall), rc) +
     kpi('SnapCall Interactions', fmt(totSnaps), `of ${fmt(totTix)} total tickets`, '', 'var(--teal)') +
     (wmOverall !== null
-      ? kpi('Specialist-initiated', wmOverall + '%', fmt(wmTotInit) + ' of ' + fmt(wmTotTotal) + ' tickets', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)')
+      ? kpi('Specialist-initiated', wmOverall + '%', (wmMonthLabel ? wmMonthLabel + ' · ' : '') + fmt(wmTotInit) + ' of ' + fmt(wmTotTotal) + ' tickets', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)')
       : kpi('Specialist-initiated', '—', 'Import word mention CSV to see', '', 'var(--t2)')) +
     kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)');
 
@@ -1861,8 +1868,19 @@ function resetDZ() {
 
 function clearAll() {
   if (!confirm('Delete all imported data? Team assignments and goals will be kept.')) return;
-  S.d('sc'); S.d('tt'); S.d('wm'); initDateRange(); updateDataStatus(); renderAll();
+  S.d('sc'); S.d('tt'); S.d('wm'); S.d('uploadLogs'); initDateRange(); updateDataStatus(); renderAll();
   showN('imp-notif', 'ok', 'All data cleared.');
+}
+
+function clearWM() {
+  if (!confirm('Delete all word mention data? Your SnapCall usage and ticket data will be kept.')) return;
+  S.d('wm');
+  // Also remove wm entries from upload logs
+  const logs = S.g('uploadLogs') || [];
+  logs.forEach(l => { if (l.wm) delete l.wm; });
+  S.s('uploadLogs', logs);
+  updateDataStatus(); renderUploadHistory(); renderAll();
+  showN('imp-notif', 'ok', '✓ Word mention data cleared. Re-import your word count CSV to start fresh.');
 }
 
 // ── TEAM TABLE ──
@@ -1973,6 +1991,7 @@ ge('f-wm').addEventListener('change', e => handleWM(e));
 ge('btn-confirm').addEventListener('click', confirmImport);
 ge('btn-cancel').addEventListener('click', cancelImport);
 ge('btn-clear').addEventListener('click', clearAll);
+  ge('btn-clear-wm').addEventListener('click', clearWM);
   ge('btn-export').addEventListener('click', exportDataJson);
 
 // Goals + Settings

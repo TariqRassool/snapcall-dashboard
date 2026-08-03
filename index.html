@@ -52,6 +52,10 @@ select,option{background:#fff;color:var(--t1)}
 .kl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--t3);margin-bottom:8px}
 .kv{font-family:var(--head);font-size:28px;font-weight:700;letter-spacing:-1px;line-height:1;color:var(--navy)}
 .ks{font-size:12px;color:var(--t2);margin-top:5px}
+.ktt-icon{font-size:13px;color:var(--t3);cursor:default;font-style:normal;font-weight:400;text-transform:none;letter-spacing:0}
+.ktt-box{display:none;position:absolute;top:calc(100% + 8px);left:0;z-index:99;background:var(--navy);color:#e5f0ff;font-size:12px;font-weight:400;line-height:1.6;padding:12px 14px;border-radius:8px;width:260px;box-shadow:0 4px 16px rgba(0,0,0,.18);text-transform:none;letter-spacing:0;pointer-events:none}
+.ktt-box::before{content:'';position:absolute;top:-6px;left:16px;width:12px;height:12px;background:var(--navy);transform:rotate(45deg);border-radius:2px}
+.kc:hover .ktt-box{display:block}
 .kb{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:6px}
 .up{background:rgba(5,203,191,.12);color:#0a8a82}
 .wn{background:rgba(245,166,35,.12);color:#b87d0e}
@@ -917,6 +921,14 @@ function rbadge(r, g) {
   return '<span class="kb dn">▼ Below goal</span>';
 }
 function kpi(l, v, s, b, c) { return `<div class="kc"><div class="kl">${l}</div><div class="kv" style="color:${c}">${v}</div><div class="ks">${s}</div>${b}</div>`; }
+function kpiTooltip(l, v, badge, c, tooltipText) {
+  return `<div class="kc" style="position:relative">
+    <div class="kl" style="display:flex;align-items:center;gap:5px">${l}<span class="ktt-icon" aria-label="More info">ⓘ</span></div>
+    <div class="kv" style="color:${c}">${v}</div>
+    ${badge}
+    <div class="ktt-box" role="tooltip">${tooltipText}</div>
+  </div>`;
+}
 function dc(id) { if (charts[id]) { try { charts[id].destroy(); } catch(e) {} delete charts[id]; } }
 function cOpts() {
   return { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#8fadd4', font: { size: 11 } }, grid: { display: false } }, y: { ticks: { color: '#8fadd4', font: { size: 11 }, callback: v => v + '%' }, grid: { color: 'rgba(0,46,110,0.06)' } } } };
@@ -985,10 +997,13 @@ function renderOverview(sc, tt, agents, goals) {
 
   ge('ov-kpis').innerHTML =
     kpi('Overall Adoption', rate.toFixed(1) + '%', `Goal: ${goals.overall}%`, rbadge(rate, goals.overall), rc) +
-    kpi('SnapCall Interactions', fmt(totSnaps), `of ${fmt(totTix)} total tickets`, '', 'var(--teal)') +
+    kpiTooltip('SnapCall Interactions', fmt(totSnaps), '', 'var(--teal)',
+      `<strong style="color:#fff">What is this?</strong><br>The total number of SnapCall sessions initiated on tickets assigned to your support team — calls, clips, flows and scheduled calls combined.<br><br><strong style="color:#fff">Why is it different from Specialist-initiated?</strong><br>This counts all SnapCall activity including customer-triggered sessions and system events. Specialist-initiated only counts tickets where a specialist actively sent a SnapCall link, which may cover a different date range.`) +
     (wmOverall !== null
-      ? kpi('Specialist-initiated', wmOverall + '%', (wmMonthLabel ? wmMonthLabel + ' · ' : '') + fmt(wmTotInit) + ' of ' + fmt(wmTotTotal) + ' tickets', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)')
-      : kpi('Specialist-initiated', '—', 'Import word mention CSV to see', '', 'var(--t2)')) +
+      ? kpiTooltip('Specialist-initiated', wmOverall + '%', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)',
+          `<strong style="color:#fff">What is this?</strong><br>Of all SnapCall-tagged tickets, the % where a specialist proactively sent a SnapCall link in a public reply to the customer.<br><br><strong style="color:#fff">Coverage: </strong>${wmMonthLabel || 'unknown period'}<br>${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets<br><br><strong style="color:#fff">Why is the total lower than SnapCall Interactions?</strong><br>This is based on your word mention report which may cover fewer months than your SnapCall usage data. Import monthly word count files to extend coverage.`)
+      : kpiTooltip('Specialist-initiated', '—', '', 'var(--t2)',
+          `<strong style="color:#fff">No data yet</strong><br>Import a word mention CSV under Admin → Import to see how often specialists are proactively using SnapCall.`)) +
     kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)');
 
   const pct = Math.min(rate / goals.overall * 100, 100), R = 64, circ = 2 * Math.PI * R, dash = circ * pct / 100;

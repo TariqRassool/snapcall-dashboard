@@ -111,11 +111,11 @@ select,option{background:#fff;color:var(--t1)}
 .pc.p1 .pc-stat-v{font-size:16px}
 .pc-stat-l{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.4px;text-align:center}
 .pc-score{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--teal);border-radius:20px;padding:2px 10px;font-size:10px;font-family:var(--mono);white-space:nowrap}
-.tmr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;align-items:center;padding:10px 16px;border-bottom:1px solid rgba(0,46,110,.06);transition:background .15s}
+.tmr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr 1fr;align-items:center;padding:10px 16px;border-bottom:1px solid rgba(0,46,110,.06);transition:background .15s}
 .tmr:hover{background:var(--ice)}
 .tmr:last-child{border-bottom:none}
 .tmr.top3{background:rgba(5,203,191,.05)}
-.tmh{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;background:#fafcff;border-radius:6px 6px 0 0;border-bottom:1px solid var(--b1)}
+.tmh{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr 1fr;background:#fafcff;border-radius:6px 6px 0 0;border-bottom:1px solid var(--b1)}
 .tmh div{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--t3);padding:9px 16px}
 .tmh div:not(:first-child){text-align:center}
 .tmr div:not(:first-child){text-align:center;font-size:13px}
@@ -299,7 +299,7 @@ select,option{background:#fff;color:var(--t1)}
     <div class="card" style="padding:0;overflow:hidden">
       <div class="tmh">
         <div style="padding-left:16px">Agent</div>
-        <div>SnapCalls</div><div>Adoption</div><div>CSAT</div><div>Res. (days)</div><div>Usage style</div>
+        <div>SnapCalls</div><div>Adoption</div><div>CSAT</div><div>Initiated %</div><div>Usage style</div>
       </div>
       <div id="agents-list"></div>
     </div>
@@ -406,9 +406,10 @@ select,option{background:#fff;color:var(--t1)}
       <div id="at-import">
         <div class="ibox"><strong>How it works:</strong> The SnapCall CSV provides per-agent session counts, CSAT and resolution time. The Total Tickets CSV provides each agent's total assigned ticket volume (via <strong>Ticket first assigned</strong>). The dashboard joins them on <strong>Assignee name + Month</strong> to compute <strong>Adoption Rate = agent's SnapCalls ÷ agent's own ticket count</strong>. Agents assigned to <strong>Other teams</strong> are automatically excluded from all stats.</div>
         <div id="imp-notif" class="notif"></div>
-        <div class="igrid">
+        <div class="igrid" style="grid-template-columns:1fr 1fr 1fr">
           <div class="dz" id="dz-sc"><div class="dz-ic">🎥</div><div class="dz-chip sc">SnapCall Usage CSV</div><div class="dz-title">Per-agent data</div><div class="dz-cols">Ticket solved - Month (e.g. January)<br>Ticket solved - Year (e.g. 2025)<br>Assignee name<br>Ticket channel<br>Ticket tags<br>CSAT Score<br>First resolution time (days)<br>Tickets<br>Ticket brand</div><div class="dz-st" id="sc-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-sc" accept=".csv" style="display:none"></div>
           <div class="dz" id="dz-tt"><div class="dz-ic">📋</div><div class="dz-chip tt">Total Tickets CSV</div><div class="dz-title">Ticket volume by brand</div><div class="dz-cols">Ticket first assigned - Month (e.g. January)<br>Ticket first assigned - Year (e.g. 2025)<br>Assignee name<br>Ticket brand<br>Tickets (total volume)</div><div class="dz-st" id="tt-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-tt" accept=".csv" style="display:none"></div>
+          <div class="dz" id="dz-wm" style="border-color:rgba(0,46,110,.3)"><div class="dz-ic">✍️</div><div class="dz-chip" style="background:rgba(0,46,110,.08);color:var(--navy)">Word Mention CSV</div><div class="dz-title">Specialist-initiated data</div><div class="dz-cols">Ticket ID<br>Ticket Owner (specialist name)<br>Brand Type<br>Ticket Comment Owner<br>Public Comment<br>Message</div><div class="dz-st" id="wm-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-wm" accept=".csv" style="display:none"></div>
         </div>
         <div id="confirm-row" style="display:none;margin-bottom:18px">
           <div class="cpills" id="cpills"></div>
@@ -505,6 +506,7 @@ async function loadFromGitHub() {
       if (data.goals)       S.s('goals',       data.goals);
       if (data.org)         S.s('org',         data.org);
       if (data.uploadLogs)  S.s('uploadLogs',  data.uploadLogs);
+      if (data.wm)          S.s('wm',          data.wm);
       S.s('dataTimestamp', remoteTs);
       console.log('[SnapCall] Loaded data from GitHub data.json (timestamp:', new Date(remoteTs).toLocaleString(), ')');
     }
@@ -519,6 +521,7 @@ function exportDataJson() {
     timestamp: Date.now(),
     sc:          S.g('sc')          || [],
     tt:          S.g('tt')          || [],
+    wm:          S.g('wm')          || [],
     agents:      S.g('agents')      || [],
     goals:       S.g('goals')       || GOALS,
     org:         S.g('org')         || 'Cin7 Support',
@@ -533,7 +536,7 @@ function exportDataJson() {
 }
 const ge = id => document.getElementById(id);
 
-let staged = { sc: null, tt: null };
+let staged = { sc: null, tt: null, wm: null };
 let charts = {};
 let adminUnlocked = false;
 
@@ -822,6 +825,11 @@ function buildAgents(scRows, ttRows) {
     const res = +(r.resolution); if (!isNaN(res) && res > 0) { m[k].res += res; m[k].rn++; }
   });
 
+  // Join word mention data per agent
+  const wmData = S.g('wm') || [];
+  const wmMap = {};
+  wmData.forEach(w => { wmMap[w.name] = w; });
+
   const g = def('goals', GOALS);
   return Object.values(m).map(a => {
     // Sum agent's tickets across all months using month-number-only key
@@ -847,7 +855,10 @@ function buildAgents(scRows, ttRows) {
     const rScore  = g.art > 0 && avgRes > 0 ? Math.min(g.art / avgRes * 100, 100) : 0;
     const cnt     = 1 + (cScore > 0 ? 1 : 0) + (rScore > 0 ? 1 : 0);
     const composite = Math.round((aScore + cScore + rScore) / cnt);
-    return { ...a, rate, csat, avgRes, composite, agentTickets: denom };
+    const wm = wmMap[a.name];
+    const initiatedPct = wm ? wm.initiatedPct : null;
+    const initiatedCount = wm ? wm.initiatedCount : null;
+    return { ...a, rate, csat, avgRes, composite, agentTickets: denom, initiatedPct, initiatedCount };
   });
 }
 function buildTrend(product) {
@@ -958,11 +969,19 @@ function renderOverview(sc, tt, agents, goals) {
   const cR = cT > 0 ? cS / cT * 100 : 0, oR = oT > 0 ? oS / oT * 100 : 0;
   const rc = rcolor(rate, goals.overall);
 
+  // Specialist-initiated % from WM data
+  const wmAll = S.g('wm') || [];
+  const wmTotInit  = wmAll.reduce((s, w) => s + (w.initiatedCount || 0), 0);
+  const wmTotTotal = wmAll.reduce((s, w) => s + (w.totalCount    || 0), 0);
+  const wmOverall  = wmTotTotal > 0 ? Math.round(wmTotInit / wmTotTotal * 100) : null;
+
   ge('ov-kpis').innerHTML =
     kpi('Overall Adoption', rate.toFixed(1) + '%', `Goal: ${goals.overall}%`, rbadge(rate, goals.overall), rc) +
     kpi('SnapCall Interactions', fmt(totSnaps), `of ${fmt(totTix)} total tickets`, '', 'var(--teal)') +
-    kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)') +
-    kpi('Avg Resolution', avgRes > 0 ? avgRes.toFixed(1) + 'd' : '—', `Goal: ${goals.art} days`, '', 'var(--t1)');
+    (wmOverall !== null
+      ? kpi('Specialist-initiated', wmOverall + '%', fmt(wmTotInit) + ' of ' + fmt(wmTotTotal) + ' tickets', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)')
+      : kpi('Specialist-initiated', '—', 'Import word mention CSV to see', '', 'var(--t2)')) +
+    kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)');
 
   const pct = Math.min(rate / goals.overall * 100, 100), R = 64, circ = 2 * Math.PI * R, dash = circ * pct / 100;
   ge('ov-ring').innerHTML = `<svg width="168" height="168" viewBox="0 0 168 168"><circle cx="84" cy="84" r="${R}" fill="none" stroke="#e5f0ff" stroke-width="11"/><circle cx="84" cy="84" r="${R}" fill="none" stroke="${rc}" stroke-width="11" stroke-dasharray="${dash.toFixed(1)} ${circ.toFixed(1)}" stroke-dashoffset="${(circ/4).toFixed(1)}" stroke-linecap="round" transform="rotate(-90 84 84)"/><text x="84" y="79" text-anchor="middle" fill="#002e6e" font-size="21" font-weight="700" font-family="Syne,sans-serif">${rate.toFixed(1)}%</text><text x="84" y="98" text-anchor="middle" fill="#4a6fa0" font-size="11" font-family="Inter,sans-serif">of ${goals.overall}% goal</text></svg><div class="rm"><div class="rmr"><span>Cin7 Core</span><strong style="color:var(--teal)">${cT > 0 ? cR.toFixed(1) + '%' : '—'}</strong></div><div class="rmr"><span>Cin7 Omni</span><strong style="color:var(--navy)">${oT > 0 ? oR.toFixed(1) + '%' : '—'}</strong></div><div class="rmr"><span>CSAT avg</span><strong>${avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—'}</strong></div><div class="rmr"><span>On target</span><strong style="color:var(--teal)">${agents.filter(a => a.rate >= goals.overall).length} / ${agents.length}</strong></div></div>`;
@@ -980,6 +999,20 @@ function renderOverview(sc, tt, agents, goals) {
 // ── AGENTS ──
 
 // Returns a usage style badge based on agent's tag counts
+
+function initiatedBadge(a) {
+  if (a.initiatedPct === null || a.initiatedPct === undefined) {
+    return '<span style="font-size:11px;color:var(--t3)">—</span>';
+  }
+  if (a.initiatedPct >= 70) {
+    return '<span style="background:rgba(5,203,191,.12);color:#0a8a82;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px">' + a.initiatedPct + '%</span>';
+  }
+  if (a.initiatedPct >= 40) {
+    return '<span style="background:rgba(245,166,35,.12);color:#b87d0e;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px">' + a.initiatedPct + '%</span>';
+  }
+  return '<span style="background:rgba(232,69,69,.08);color:#c42020;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px">' + a.initiatedPct + '%</span>';
+}
+
 function usageStyle(a) {
   const tc = a.tagCounts || { call:0, clip:0, flow:0 };
   const max = Math.max(tc.call, tc.clip, tc.flow);
@@ -1009,7 +1042,7 @@ function renderAgents() {
   ge('rest-lbl').style.display = listAgents.length ? 'block' : 'none';
   ge('agents-list').innerHTML = listAgents.length ? listAgents.map(a => {
     const rc = rcolor(a.rate, goals.overall);
-    return `<div class="tmr"><div><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px"><span class="bdg ${(a.product || '').toLowerCase()}">${prodLabel(a.product)}</span>${a.team ? ' · ' + a.team : ''}</div></div><div style="font-weight:500">${fmt(a.snaps)}</div><div><div class="rc" style="justify-content:center"><div class="rbg" style="width:50px"><div class="rbf" style="width:${Math.min(a.rate,100).toFixed(0)}%;background:${rc};height:3px"></div></div><span class="mono" style="color:${rc}">${a.rate.toFixed(1)}%</span></div></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2) + '/5' : '—'}</div><div style="color:var(--t2)">${a.avgRes > 0 ? a.avgRes.toFixed(1) + 'd' : '—'}</div><div>${usageStyle(a)}</div></div>`;
+    return `<div class="tmr"><div><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px"><span class="bdg ${(a.product || '').toLowerCase()}">${prodLabel(a.product)}</span>${a.team ? ' · ' + a.team : ''}</div></div><div style="font-weight:500">${fmt(a.snaps)}</div><div><div class="rc" style="justify-content:center"><div class="rbg" style="width:50px"><div class="rbf" style="width:${Math.min(a.rate,100).toFixed(0)}%;background:${rc};height:3px"></div></div><span class="mono" style="color:${rc}">${a.rate.toFixed(1)}%</span></div></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2) + '/5' : '—'}</div><div style="color:var(--t2)">${a.avgRes > 0 ? a.avgRes.toFixed(1) + 'd' : '—'}</div><div>${initiatedBadge(a)}</div><div>${usageStyle(a)}</div></div>`;
   }).join('') : '<div class="empty">No agent data found for this filter</div>';
 }
 
@@ -1383,6 +1416,68 @@ function checkReady() {
     (hasTT ? `<span class="cpill ok">📋 Total Tickets: ${staged.tt.length} rows</span>` : `<span class="cpill dim">📋 Total Tickets: not loaded</span>`);
 }
 
+function handleWM(e) {
+  const f = (e.target || e).files ? (e.target || e).files[0] : e;
+  if (!f) return;
+  readCSV(f, rows => {
+    // Parse word mention report — each row is a ticket comment
+    const parsed = rows.map(r => {
+      const owner  = (r['ticket comment owner'] || '').trim();
+      const msg    = (r['message'] || '').toLowerCase();
+      const pub    = (r['public comment'] || '').trim();
+      const tid    = r['ticket id'] || '';
+      const spec   = (r['ticket owner'] || '').trim();
+      const isSnapBot = owner.toLowerCase() === 'snapcall';
+      const hasLink   = msg.includes('stream.snapcall.io') || msg.includes('snapcall.io/media');
+      const hasMention = msg.includes('snapcall');
+      // Specialist-initiated = specialist wrote public comment mentioning/linking SnapCall
+      const initiated = !isSnapBot && pub === 'True' && (hasLink || hasMention) && owner && owner.toLowerCase() !== 'snapcall';
+      return { ticketId: tid, specialist: spec, commentOwner: owner, initiated, isSnapBot };
+    }).filter(r => r.ticketId);
+
+    if (!parsed.length) { showN('imp-notif', 'err', 'Could not parse Word Mention CSV — check column headers match exactly.'); return; }
+
+    // Aggregate per specialist: initiated tickets and total SnapCall tickets
+    const specMap = {};
+    parsed.forEach(r => {
+      const name = r.specialist || r.commentOwner;
+      if (!name || name.toLowerCase() === 'snapcall') return;
+      if (!specMap[name]) specMap[name] = { initiated: new Set(), total: new Set() };
+      specMap[name].total.add(r.ticketId);
+      if (r.initiated) specMap[name].initiated.add(r.ticketId);
+    });
+
+    // Build summary array
+    const summary = Object.entries(specMap).map(([name, d]) => ({
+      name,
+      initiatedCount: d.initiated.size,
+      totalCount: d.total.size,
+      initiatedPct: d.total.size > 0 ? Math.round(d.initiated.size / d.total.size * 100) : 0
+    }));
+
+    staged.wm = summary;
+    staged.wm_filename = f.name || 'Word Mention CSV';
+    ge('dz-wm').classList.add('loaded');
+    ge('wm-st').style.color = 'var(--teal)';
+    const totalInitiated = summary.reduce((s, a) => s + a.initiatedCount, 0);
+    const totalSnap      = summary.reduce((s, a) => s + a.totalCount, 0);
+    const overallPct     = totalSnap > 0 ? Math.round(totalInitiated / totalSnap * 100) : 0;
+    ge('wm-st').textContent = `✓ ${summary.length} specialists · ${overallPct}% specialist-initiated`;
+
+    // Show in confirm row
+    const pills = ge('cpills');
+    if (pills) {
+      const existing = pills.querySelector('.wm-pill');
+      if (existing) existing.remove();
+      const pill = document.createElement('span');
+      pill.className = 'cpill ok wm-pill';
+      pill.textContent = `✍️ Word Mention: ${summary.length} specialists`;
+      pills.appendChild(pill);
+    }
+  });
+}
+
+
 function confirmImport() {
   let newAgentNames = [];
   const uploadId = 'upload_' + Date.now();
@@ -1415,9 +1510,15 @@ function confirmImport() {
   logs.unshift(uploadLog);
   S.s('uploadLogs', logs);
 
+  if (staged.wm) {
+    S.s('wm', staged.wm);
+    uploadLog.wm = { filename: staged.wm_filename || 'Word Mention CSV', count: staged.wm.length };
+  }
+
   const scMsg = staged.sc ? staged.sc.length + ' SnapCall rows' : '—';
   const ttMsg = staged.tt ? staged.tt.length + ' ticket rows' : '—';
-  showN('imp-notif', 'ok', `✓ Saved — ${scMsg} · ${ttMsg} · Now export data.json and commit it to GitHub so everyone sees the update.`);
+  const wmMsg = staged.wm ? staged.wm.length + ' specialist records' : null;
+  showN('imp-notif', 'ok', `✓ Saved — ${scMsg} · ${ttMsg}${wmMsg ? ' · ' + wmMsg : ''} · Now export data.json and commit it to GitHub so everyone sees the update.`);
 
   if (newAgentNames.length > 0) showNewAgentBanner(newAgentNames);
   resetDZ(); initDateRange(); updateDataStatus(); renderUploadHistory(); renderAll();
@@ -1503,11 +1604,12 @@ function resetDZ() {
   ge('confirm-row').style.display = 'none'; ge('prev-wrap').style.display = 'none';
   ge('dz-sc').classList.remove('loaded'); ge('sc-st').textContent = 'Click or drop file here'; ge('sc-st').style.color = 'var(--t3)'; ge('f-sc').value = '';
   ge('dz-tt').classList.remove('loaded'); ge('tt-st').textContent = 'Click or drop file here'; ge('tt-st').style.color = 'var(--t3)'; ge('f-tt').value = '';
+  ge('dz-wm').classList.remove('loaded'); ge('wm-st').textContent = 'Click or drop file here'; ge('wm-st').style.color = 'var(--t3)'; ge('f-wm').value = '';
 }
 
 function clearAll() {
   if (!confirm('Delete all imported data? Team assignments and goals will be kept.')) return;
-  S.d('sc'); S.d('tt'); initDateRange(); updateDataStatus(); renderAll();
+  S.d('sc'); S.d('tt'); S.d('wm'); initDateRange(); updateDataStatus(); renderAll();
   showN('imp-notif', 'ok', 'All data cleared.');
 }
 
@@ -1593,9 +1695,11 @@ ge('atp-settings').addEventListener('click', () => atab('settings'));
 // Import zones
 ge('dz-sc').addEventListener('click', () => ge('f-sc').click());
 ge('dz-tt').addEventListener('click', () => ge('f-tt').click());
+ge('dz-wm').addEventListener('click', () => ge('f-wm').click());
 ge('f-sc').addEventListener('change', e => handleSC(e));
 ge('f-tt').addEventListener('change', e => handleTT(e));
-ge('btn-confirm').addEventListener('click', confirmImport);
+ge('f-tt').addEventListener('change', e => handleTT(e));
+ge('f-wm').addEventListener('change', e => handleWM(e));
 ge('btn-cancel').addEventListener('click', cancelImport);
 ge('btn-clear').addEventListener('click', clearAll);
   ge('btn-export').addEventListener('click', exportDataJson);
@@ -1605,14 +1709,17 @@ ge('btn-goals').addEventListener('click', saveGoals);
 ge('btn-settings').addEventListener('click', saveSettings);
 
 // Drag & drop
-['dz-sc', 'dz-tt'].forEach(id => {
+['dz-sc', 'dz-tt', 'dz-wm'].forEach(id => {
   const dz = ge(id);
   dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag'); });
   dz.addEventListener('dragleave', () => dz.classList.remove('drag'));
   dz.addEventListener('drop', e => {
     e.preventDefault(); dz.classList.remove('drag');
     const f = e.dataTransfer.files[0]; if (!f) return;
-    id === 'dz-sc' ? handleSC({ target: { files: [f] } }) : handleTT({ target: { files: [f] } });
+    const f = e.dataTransfer.files[0]; if (!f) return;
+    if (id === 'dz-sc') handleSC({ target: { files: [f] } });
+    else if (id === 'dz-tt') handleTT({ target: { files: [f] } });
+    else handleWM({ target: { files: [f] } });
   });
 });
 

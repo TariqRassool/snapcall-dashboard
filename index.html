@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 :root{
   --bg:#f9f6f3;--s1:#ffffff;--s2:#ffffff;--s3:#f0f4ff;--s4:#e5f0ff;
@@ -409,7 +410,7 @@ select,option{background:#fff;color:var(--t1)}
         <div class="igrid" style="grid-template-columns:1fr 1fr 1fr">
           <div class="dz" id="dz-sc"><div class="dz-ic">🎥</div><div class="dz-chip sc">SnapCall Usage CSV</div><div class="dz-title">Per-agent data</div><div class="dz-cols">Ticket solved - Month (e.g. January)<br>Ticket solved - Year (e.g. 2025)<br>Assignee name<br>Ticket channel<br>Ticket tags<br>CSAT Score<br>First resolution time (days)<br>Tickets<br>Ticket brand</div><div class="dz-st" id="sc-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-sc" accept=".csv" style="display:none"></div>
           <div class="dz" id="dz-tt"><div class="dz-ic">📋</div><div class="dz-chip tt">Total Tickets CSV</div><div class="dz-title">Ticket volume by brand</div><div class="dz-cols">Ticket first assigned - Month (e.g. January)<br>Ticket first assigned - Year (e.g. 2025)<br>Assignee name<br>Ticket brand<br>Tickets (total volume)</div><div class="dz-st" id="tt-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-tt" accept=".csv" style="display:none"></div>
-          <div class="dz" id="dz-wm" style="border-color:rgba(0,46,110,.3)"><div class="dz-ic">✍️</div><div class="dz-chip" style="background:rgba(0,46,110,.08);color:var(--navy)">Word Mention CSV</div><div class="dz-title">Specialist-initiated data</div><div class="dz-cols">Ticket ID<br>Ticket Owner (specialist name)<br>Brand Type<br>Ticket Comment Owner<br>Public Comment<br>Message</div><div class="dz-st" id="wm-st" style="color:var(--t3)">Click or drop file here</div><input type="file" id="f-wm" accept=".csv" style="display:none"></div>
+          <div class="dz" id="dz-wm" style="border-color:rgba(0,46,110,.3)"><div class="dz-ic">✍️</div><div class="dz-chip" style="background:rgba(0,46,110,.08);color:var(--navy)">Word Mention CSV / XLSX</div><div class="dz-title">Specialist-initiated data</div><div class="dz-cols">Ticket ID<br>Ticket Owner (specialist name)<br>Brand Type<br>Ticket Comment Owner<br>Public Comment<br>Message</div><div class="dz-st" id="wm-st" style="color:var(--t3)">Click or drop file here (.csv or .xlsx)</div><input type="file" id="f-wm" accept=".csv,.xlsx,.xls" style="display:none"></div>
         </div>
         <div id="confirm-row" style="display:none;margin-bottom:18px">
           <div class="cpills" id="cpills"></div>
@@ -1419,25 +1420,25 @@ function checkReady() {
 function handleWM(e) {
   const f = (e.target || e).files ? (e.target || e).files[0] : e;
   if (!f) return;
-  readCSV(f, rows => {
-    // Parse word mention report — each row is a ticket comment
+
+  function processWMRows(rows) {
     const parsed = rows.map(r => {
       const owner  = (r['ticket comment owner'] || '').trim();
       const msg    = (r['message'] || '').toLowerCase();
-      const pub    = (r['public comment'] || '').trim();
-      const tid    = r['ticket id'] || '';
+      // Handle both string 'True'/'False' and actual boolean from xlsx
+      const pubRaw = r['public comment'];
+      const pub    = pubRaw === true || String(pubRaw).trim() === 'True';
+      const tid    = String(r['ticket id'] || '').trim();
       const spec   = (r['ticket owner'] || '').trim();
-      const isSnapBot = owner.toLowerCase() === 'snapcall';
-      const hasLink   = msg.includes('stream.snapcall.io') || msg.includes('snapcall.io/media');
+      const isSnapBot  = owner.toLowerCase() === 'snapcall';
+      const hasLink    = msg.includes('stream.snapcall.io') || msg.includes('snapcall.io/media');
       const hasMention = msg.includes('snapcall');
-      // Specialist-initiated = specialist wrote public comment mentioning/linking SnapCall
-      const initiated = !isSnapBot && pub === 'True' && (hasLink || hasMention) && owner && owner.toLowerCase() !== 'snapcall';
+      const initiated  = !isSnapBot && pub && (hasLink || hasMention) && owner && owner.toLowerCase() !== 'snapcall';
       return { ticketId: tid, specialist: spec, commentOwner: owner, initiated, isSnapBot };
     }).filter(r => r.ticketId);
 
-    if (!parsed.length) { showN('imp-notif', 'err', 'Could not parse Word Mention CSV — check column headers match exactly.'); return; }
+    if (!parsed.length) { showN('imp-notif', 'err', 'Could not parse Word Mention file — check column headers match exactly.'); return; }
 
-    // Aggregate per specialist: initiated tickets and total SnapCall tickets
     const specMap = {};
     parsed.forEach(r => {
       const name = r.specialist || r.commentOwner;
@@ -1447,16 +1448,15 @@ function handleWM(e) {
       if (r.initiated) specMap[name].initiated.add(r.ticketId);
     });
 
-    // Build summary array
     const summary = Object.entries(specMap).map(([name, d]) => ({
       name,
       initiatedCount: d.initiated.size,
-      totalCount: d.total.size,
-      initiatedPct: d.total.size > 0 ? Math.round(d.initiated.size / d.total.size * 100) : 0
+      totalCount:     d.total.size,
+      initiatedPct:   d.total.size > 0 ? Math.round(d.initiated.size / d.total.size * 100) : 0
     }));
 
     staged.wm = summary;
-    staged.wm_filename = f.name || 'Word Mention CSV';
+    staged.wm_filename = f.name || 'Word Mention file';
     ge('dz-wm').classList.add('loaded');
     ge('wm-st').style.color = 'var(--teal)';
     const totalInitiated = summary.reduce((s, a) => s + a.initiatedCount, 0);
@@ -1464,7 +1464,6 @@ function handleWM(e) {
     const overallPct     = totalSnap > 0 ? Math.round(totalInitiated / totalSnap * 100) : 0;
     ge('wm-st').textContent = `✓ ${summary.length} specialists · ${overallPct}% specialist-initiated`;
 
-    // Show in confirm row
     const pills = ge('cpills');
     if (pills) {
       const existing = pills.querySelector('.wm-pill');
@@ -1474,9 +1473,31 @@ function handleWM(e) {
       pill.textContent = `✍️ Word Mention: ${summary.length} specialists`;
       pills.appendChild(pill);
     }
-  });
-}
+  }
 
+  // Handle both CSV and XLSX
+  const isXlsx = f.name.toLowerCase().endsWith('.xlsx') || f.name.toLowerCase().endsWith('.xls');
+  if (isXlsx) {
+    // Use SheetJS (already available in the environment via CDN)
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const XLSX = window.XLSX;
+        if (!XLSX) { showN('imp-notif', 'err', 'XLSX library not loaded — please export as CSV first.'); return; }
+        const wb   = XLSX.read(ev.target.result, { type: 'binary' });
+        const ws   = wb.Sheets[wb.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(ws, { defval: '' });
+        processWMRows(rows);
+      } catch(err) {
+        showN('imp-notif', 'err', 'Could not read XLSX file — try exporting as CSV instead.');
+        console.error(err);
+      }
+    };
+    reader.readAsBinaryString(f);
+  } else {
+    readCSV(f, processWMRows);
+  }
+}
 
 function confirmImport() {
   let newAgentNames = [];

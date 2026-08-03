@@ -1421,48 +1421,73 @@ function handleWM(e) {
   const f = (e.target || e).files ? (e.target || e).files[0] : e;
   if (!f) return;
 
+  // Convert Excel serial date, JS Date, or string to YYYY-MM
+  function tsToYearMonth(val) {
+    if (!val && val !== 0) return '';
+    if (typeof val === 'number') {
+      const date = new Date((val - 25569) * 86400 * 1000);
+      if (!isNaN(date)) return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0');
+    }
+    if (val instanceof Date) return val.getFullYear() + '-' + String(val.getMonth() + 1).padStart(2, '0');
+    const d = new Date(String(val).trim());
+    if (!isNaN(d)) return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+    return '';
+  }
+
   function processWMRows(rows) {
     const parsed = rows.map(r => {
-      const owner  = (r['ticket comment owner'] || '').trim();
-      const msg    = (r['message'] || '').toLowerCase();
-      // Handle both string 'True'/'False' and actual boolean from xlsx
-      const pubRaw = r['public comment'];
-      const pub    = pubRaw === true || String(pubRaw).trim() === 'True';
-      const tid    = String(r['ticket id'] || '').trim();
-      const spec   = (r['ticket owner'] || '').trim();
+      const owner   = (r['Ticket Comment Owner'] || r['ticket comment owner'] || '').trim();
+      const msg     = (r['Message'] || r['message'] || '').toLowerCase();
+      const pubRaw  = r['Public Comment'] !== undefined ? r['Public Comment'] : r['public comment'];
+      const pub     = pubRaw === true || String(pubRaw).trim() === 'True';
+      const tid     = String(r['Ticket ID'] || r['ticket id'] || '').trim();
+      const spec    = (r['Ticket Owner'] || r['ticket owner'] || '').trim();
+      const tsRaw   = r['Comment Created At'] || r['comment created at'];
+      const month   = tsToYearMonth(tsRaw);
       const isSnapBot  = owner.toLowerCase() === 'snapcall';
       const hasLink    = msg.includes('stream.snapcall.io') || msg.includes('snapcall.io/media');
       const hasMention = msg.includes('snapcall');
       const initiated  = !isSnapBot && pub && (hasLink || hasMention) && owner && owner.toLowerCase() !== 'snapcall';
-      return { ticketId: tid, specialist: spec, commentOwner: owner, initiated, isSnapBot };
+      return { ticketId: tid, specialist: spec, commentOwner: owner, initiated, isSnapBot, month };
     }).filter(r => r.ticketId);
 
     if (!parsed.length) { showN('imp-notif', 'err', 'Could not parse Word Mention file — check column headers match exactly.'); return; }
+
+    const monthsInFile = [...new Set(parsed.map(r => r.month).filter(Boolean))].sort();
 
     const specMap = {};
     parsed.forEach(r => {
       const name = r.specialist || r.commentOwner;
       if (!name || name.toLowerCase() === 'snapcall') return;
-      if (!specMap[name]) specMap[name] = { initiated: new Set(), total: new Set() };
+      if (!specMap[name]) specMap[name] = { initiated: new Set(), total: new Set(), months: new Set() };
       specMap[name].total.add(r.ticketId);
       if (r.initiated) specMap[name].initiated.add(r.ticketId);
+      if (r.month) specMap[name].months.add(r.month);
     });
 
     const summary = Object.entries(specMap).map(([name, d]) => ({
       name,
       initiatedCount: d.initiated.size,
       totalCount:     d.total.size,
-      initiatedPct:   d.total.size > 0 ? Math.round(d.initiated.size / d.total.size * 100) : 0
+      initiatedPct:   d.total.size > 0 ? Math.round(d.initiated.size / d.total.size * 100) : 0,
+      months:         [...d.months].sort()
     }));
 
-    staged.wm = summary;
+    staged.wm          = summary;
     staged.wm_filename = f.name || 'Word Mention file';
+    staged.wm_months   = monthsInFile;
+
     ge('dz-wm').classList.add('loaded');
     ge('wm-st').style.color = 'var(--teal)';
     const totalInitiated = summary.reduce((s, a) => s + a.initiatedCount, 0);
     const totalSnap      = summary.reduce((s, a) => s + a.totalCount, 0);
     const overallPct     = totalSnap > 0 ? Math.round(totalInitiated / totalSnap * 100) : 0;
-    ge('wm-st').textContent = `✓ ${summary.length} specialists · ${overallPct}% specialist-initiated`;
+    const MSHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const monthLabels = monthsInFile.map(ym => {
+      const [yr, mn] = ym.split('-').map(Number);
+      return (MSHORT[mn-1] || ym) + ' ' + yr;
+    }).join(', ');
+    ge('wm-st').textContent = '\u2713 ' + summary.length + ' specialists \u00b7 ' + overallPct + '% initiated \u00b7 ' + (monthLabels || 'unknown period');
 
     const pills = ge('cpills');
     if (pills) {
@@ -1470,15 +1495,13 @@ function handleWM(e) {
       if (existing) existing.remove();
       const pill = document.createElement('span');
       pill.className = 'cpill ok wm-pill';
-      pill.textContent = `✍️ Word Mention: ${summary.length} specialists`;
+      pill.textContent = '\u270d\ufe0f Word Mention: ' + summary.length + ' specialists';
       pills.appendChild(pill);
     }
   }
 
-  // Handle both CSV and XLSX
   const isXlsx = f.name.toLowerCase().endsWith('.xlsx') || f.name.toLowerCase().endsWith('.xls');
   if (isXlsx) {
-    // Use SheetJS (already available in the environment via CDN)
     const reader = new FileReader();
     reader.onload = ev => {
       try {
@@ -1486,7 +1509,7 @@ function handleWM(e) {
         if (!XLSX) { showN('imp-notif', 'err', 'XLSX library not loaded — please export as CSV first.'); return; }
         const wb   = XLSX.read(ev.target.result, { type: 'binary' });
         const ws   = wb.Sheets[wb.SheetNames[0]];
-        const rows = XLSX.utils.sheet_to_json(ws, { defval: '' });
+        const rows = XLSX.utils.sheet_to_json(ws, { defval: '', cellDates: true });
         processWMRows(rows);
       } catch(err) {
         showN('imp-notif', 'err', 'Could not read XLSX file — try exporting as CSV instead.');
@@ -1532,8 +1555,29 @@ function confirmImport() {
   S.s('uploadLogs', logs);
 
   if (staged.wm) {
-    S.s('wm', staged.wm);
-    uploadLog.wm = { filename: staged.wm_filename || 'Word Mention CSV', count: staged.wm.length };
+    // Merge WM data — replace months covered by this file, keep others
+    const existingWM = S.g('wm') || [];
+    const newMonths  = staged.wm_months || [];
+    // Remove existing entries whose months overlap with this file
+    const merged = existingWM.filter(a => {
+      const aMonths = a.months || [];
+      return !aMonths.some(m => newMonths.includes(m));
+    });
+    // Merge in new entries
+    staged.wm.forEach(newEntry => {
+      const existing = merged.find(a => a.name === newEntry.name);
+      if (existing) {
+        // Combine counts
+        existing.initiatedCount += newEntry.initiatedCount;
+        existing.totalCount     += newEntry.totalCount;
+        existing.initiatedPct    = existing.totalCount > 0 ? Math.round(existing.initiatedCount / existing.totalCount * 100) : 0;
+        existing.months          = [...new Set([...(existing.months||[]), ...(newEntry.months||[])])].sort();
+      } else {
+        merged.push(newEntry);
+      }
+    });
+    S.s('wm', merged);
+    uploadLog.wm = { filename: staged.wm_filename || 'Word Mention file', count: staged.wm.length, months: newMonths };
   }
 
   const scMsg = staged.sc ? staged.sc.length + ' SnapCall rows' : '—';
@@ -1561,7 +1605,8 @@ function renderUploadHistory() {
         <div style="flex:1;min-width:0">
           <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">${dateStr} at ${timeStr}</div>
           ${log.sc ? `<div style="font-size:12px;color:var(--t2);margin-bottom:3px">🎥 <strong style="color:var(--navy)">${log.sc.filename}</strong> — ${fmt(log.sc.rows)} rows · <span style="color:var(--teal)">${scMonths}</span></div>` : ''}
-          ${log.tt ? `<div style="font-size:12px;color:var(--t2)">📋 <strong style="color:var(--navy)">${log.tt.filename}</strong> — ${fmt(log.tt.rows)} rows · <span style="color:var(--teal)">${ttMonths}</span></div>` : ''}
+          ${log.tt ? `<div style="font-size:12px;color:var(--t2);margin-bottom:3px">📋 <strong style="color:var(--navy)">${log.tt.filename}</strong> — ${fmt(log.tt.rows)} rows · <span style="color:var(--teal)">${ttMonths}</span></div>` : ''}
+          ${log.wm ? `<div style="font-size:12px;color:var(--t2)">✍️ <strong style="color:var(--navy)">${log.wm.filename}</strong> — ${fmt(log.wm.count)} specialists · <span style="color:var(--teal)">${(log.wm.months||[]).map(ymLabel).join(', ') || 'unknown period'}</span></div>` : ''}
         </div>
         <button id="del-upload-${idx}" style="background:none;border:1.5px solid var(--red);color:var(--red);border-radius:6px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">🗑 Delete this upload</button>
       </div>

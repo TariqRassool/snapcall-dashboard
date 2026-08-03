@@ -1894,10 +1894,28 @@ function atab(name) {
 function readCSV(file, cb) {
   const rd = new FileReader();
   rd.onload = e => {
-    const lines = e.target.result.trim().split(/\r?\n/);
-    if (lines.length < 2) { cb([]); return; }
-    const hdrs = csvSplit(lines[0]).map(h => h.trim().replace(/^"|"$/g, '').toLowerCase());
-    cb(lines.slice(1).map(line => {
+    const raw = e.target.result;
+    // Split into logical rows respecting quoted fields that contain newlines
+    const logicalRows = [];
+    let current = '', inQuote = false;
+    for (let i = 0; i < raw.length; i++) {
+      const ch = raw[i];
+      if (ch === '"') {
+        inQuote = !inQuote;
+        current += ch;
+      } else if ((ch === '\n' || (ch === '\r' && raw[i+1] === '\n')) && !inQuote) {
+        if (ch === '\r') i++; // skip \n after \r
+        logicalRows.push(current);
+        current = '';
+      } else {
+        current += ch;
+      }
+    }
+    if (current.trim()) logicalRows.push(current);
+
+    if (logicalRows.length < 2) { cb([]); return; }
+    const hdrs = csvSplit(logicalRows[0]).map(h => h.trim().replace(/^"|"$/g, '').toLowerCase());
+    cb(logicalRows.slice(1).map(line => {
       const vals = csvSplit(line), o = {};
       hdrs.forEach((h, i) => o[h] = (vals[i] || '').trim().replace(/^"|"$/g, ''));
       return o;

@@ -48,7 +48,7 @@ select,option{background:#fff;color:var(--t1)}
 .card{background:#fff;border:1px solid var(--b1);border-radius:var(--r2);padding:20px;box-shadow:var(--shadow)}
 .ctit{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:14px}
 .kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:14px;margin-bottom:24px}
-.kc{background:#fff;border:1px solid var(--b1);border-radius:var(--r2);padding:20px 22px;box-shadow:var(--shadow)}
+.kc{background:#fff;border:1px solid var(--b1);border-radius:var(--r2);padding:20px 22px;box-shadow:var(--shadow);min-height:110px;display:flex;flex-direction:column}
 .kl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--t3);margin-bottom:8px}
 .kv{font-family:var(--head);font-size:28px;font-weight:700;letter-spacing:-1px;line-height:1;color:var(--navy)}
 .ks{font-size:12px;color:var(--t2);margin-top:5px}
@@ -832,9 +832,18 @@ function buildAgents(scRows, ttRows) {
   });
 
   // Join word mention data per agent
-  const wmData = S.g('wm') || [];
+  // Join WM data — filter to months that overlap with current date range
+  const allWM = S.g('wm') || [];
+  const wmData = allWM.map(w => {
+    // Filter this specialist's data to months in the current date range
+    const monthsInRange = (w.months || []).filter(m => inRange(m));
+    if (monthsInRange.length === 0) return { ...w, initiatedPct: null, initiatedCount: null };
+    // If all months are in range, use as-is; otherwise we can't perfectly split counts
+    // so show as-is with a note (best approximation)
+    return w;
+  });
   const wmMap = {};
-  wmData.forEach(w => { wmMap[w.name] = w; });
+  wmData.forEach(w => { if (w.name) wmMap[w.name] = w; });
 
   const g = def('goals', GOALS);
   return Object.values(m).map(a => {
@@ -921,10 +930,11 @@ function rbadge(r, g) {
   return '<span class="kb dn">▼ Below goal</span>';
 }
 function kpi(l, v, s, b, c) { return `<div class="kc"><div class="kl">${l}</div><div class="kv" style="color:${c}">${v}</div><div class="ks">${s}</div>${b}</div>`; }
-function kpiTooltip(l, v, badge, c, tooltipText) {
+function kpiTooltip(l, v, sub, badge, c, tooltipText) {
   return `<div class="kc" style="position:relative">
     <div class="kl" style="display:flex;align-items:center;gap:5px">${l}<span class="ktt-icon" aria-label="More info">ⓘ</span></div>
     <div class="kv" style="color:${c}">${v}</div>
+    <div class="ks">${sub}</div>
     ${badge}
     <div class="ktt-box" role="tooltip">${tooltipText}</div>
   </div>`;
@@ -997,12 +1007,12 @@ function renderOverview(sc, tt, agents, goals) {
 
   ge('ov-kpis').innerHTML =
     kpi('Overall Adoption', rate.toFixed(1) + '%', `Goal: ${goals.overall}%`, rbadge(rate, goals.overall), rc) +
-    kpiTooltip('SnapCall Interactions', fmt(totSnaps), '', 'var(--teal)',
-      `<strong style="color:#fff">What is this?</strong><br>The total number of SnapCall sessions initiated on tickets assigned to your support team — calls, clips, flows and scheduled calls combined.<br><br><strong style="color:#fff">Why is it different from Specialist-initiated?</strong><br>This counts all SnapCall activity including customer-triggered sessions and system events. Specialist-initiated only counts tickets where a specialist actively sent a SnapCall link, which may cover a different date range.`) +
+    kpiTooltip('SnapCall Interactions', fmt(totSnaps), `of ${fmt(totTix)} total tickets`, '', 'var(--teal)',
+      `<strong style="color:#fff">What is this?</strong><br>The total number of SnapCall sessions initiated on tickets assigned to your support team — calls, clips, flows and scheduled calls combined.<br><br><strong style="color:#fff">Why is it different from Specialist-initiated?</strong><br>This counts all SnapCall activity including customer-triggered sessions and system events. Specialist-initiated only counts tickets where a specialist actively sent a SnapCall link — based on your word mention report, which may cover a different date range.`) +
     (wmOverall !== null
-      ? kpiTooltip('Specialist-initiated', wmOverall + '%', wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)',
-          `<strong style="color:#fff">What is this?</strong><br>Of all SnapCall-tagged tickets, the % where a specialist proactively sent a SnapCall link in a public reply to the customer.<br><br><strong style="color:#fff">Coverage: </strong>${wmMonthLabel || 'unknown period'}<br>${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets<br><br><strong style="color:#fff">Why is the total lower than SnapCall Interactions?</strong><br>This is based on a separate word mention report which may cover fewer months than your SnapCall usage data.`)
-      : kpiTooltip('Specialist-initiated', '—', '', 'var(--t2)',
+      ? kpiTooltip('Specialist-initiated', wmOverall + '%', `${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets · ${wmMonthLabel || ''}`, wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)',
+          `<strong style="color:#fff">What is this?</strong><br>Of all SnapCall-tagged tickets, the % where a specialist proactively sent a SnapCall link in a public reply to the customer.<br><br><strong style="color:#fff">Coverage: </strong>${wmMonthLabel || 'unknown period'}<br>${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets<br><br><strong style="color:#fff">Why is the total lower than SnapCall Interactions?</strong><br>This is based on your word mention report which may cover fewer months than your SnapCall usage data. Import monthly word count files to extend coverage.`)
+      : kpiTooltip('Specialist-initiated', '—', 'Import word mention CSV to see', '', 'var(--t2)',
           `<strong style="color:#fff">No data yet</strong><br>Import a word mention CSV under Admin → Import to see how often specialists are proactively using SnapCall.`)) +
     kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)');
 

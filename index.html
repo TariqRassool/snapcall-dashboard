@@ -1008,10 +1008,10 @@ function renderOverview(sc, tt, agents, goals) {
   ge('ov-kpis').innerHTML =
     kpi('Overall Adoption', rate.toFixed(1) + '%', `Goal: ${goals.overall}%`, rbadge(rate, goals.overall), rc) +
     kpiTooltip('SnapCall Interactions', fmt(totSnaps), `of ${fmt(totTix)} total tickets`, '', 'var(--teal)',
-      `<strong style="color:#fff">What is this?</strong><br>The total number of SnapCall sessions initiated on tickets assigned to your support team — calls, clips, flows and scheduled calls combined.<br><br><strong style="color:#fff">Why is it different from Specialist-initiated?</strong><br>This counts all SnapCall activity including customer-triggered sessions and system events. Specialist-initiated only counts tickets where a specialist actively sent a SnapCall link — based on your word mention report, which may cover a different date range.`) +
+      `<strong style="color:#fff">What is this?</strong><br>The total number of SnapCall sessions on tickets assigned to your support team — calls, clips, flows and scheduled calls combined.<br><br><strong style="color:#fff">Why is it different from Specialist-initiated?</strong><br>This counts all SnapCall activity including customer-triggered sessions and system events. Specialist-initiated only counts tickets where a specialist actively sent a SnapCall link.`) +
     (wmOverall !== null
-      ? kpiTooltip('Specialist-initiated', wmOverall + '%', `${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets · ${wmMonthLabel || ''}`, wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)',
-          `<strong style="color:#fff">What is this?</strong><br>Of all SnapCall-tagged tickets, the % where a specialist proactively sent a SnapCall link in a public reply to the customer.<br><br><strong style="color:#fff">Coverage: </strong>${wmMonthLabel || 'unknown period'}<br>${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets<br><br><strong style="color:#fff">Why is the total lower than SnapCall Interactions?</strong><br>This is based on your word mention report which may cover fewer months than your SnapCall usage data. Import monthly word count files to extend coverage.`)
+      ? kpiTooltip('Specialist-initiated', wmOverall + '%', `${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets`, wmOverall >= 70 ? '<span class="kb up">▲ High proactivity</span>' : wmOverall >= 40 ? '<span class="kb wn">⬤ Moderate</span>' : '<span class="kb dn">▼ Mostly passive</span>', 'var(--navy)',
+          `<strong style="color:#fff">What is this?</strong><br>Of all SnapCall-tagged tickets, the % where a specialist proactively sent a SnapCall link in a public reply to the customer.<br><br><strong style="color:#fff">Coverage: </strong>${wmMonthLabel || 'unknown period'}<br>${fmt(wmTotInit)} of ${fmt(wmTotTotal)} tickets<br><br><strong style="color:#fff">Why is the total lower than SnapCall Interactions?</strong><br>This is based on a separate word mention report which may cover fewer months than the SnapCall usage data.`)
       : kpiTooltip('Specialist-initiated', '—', 'Import word mention CSV to see', '', 'var(--t2)',
           `<strong style="color:#fff">No data yet</strong><br>Import a word mention CSV under Admin → Import to see how often specialists are proactively using SnapCall.`)) +
     kpi('Avg CSAT', avgC > 0 ? avgC.toFixed(2) + ' / 5' : '—', `Target: ${goals.csat} / 5`, avgC > 0 ? `<span class="kb ${avgC >= goals.csat ? 'up' : 'wn'}">${avgC >= goals.csat ? '▲ On target' : '⬤ Near target'}</span>` : '', 'var(--t1)');
@@ -1100,13 +1100,13 @@ function renderPodium(agents, goals, containerId) {
   function catCard(agent, rank, valueHTML, label, extraHTML) {
     const ini = agent.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
     const cls = ['p1','p2','p3'][rank];
-    return `<div class="pc ${cls}" style="flex:1;min-width:130px;max-width:200px">
+    return `<div class="pc ${cls}" style="flex:1;min-width:150px;max-width:200px;min-height:230px;display:flex;flex-direction:column;align-items:center;text-align:center">
       <div class="pc-rank">${medals[rank]}</div>
       <div class="pc-av">${ini}</div>
-      <div class="pc-name" style="font-size:13px">${agent.name}</div>
-      <div style="margin-bottom:8px;font-size:11px"><span class="bdg ${(agent.product||'').toLowerCase()}">${prodLabel(agent.product)}</span>${agent.team?` <span style="color:var(--t2)">· ${agent.team}</span>`:''}</div>
-      <div style="font-family:var(--head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:2px">${valueHTML}</div>
-      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:6px">${label}</div>
+      <div class="pc-name" style="font-size:13px;text-align:center">${agent.name}</div>
+      <div style="margin-bottom:8px;font-size:11px;text-align:center;line-height:1.8"><span class="bdg ${(agent.product||'').toLowerCase()}">${prodLabel(agent.product)}</span>${agent.team?`<br><span style="color:var(--t2)">${agent.team}</span>`:''}</div>
+      <div style="font-family:var(--head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:2px;text-align:center">${valueHTML}</div>
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:6px;text-align:center">${label}</div>
       ${extraHTML || ''}
     </div>`;
   }
@@ -1115,14 +1115,14 @@ function renderPodium(agents, goals, containerId) {
     if (!top3.length) return `<div style="flex:1"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:${color};margin-bottom:14px;display:flex;align-items:center;gap:6px">${icon} ${title}</div><div style="font-size:12px;color:var(--t2);padding:16px 0">No data available</div></div>`;
     return `<div style="flex:1;min-width:220px">
       <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:${color};margin-bottom:18px;display:flex;align-items:center;gap:6px">${icon} ${title}</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">${top3.map((a,i) => cardFn(a,i)).join('')}</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:stretch">${top3.map((a,i) => cardFn(a,i)).join('')}</div>
     </div>`;
   }
 
   const adoptionSection = section('Most SnapCalls Initiated', '📈', '#05cbbf', top3Rate, (a,i) => {
     const rc = rcolor(a.rate, goals.overall);
     return catCard(a, i, fmt(a.snaps), 'SnapCall Interactions',
-      `<div style="font-size:12px;color:var(--t2)">${a.rate.toFixed(1)}% adoption rate</div>`);
+      `<div style="font-size:12px;color:var(--t2);text-align:center">${a.rate.toFixed(1)}% adoption</div>`);
   });
 
   const csatSection = section('Top CSAT Score', '⭐', '#f5a623', top3Csat, (a,i) =>

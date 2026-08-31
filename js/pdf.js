@@ -190,23 +190,14 @@ async function exportPDF() {
         <div style="position:absolute;right:80px;bottom:-80px;width:200px;height:200px;border-radius:50%;border:30px solid rgba(5,203,191,.05)"></div>
         <div style="position:absolute;left:-30px;bottom:-40px;width:140px;height:140px;border-radius:50%;border:20px solid rgba(255,255,255,.04)"></div>
 
-        <div style="position:relative;display:flex;align-items:flex-start;justify-content:space-between">
-          <div>
-            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(5,203,191,.15);border:1px solid rgba(5,203,191,.3);border-radius:20px;padding:4px 12px;margin-bottom:18px">
-              <div style="width:7px;height:7px;border-radius:50%;background:#05cbbf"></div>
-              <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:#05cbbf">${org}</span>
-            </div>
-            <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.3px">It's all about</div>
-            <div style="font-size:38px;font-weight:800;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:8px">SnapCall</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.45)">${dateLabel}</div>
+        <div style="position:relative">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(5,203,191,.15);border:1px solid rgba(5,203,191,.3);border-radius:20px;padding:4px 12px;margin-bottom:18px">
+            <div style="width:7px;height:7px;border-radius:50%;background:#05cbbf"></div>
+            <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:#05cbbf">${org}</span>
           </div>
-          <!-- big adoption number -->
-          <div style="text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px 28px">
-            <div style="font-size:11px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px">Overall Adoption</div>
-            <div style="font-size:48px;font-weight:800;color:${sc2(overallRate,g.overall)};line-height:1;letter-spacing:-2px">${overallRate.toFixed(1)}%</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:6px">Goal: ${g.overall}%</div>
-            <div style="margin-top:10px;display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:${sc2(overallRate,g.overall)}22;color:${sc2(overallRate,g.overall)};border:1px solid ${sc2(overallRate,g.overall)}55">${sl(overallRate,g.overall)}</div>
-          </div>
+          <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.3px">It's all about</div>
+          <div style="font-size:38px;font-weight:800;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:8px">SnapCall</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.45)">${dateLabel}</div>
         </div>
 
         <!-- teal wave divider -->
@@ -220,12 +211,22 @@ async function exportPDF() {
       <div style="padding:32px 44px 40px">
 
         <!-- ░░ KPI STRIP ░░ -->
+        <!-- Overall Adoption — hero card -->
+        <div style="background:linear-gradient(135deg,#05cbbf,#03a89e);border-radius:14px;padding:18px 20px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 16px rgba(5,203,191,.3)">
+          <div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(0,46,110,.6);margin-bottom:6px">Overall Adoption Rate</div>
+            <div style="font-size:42px;font-weight:800;color:#002e6e;line-height:1;letter-spacing:-2px">${overallRate.toFixed(1)}%</div>
+            <div style="font-size:10px;color:rgba(0,46,110,.55);margin-top:6px">Goal: ${g.overall}% · ${sl(overallRate,g.overall)}</div>
+          </div>
+          <div style="font-size:52px;opacity:.25">📊</div>
+        </div>
+        <!-- Supporting KPIs -->
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px">
           ${[
             { emoji:'🎥', label:'SnapCall Sessions', val:fmt(totalSnaps), sub:`of ${fmt(totalTickets)} tickets` },
             { emoji:'⭐', label:'Avg CSAT', val:avgCsat>0?avgCsat.toFixed(2)+'/5':'—', sub:`Target: ${g.csat}/5`, color:avgCsat>0?sc2(avgCsat,g.csat):null },
             { emoji:'⚡', label:'Avg Resolution', val:avgRes>0?avgRes.toFixed(1)+'d':'—', sub:`Goal: ${g.art} days` },
-            { emoji:'🎯', label:'On Target', val:`${onTarget}/${agents.length}`, sub:`at or above ${g.overall}%` },
+            { emoji:'🎯', label:'Hitting Goal', val:`${onTarget}/${agents.length}`, sub:`specialists at ${g.overall}%+` },
           ].map(k=>`
             <div style="background:#fff;border-radius:14px;padding:16px 14px;box-shadow:0 1px 6px rgba(0,46,110,.07);text-align:center">
               <div style="font-size:22px;margin-bottom:8px">${k.emoji}</div>

@@ -140,7 +140,7 @@ function renderAgents() {
   ge('rest-lbl').style.display = listAgents.length ? 'block' : 'none';
   ge('agents-list').innerHTML = listAgents.length ? listAgents.map(a => {
     const rc = rcolor(a.rate, goals.overall);
-    return `<div class="tmr"><div><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px"><span class="bdg ${(a.product || '').toLowerCase()}">${prodLabel(a.product)}</span>${a.team ? ' · ' + a.team : ''}</div></div><div style="font-weight:500">${fmt(a.snaps)}</div><div><div class="rc" style="justify-content:center"><div class="rbg" style="width:50px"><div class="rbf" style="width:${Math.min(a.rate,100).toFixed(0)}%;background:${rc};height:3px"></div></div><span class="mono" style="color:${rc}">${a.rate.toFixed(1)}%</span></div></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2) + '/5' : '—'}</div><div>${initiatedBadge(a)}</div><div>${usageStyle(a)}</div></div>`;
+    return `<div class="tmr"><div style="min-width:0"><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span class="bdg ${(a.product || '').toLowerCase()}">${prodLabel(a.product)}</span>${a.team ? '<span style="color:var(--t3)"> · </span>' + a.team : ''}</div></div><div style="font-weight:500">${fmt(a.snaps)}</div><div><div class="rc" style="justify-content:center"><div class="rbg" style="width:50px"><div class="rbf" style="width:${Math.min(a.rate,100).toFixed(0)}%;background:${rc};height:3px"></div></div><span class="mono" style="color:${rc}">${a.rate.toFixed(1)}%</span></div></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2) + '/5' : '—'}</div><div>${initiatedBadge(a)}</div><div>${usageStyle(a)}</div></div>`;
   }).join('') : '<div class="empty">No agent data found for this filter</div>';
 }
 
@@ -158,17 +158,16 @@ function renderPodium(agents, goals, containerId) {
   const top3Res  = [...withRes].sort((a,b) => a.avgRes - b.avgRes).slice(0,3);
   const medals   = ['🥇','🥈','🥉'];
 
-  function catCard(agent, rank, valueHTML, label, extraHTML) {
+  function catCard(agent, rank, valueHTML) {
+    const firstName = agent.name.split(' ')[0];
     const ini = agent.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
     const cls = ['p1','p2','p3'][rank];
-    return `<div class="pc ${cls}" style="flex:1;min-width:100px;max-width:190px;min-height:230px;display:flex;flex-direction:column;align-items:center;text-align:center">
+    return `<div class="pc ${cls}" style="flex:1;min-width:100px;max-width:190px;min-height:200px;display:flex;flex-direction:column;align-items:center;text-align:center">
       <div class="pc-rank">${medals[rank]}</div>
       <div class="pc-av">${ini}</div>
-      <div class="pc-name" style="font-size:13px;text-align:center">${agent.name}</div>
-      <div style="margin-bottom:8px;font-size:11px;text-align:center;line-height:1.8"><span class="bdg ${(agent.product||'').toLowerCase()}">${prodLabel(agent.product)}</span>${agent.team?`<br><span style="color:var(--t2)">${agent.team}</span>`:''}</div>
-      <div style="font-family:var(--head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:2px;text-align:center">${valueHTML}</div>
-      <div style="font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:6px;text-align:center">${label}</div>
-      ${extraHTML || ''}
+      <div class="pc-name" style="font-size:13px;text-align:center">${firstName}</div>
+      <div style="margin-bottom:10px;font-size:11px;text-align:center"><span class="bdg ${(agent.product||'').toLowerCase()}">${prodLabel(agent.product)}</span></div>
+      <div style="font-family:var(--head);font-size:20px;font-weight:700;color:var(--navy);text-align:center">${valueHTML}</div>
     </div>`;
   }
 
@@ -181,16 +180,13 @@ function renderPodium(agents, goals, containerId) {
   }
 
   const adoptionSection = section('Most SnapCalls Initiated', '📈', '#05cbbf', top3Rate, (a,i) =>
-    catCard(a, i, fmt(a.snaps), 'SnapCall Interactions',
-      `<div style="font-size:12px;color:var(--t2);text-align:center">${a.rate.toFixed(1)}% adoption</div>`));
+    catCard(a, i, fmt(a.snaps)));
 
   const csatSection = section('Top CSAT Score', '⭐', '#f5a623', top3Csat, (a,i) =>
-    catCard(a, i, a.csat.toFixed(2) + ' / 5', 'CSAT Score',
-      `<div style="font-size:12px;color:var(--t2)">${a.rate.toFixed(1)}% adoption</div>`));
+    catCard(a, i, a.csat.toFixed(2) + ' / 5'));
 
   const artSection = section('Best Resolution Time', '⚡', '#4a6fa0', top3Res, (a,i) =>
-    catCard(a, i, a.avgRes.toFixed(1) + 'd', 'Avg Resolution',
-      `<div style="font-size:12px;color:var(--t2)">${a.rate.toFixed(1)}% adoption</div>`));
+    catCard(a, i, a.avgRes.toFixed(1) + 'd'));
 
   el.innerHTML = `<div style="display:flex;gap:24px;margin-bottom:28px;padding:0 4px">${adoptionSection}${csatSection}${artSection}</div>`;
 }
@@ -238,7 +234,7 @@ function renderTeams() {
       <div style="font-size:12px;color:var(--t2)">${top1Res.avgRes.toFixed(1)}d avg · ${top1Res.rate.toFixed(1)}% adoption</div>
     </div>` : ''}
   </div>
-</div>` : ''}<div class="tmh" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr"><div style="padding-left:16px">Specialist</div><div>SnapCalls</div><div>Adoption</div><div>CSAT</div><div>Initiated %</div><div>Usage style</div></div>${members.map((a, idx) => { const rc2 = rcolor(a.rate, goals.overall); return `<div class="tmr${idx < 3 ? ' top3' : ''}"><div><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2)"><span class="bdg ${(a.product||'').toLowerCase()}">${prodLabel(a.product)}</span></div></div><div>${fmt(a.snaps)}</div><div><span class="mono" style="color:${rc2}">${a.rate.toFixed(1)}%</span></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2)+'/5' : '—'}</div><div>${initiatedBadge(a)}</div><div>${usageStyle(a)}</div></div>`; }).join('')}</div>`;
+</div>` : ''}<div class="tmh" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr"><div style="padding-left:16px">Specialist</div><div>SnapCalls</div><div>Adoption</div><div>CSAT</div><div>Initiated %</div><div>Usage style</div></div>${members.map((a, idx) => { const rc2 = rcolor(a.rate, goals.overall); return `<div class="tmr${idx < 3 ? ' top3' : ''}"><div style="min-width:0"><div style="font-weight:500;font-size:13px">${a.name}</div><div style="font-size:11px;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span class="bdg ${(a.product||'').toLowerCase()}">${prodLabel(a.product)}</span></div></div><div>${fmt(a.snaps)}</div><div><span class="mono" style="color:${rc2}">${a.rate.toFixed(1)}%</span></div><div style="color:var(--t2)">${a.csat > 0 ? a.csat.toFixed(2)+'/5' : '—'}</div><div>${initiatedBadge(a)}</div><div>${usageStyle(a)}</div></div>`; }).join('')}</div>`;
   }).join('');
 }
 

@@ -373,17 +373,13 @@ async function exportPDF() {
       logging: false
     });
 
-    progress.textContent = 'Creating PDF…';
-    const { jsPDF } = window.jspdf;
-    // Page width = A4 width (210mm), page height = whatever the content is — one continuous page, no slicing
-    const pdfW  = 210;
-    const pdfH  = (canvas.height / canvas.width) * pdfW;
-    const pdf   = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pdfW, pdfH] });
-    const imgData = canvas.toDataURL('image/png');
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfW, pdfH);
-
+    progress.textContent = 'Saving image…';
     const safeDate = dateLabel.replace(/[^a-zA-Z0-9\-]/g,'_').replace(/__+/g,'_');
-    pdf.save(`SnapCall_Report_${safeDate}.pdf`);
+    const imgData  = canvas.toDataURL('image/jpeg', 0.92);
+    const a        = document.createElement('a');
+    a.href         = imgData;
+    a.download     = `SnapCall_Report_${safeDate}.jpg`;
+    a.click();
 
   } catch(err) {
     console.error('[PDF Export]', err);

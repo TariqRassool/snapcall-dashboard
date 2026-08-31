@@ -1,10 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-
 // ── SHARED STATE ──
-// These are accessed across multiple modules so they live at the top of main.
+// Declared at global scope so admin.js, render.js, and pdf.js can all access them.
+// main.js loads last, but these variables need to exist when the other scripts run.
 let staged        = { sc: null, tt: null, wm: null };
 let charts        = {};
 let adminUnlocked = false;
+
+document.addEventListener('DOMContentLoaded', function () {
 
 // ── ONE-TIME MIGRATION ──
 // Remove stale WM entries that have no months — they came from broken earlier imports

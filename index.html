@@ -671,42 +671,48 @@ function unlockAdmin() {
 // Stores the applied custom range when preset = 'custom'
 let customRange = { from: '', to: '' };
 
+// Track the value at mousedown so we know if custom was already selected before the click
+let _datePresetAtMousedown = '';
+let _dateListenersAttached = false;
+
 function initDateRange() {
   const sel = ge('date-preset');
   if (!sel) return;
 
-  // Track the value at mousedown so we know if custom was already selected before the click
-  let valueAtMousedown = sel.value;
+  // Only attach event listeners once — subsequent calls (from clearAll etc.) just reset state
+  if (!_dateListenersAttached) {
+    _dateListenersAttached = true;
 
-  sel.addEventListener('mousedown', () => {
-    valueAtMousedown = sel.value;
-  });
+    sel.addEventListener('mousedown', () => {
+      _datePresetAtMousedown = sel.value;
+    });
 
-  sel.addEventListener('change', () => {
-    const val = sel.value;
-    if (val === 'custom') {
-      openCustomRange();
-    } else {
-      renderAll();
-    }
-  });
+    sel.addEventListener('change', () => {
+      const val = sel.value;
+      if (val === 'custom') {
+        openCustomRange();
+      } else {
+        renderAll();
+      }
+    });
 
-  // If the user opens the dropdown while already on 'custom' and re-selects it,
-  // 'change' won't fire — detect this via click with the pre-click value stored above
-  sel.addEventListener('click', () => {
-    if (sel.value === 'custom' && valueAtMousedown === 'custom') {
-      openCustomRange();
-    }
-  });
+    // If the user opens the dropdown while already on 'custom' and re-selects it,
+    // 'change' won't fire — detect this via the pre-click value stored at mousedown
+    sel.addEventListener('click', () => {
+      if (sel.value === 'custom' && _datePresetAtMousedown === 'custom') {
+        openCustomRange();
+      }
+    });
 
-  // Custom popup buttons
-  ge('cr-cancel').addEventListener('click', closeCustomRange);
-  ge('cr-apply').addEventListener('click', applyCustomRange);
-  ge('custom-overlay').addEventListener('click', e => { if (e.target === ge('custom-overlay')) closeCustomRange(); });
+    // Custom popup buttons
+    ge('cr-cancel').addEventListener('click', closeCustomRange);
+    ge('cr-apply').addEventListener('click', applyCustomRange);
+    ge('custom-overlay').addEventListener('click', e => { if (e.target === ge('custom-overlay')) closeCustomRange(); });
 
-  // Live validation hint
-  ge('cr-from').addEventListener('change', validateCustomRange);
-  ge('cr-to').addEventListener('change', validateCustomRange);
+    // Live validation hint
+    ge('cr-from').addEventListener('change', validateCustomRange);
+    ge('cr-to').addEventListener('change', validateCustomRange);
+  }
 }
 
 function openCustomRange() {

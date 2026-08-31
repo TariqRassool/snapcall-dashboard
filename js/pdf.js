@@ -319,30 +319,7 @@ async function exportPDF() {
             }).join('')}
           </div>
 
-          <!-- full ranked list -->
-          ${ranked.length > 3 ? `
-          <div style="background:rgba(255,255,255,.05);border-radius:10px;overflow:hidden">
-            <div style="display:grid;grid-template-columns:28px 1fr 64px 64px 64px;gap:0;padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
-              <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3)">#</div>
-              <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3)">Specialist</div>
-              <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3);text-align:right">Sessions</div>
-              <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3);text-align:right">Adoption</div>
-              <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3);text-align:right">CSAT</div>
-            </div>
-            ${ranked.slice(3).map((a,i)=>{
-              const rc = a.rate >= g.overall ? '#05cbbf' : a.rate >= g.overall*0.7 ? '#f5a623' : 'rgba(255,255,255,.4)';
-              return `<div style="display:grid;grid-template-columns:28px 1fr 64px 64px 64px;gap:0;padding:7px 14px;border-bottom:1px solid rgba(255,255,255,.05);align-items:center">
-                <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,.3)">${i+4}</div>
-                <div>
-                  <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.85)">${a.name.split(' ')[0]}</span>
-                  <span style="font-size:9px;color:rgba(255,255,255,.3);margin-left:5px">${a.product||''}</span>
-                </div>
-                <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-align:right">${fmt(a.snaps)}</div>
-                <div style="font-size:11px;font-weight:600;color:${rc};text-align:right">${a.rate.toFixed(1)}%</div>
-                <div style="font-size:11px;color:rgba(255,255,255,.5);text-align:right">${a.csat>0?a.csat.toFixed(2):'-'}</div>
-              </div>`;
-            }).join('')}
-          </div>` : ''}
+
         </div>` : ''}
 
         <!-- ░░ CSAT + RESOLUTION ░░ -->
@@ -397,28 +374,12 @@ async function exportPDF() {
 
     progress.textContent = 'Creating PDF…';
     const { jsPDF } = window.jspdf;
-    const pdf  = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-    const pdfW = pdf.internal.pageSize.getWidth();
-    const pdfH = pdf.internal.pageSize.getHeight();
+    // Page width = A4 width (210mm), page height = whatever the content is — one continuous page, no slicing
+    const pdfW  = 210;
+    const pdfH  = (canvas.height / canvas.width) * pdfW;
+    const pdf   = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pdfW, pdfH] });
     const imgData = canvas.toDataURL('image/png');
-    const imgH    = (canvas.height / canvas.width) * pdfW;
-
-    if (imgH <= pdfH) {
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfW, imgH);
-    } else {
-      let remaining = imgH, page = 0;
-      while (remaining > 0) {
-        if (page > 0) pdf.addPage();
-        const sliceH = Math.min(pdfH, remaining);
-        const srcY   = (page * pdfH / imgH) * canvas.height;
-        const srcH   = (sliceH / imgH) * canvas.height;
-        const pc     = document.createElement('canvas');
-        pc.width = canvas.width; pc.height = Math.ceil(srcH);
-        pc.getContext('2d').drawImage(canvas, 0, srcY, canvas.width, srcH, 0, 0, canvas.width, srcH);
-        pdf.addImage(pc.toDataURL('image/png'), 'PNG', 0, 0, pdfW, sliceH);
-        remaining -= pdfH; page++;
-      }
-    }
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfW, pdfH);
 
     const safeDate = dateLabel.replace(/[^a-zA-Z0-9\-]/g,'_').replace(/__+/g,'_');
     pdf.save(`SnapCall_Report_${safeDate}.pdf`);

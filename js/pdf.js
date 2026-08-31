@@ -218,7 +218,7 @@ async function exportPDF() {
             <div style="font-size:42px;font-weight:800;color:#002e6e;line-height:1;letter-spacing:-2px">${overallRate.toFixed(1)}%</div>
             <div style="font-size:10px;color:rgba(0,46,110,.55);margin-top:6px">Goal: ${g.overall}% · ${sl(overallRate,g.overall)}</div>
           </div>
-          <div style="font-size:52px;opacity:.25">📊</div>
+
         </div>
         <!-- Supporting KPIs -->
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px">

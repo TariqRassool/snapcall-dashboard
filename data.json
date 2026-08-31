@@ -1,5 +1,5 @@
 {
-  "timestamp": 1786008408473,
+  "timestamp": 1788152120733,
   "sc": [
     {
       "month": "2026-01",
@@ -24445,43 +24445,54 @@
     },
     {
       "month": "2026-08",
-      "name": "Afras Lathiff",
+      "name": "Abinesh Jayarajan",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "0.06111111111111111000",
+      "resolution": "10.29583333333333300000",
       "brand": "Cin7 Core",
       "product": "Core",
-      "channel": "Messaging",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Abinesh Jayarajan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.29583333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_general_error_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Abinesh Jayarajan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.29583333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Abinesh Jayarajan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.97500000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
       "tag": "snapcall_not_stock"
     },
     {
       "month": "2026-08",
-      "name": "Afras Lathiff",
+      "name": "Abinesh Jayarajan",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "0.06111111111111111000",
-      "brand": "Cin7 Core",
-      "product": "Core",
-      "channel": "Messaging",
-      "tag": "snapcall_outbound_clip"
-    },
-    {
-      "month": "2026-08",
-      "name": "Afras Lathiff",
-      "snaps": "1.00000000000000000000",
-      "csat": "0",
-      "resolution": "0.06111111111111111000",
-      "brand": "Cin7 Core",
-      "product": "Core",
-      "channel": "Messaging",
-      "tag": "snapcall_safe"
-    },
-    {
-      "month": "2026-08",
-      "name": "Aqeela Raheem",
-      "snaps": "1.00000000000000000000",
-      "csat": "0",
-      "resolution": "13.06250000000000000000",
+      "resolution": "8.97500000000000000000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24489,10 +24500,21 @@
     },
     {
       "month": "2026-08",
-      "name": "Christine L.",
+      "name": "Abinesh Jayarajan",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "5.34444444444444500000",
+      "resolution": "8.97500000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.17222222222222250000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24500,10 +24522,10 @@
     },
     {
       "month": "2026-08",
-      "name": "Christine L.",
+      "name": "Adriana Demidio",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "5.34444444444444500000",
+      "resolution": "5.17222222222222250000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24511,21 +24533,10 @@
     },
     {
       "month": "2026-08",
-      "name": "Christine L.",
+      "name": "Adriana Demidio",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "5.34444444444444500000",
-      "brand": "Cin7 Core",
-      "product": "Core",
-      "channel": "Web",
-      "tag": "snapcall_not_stock"
-    },
-    {
-      "month": "2026-08",
-      "name": "Christine L.",
-      "snaps": "1.00000000000000000000",
-      "csat": "0",
-      "resolution": "5.34444444444444500000",
+      "resolution": "5.17222222222222250000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24533,10 +24544,846 @@
     },
     {
       "month": "2026-08",
-      "name": "Christine L.",
+      "name": "Afras Lathiff",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "5.34444444444444500000",
+      "resolution": "8.02152777777777900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.08263888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.08171296296296297000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.08263888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "9.11597222222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "14.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.49821428571428500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Afras Lathiff",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "9.11597222222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.65763888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Api",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.65763888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Api",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.65763888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Api",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.65763888888888890000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Api",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.78680555555555550000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "4.72916666666666700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.52638888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.52638888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.22430555555555556000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.46111111111111110000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "4.72916666666666700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "8.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.79696180555555560000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.52638888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.46111111111111110000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "App Admin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00000000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "21.14583333333333200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "23.70659722222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "21.14583333333333200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "41.52222222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "41.52222222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "41.52222222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.50833333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.50833333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.50833333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.50833333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "18.54722222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "18.54722222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "18.54722222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_general_error_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.03611111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50833333333333400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "12.67291666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "6.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.14710648148148200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "12.67291666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Chamika Dodangoda",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.99282407407407500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dasith Seniya",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.32708333333333334000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dasith Seniya",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.32708333333333334000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dasith Seniya",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.32708333333333334000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dasith Seniya",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.32708333333333334000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dasith Seniya",
+      "snaps": "6.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.06099537037037050000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.10902777777777750000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.10902777777777750000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.10902777777777750000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.10902777777777750000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.07048611111111111000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.06180555555555556000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.07048611111111111000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.10173611111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "5.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.16847222222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.96666666666666670000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "6.00000000000000000000",
+      "csat": "0",
+      "resolution": "9.48437500000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.10173611111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.17314814814814800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.19375000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "9.13194444444444500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_general_error_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.62013888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.17314814814814800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.17314814814814800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.17314814814814800000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24547,7 +25394,29 @@
       "name": "Geethanjali Chanthirasegaran",
       "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "27.07152777777777800000",
+      "resolution": "48.04097222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Geethanjali Chanthirasegaran",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "48.04097222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Geethanjali Chanthirasegaran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "14.16736111111111100000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24556,9 +25425,9 @@
     {
       "month": "2026-08",
       "name": "Geethanjali Chanthirasegaran",
-      "snaps": "2.00000000000000000000",
+      "snaps": "6.00000000000000000000",
       "csat": "0",
-      "resolution": "27.07152777777777800000",
+      "resolution": "21.54328703703703600000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24569,7 +25438,304 @@
       "name": "Geethanjali Chanthirasegaran",
       "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "27.07152777777777800000",
+      "resolution": "48.04097222222222000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Geethanjali Chanthirasegaran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "14.16736111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Hannah Mackay",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.74652777777777780000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Hannah Mackay",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.74652777777777780000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Hannah Mackay",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.74652777777777780000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "8.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03628472222222222000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "8.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03628472222222222000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "8.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03628472222222222000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.28993055555555500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.28993055555555500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.28993055555555500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "15.01319444444444400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.33263888888889000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "17.13472222222222300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.33263888888889000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "6.00000000000000000000",
+      "csat": "0",
+      "resolution": "14.09293981481481800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "58.74375000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_schedule"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "17.13472222222222300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Imaz Imthiyaz",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "84.49513888888889000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Irfan Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.13750000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Irfan Raheem",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "13.20069444444444400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.37013888888888950000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.37013888888888950000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_general_error_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.37013888888888950000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.83125000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.83125000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.37013888888888950000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.83125000000000000000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24580,7 +25746,84 @@
       "name": "Kiyaz Muhsin",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "5.11388888888888900000",
+      "resolution": "6.32777777777777800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.32777777777777800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.32777777777777800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03333333333333333000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03333333333333333000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03333333333333333000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.07500000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kiyaz Muhsin",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.00381944444444444480",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24589,9 +25832,9 @@
     {
       "month": "2026-08",
       "name": "Kiyaz Muhsin",
-      "snaps": "1.00000000000000000000",
+      "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "5.11388888888888900000",
+      "resolution": "0.00381944444444444480",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24600,9 +25843,9 @@
     {
       "month": "2026-08",
       "name": "Kiyaz Muhsin",
-      "snaps": "1.00000000000000000000",
+      "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "5.11388888888888900000",
+      "resolution": "0.00381944444444444480",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24613,7 +25856,315 @@
       "name": "Kiyaz Muhsin",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "11.14097222222222200000",
+      "resolution": "5.28541666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kunal Jha",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.17013888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kunal Jha",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.17013888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kunal Jha",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "3.17013888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Luciana",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.35763888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Luciana",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.35763888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Luciana",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.35763888888888900000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.95555555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.85694444444444430000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01249999999999999900",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.85694444444444430000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01249999999999999900",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01249999999999999900",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.07118055555555557000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.12986111111111112000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.85694444444444430000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_schedule"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01249999999999999900",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.07118055555555557000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.04513888888888889000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.04513888888888889000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.04513888888888889000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.21736111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.21736111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mohd Faizaan",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.21736111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.34861111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.09027777777777778000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.09027777777777778000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.09027777777777778000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.30763888888888950000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24624,18 +26175,403 @@
       "name": "Paul Beamer",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "9.56319444444444500000",
+      "resolution": "0.09027777777777778000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.09027777777777778000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.16944444444444400000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.16944444444444400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.16944444444444400000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "2.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "6.01597222222222250000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "2.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "6.01597222222222250000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "2.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "6.01597222222222250000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "1.00000000000000000000",
+      "csat": "1.00000000000000000000",
+      "resolution": "7.58194444444444500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
       "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "snaps": "2.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "6.01597222222222250000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Pradeep Barot",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50416666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Pradeep Barot",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50416666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Pradeep Barot",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.50416666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
     },
     {
       "month": "2026-08",
       "name": "Pradeep Barot",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "11.06527777777777800000",
+      "resolution": "9.27847222222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_schedule"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raed Rassool",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.29097222222222224000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raed Rassool",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.29097222222222224000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raed Rassool",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.29097222222222224000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raveen Jayasena",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.13125000000000050000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raveen Jayasena",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.13125000000000050000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raveen Jayasena",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.13125000000000050000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.17013888888888887000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.17013888888888887000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.17013888888888887000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.17013888888888887000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.17013888888888887000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02569444444444444700",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02569444444444444700",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02569444444444444700",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.23611111111111113000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.23611111111111113000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.23611111111111113000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Santhushni Ellepola",
+      "snaps": "2.00000000000000000000",
+      "csat": "3.00000000000000000000",
+      "resolution": "6.60729166666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.17777777777777700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.17777777777777700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.17777777777777700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.59756944444444600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "12.01736111111111200000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Email",
@@ -24646,18 +26582,40 @@
       "name": "Shane Colombage",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "9.95138888888889000000",
+      "resolution": "11.17777777777777700000",
       "brand": "Cin7 Core",
       "product": "Core",
-      "channel": "Web",
-      "tag": "snapcall_outbound_clip"
+      "channel": "Email",
+      "tag": "snapcall_public_page"
     },
     {
       "month": "2026-08",
-      "name": "Somaskaran Paramanantham",
-      "snaps": "1.00000000000000000000",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "15.97708333333333300000",
+      "resolution": "11.59756944444444600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "17.71064814814815000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.26250000000000000000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24665,10 +26623,32 @@
     },
     {
       "month": "2026-08",
-      "name": "Somaskaran Paramanantham",
+      "name": "Shane Colombage",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "15.97708333333333300000",
+      "resolution": "40.42361111111111000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip_snapshot"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "16.26232638888888700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.26250000000000000000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24676,10 +26656,21 @@
     },
     {
       "month": "2026-08",
-      "name": "Somaskaran Paramanantham",
+      "name": "Shane Colombage",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "7.62638888888888900000",
+      "resolution": "40.42361111111111000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_media_uploaded"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "28.05173611111110800000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24687,10 +26678,21 @@
     },
     {
       "month": "2026-08",
-      "name": "Somaskaran Paramanantham",
-      "snaps": "2.00000000000000000000",
+      "name": "Shane Colombage",
+      "snaps": "3.00000000000000000000",
       "csat": "0",
-      "resolution": "8.25729166666666700000",
+      "resolution": "17.71064814814815000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.78472222222222500000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24698,10 +26700,131 @@
     },
     {
       "month": "2026-08",
-      "name": "Somaskaran Paramanantham",
+      "name": "Shane Colombage",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "15.97708333333333300000",
+      "resolution": "11.91736111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_schedule"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "26.26250000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shane Colombage",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "28.05173611111110800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shayanthi Rameswaram",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.58611111111111100000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.32083333333333600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.32083333333333600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.32083333333333600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.79166666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.79166666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.83819444444444450000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.17500000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.79166666666666600000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24712,11 +26835,231 @@
       "name": "Somaskaran Paramanantham",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "7.62638888888888900000",
+      "resolution": "9.29861111111111000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.66041666666666600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "30.31319444444444500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "28.87291666666667000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "5.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.78347222222222300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "5.00000000000000000000",
+      "csat": "0",
+      "resolution": "20.45597222222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "30.31319444444444500000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "snaps": "5.00000000000000000000",
+      "csat": "0",
+      "resolution": "27.78347222222222300000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
       "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.97430555555555550000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.91527777777777800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.24930555555555600000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suhail Azeez",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.13368055555555560000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suhail Azeez",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.13368055555555560000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suhail Azeez",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.29791666666666700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suhail Azeez",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.13368055555555560000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suhail Azeez",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.10208333333333335000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
     },
     {
       "month": "2026-08",
@@ -24732,9 +27075,9 @@
     {
       "month": "2026-08",
       "name": "Suhail Azeez",
-      "snaps": "1.00000000000000000000",
+      "snaps": "6.00000000000000000000",
       "csat": "0",
-      "resolution": "17.64652777777777700000",
+      "resolution": "5.65636574074074000000",
       "brand": "Cin7 Core",
       "product": "Core",
       "channel": "Web",
@@ -24756,9 +27099,548 @@
       "name": "Suwashini Rajandran",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "4.47152777777777700000",
+      "resolution": "4.96875000000000000000",
       "brand": "Cin7 Core",
       "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.96875000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.96875000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.43958333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.43958333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.04409722222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.05138888888888889400",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.16145833333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.43958333333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Suwashini Rajandran",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.04409722222222200000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Worren Noyahr",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.42500000000000000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Worren Noyahr",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "20.59999999999999800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Worren Noyahr",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.37552083333333300000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Worren Noyahr",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "20.59999999999999800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.70451388888889000000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.48888888888888800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.48888888888888800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_flow_core_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.48888888888888800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "4.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.72135416666666700000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Yoga",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.48888888888888800000",
+      "brand": "Cin7 Core",
+      "product": "Core",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "0.02291666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "0.02291666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "0.02291666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aasim Issa",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.01736111111111111200",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.21180555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.21180555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.21180555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.21180555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Amana Ajward",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "2.13125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Amana Ajward",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "2.13125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Amana Ajward",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "2.13125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Amana Ajward",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "2.13125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Amana Ajward",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "2.13125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.93819444444444500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.93819444444444500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.93819444444444500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Archana Srivastava",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.97013888888888900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
       "channel": "Web",
       "tag": "snapcall_outbound_clip"
     },
@@ -24767,18 +27649,18 @@
       "name": "Archana Srivastava",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "19.23888888888889000000",
+      "resolution": "5.93819444444444500000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
-      "tag": "snapcall_outbound_clip"
+      "tag": "snapcall_public_page"
     },
     {
       "month": "2026-08",
-      "name": "Jatrick Tablate",
+      "name": "Chamal Wettasinghe",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "59.28263888888889000000",
+      "resolution": "7.67777777777777800000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24786,10 +27668,10 @@
     },
     {
       "month": "2026-08",
-      "name": "Jatrick Tablate",
+      "name": "Chamal Wettasinghe",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "59.28263888888889000000",
+      "resolution": "7.67777777777777800000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24797,10 +27679,252 @@
     },
     {
       "month": "2026-08",
-      "name": "Jatrick Tablate",
+      "name": "Chamal Wettasinghe",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "59.28263888888889000000",
+      "resolution": "7.67777777777777800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Chamal Wettasinghe",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.67777777777777800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Chashika Ruwandi",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "9.17777777777777900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Cory Harrison",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "115.97152777777778000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.05138888888888900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.54305555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.54305555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.05138888888888900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.47777777777777780000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.54305555555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.73333333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.73333333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.73333333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02361111111111111000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02048611111111111000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02361111111111111000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.40740740740740740000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.40740740740740740000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Dhruti Sonegra",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.40740740740740740000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Gaindu Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.25277777777777700000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Gaindu Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.25277777777777700000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Gaindu Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.25277777777777700000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Gaindu Perera",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.33958333333333400000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24808,21 +27932,21 @@
     },
     {
       "month": "2026-08",
-      "name": "Jatrick Tablate",
+      "name": "Gaindu Perera",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "59.28263888888889000000",
+      "resolution": "10.33958333333333400000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
-      "tag": "snapcall_public_page"
+      "tag": "snapcall_outbound_clip"
     },
     {
       "month": "2026-08",
-      "name": "Jatrick Tablate",
+      "name": "Gaindu Perera",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "59.28263888888889000000",
+      "resolution": "10.33958333333333400000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24830,10 +27954,703 @@
     },
     {
       "month": "2026-08",
+      "name": "Harsh Amlani",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.11041666666666660000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Amlani",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.11041666666666660000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Amlani",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.11041666666666660000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.06666666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.06666666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.06666666666666667000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.77083333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.77083333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.83125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.77083333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.83125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "25.07291666666666800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Harsh Surti",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.83125000000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.57986111111111100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.57986111111111100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.57986111111111100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "snaps": "8.00000000000000000000",
+      "csat": "0",
+      "resolution": "22.01484375000000000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.57986111111111100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Javanna Pierre",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Javanna Pierre",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Javanna Pierre",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.01319444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jeremiah Campbell",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jeremiah Campbell",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jeremiah Campbell",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Joshua Javier",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.04444444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Joshua Javier",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.04444444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Joshua Javier",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.04444444444444400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "1.98680555555555550000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.25208333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "1.98680555555555550000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.25208333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "5.00000000000000000000",
+      "resolution": "1.98680555555555550000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "1.98611111111111100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "2.25208333333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Monika Saad",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.14270833333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Monika Saad",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.14270833333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Monika Saad",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.42777777777777800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Monika Saad",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.14270833333333300000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Monika Saad",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "4.42777777777777800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "121.74374999999999000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "121.74374999999999000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "4.00000000000000000000",
+      "resolution": "121.74374999999999000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "38.92708333333333600000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "38.92708333333333600000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "100.71562499999999000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "38.92708333333333600000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
       "name": "Paul Beamer",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "6.23333333333333300000",
+      "resolution": "0.03888888888888889000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03888888888888889000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_flow_omni_-_general_message_flow"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03888888888888889000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_lang_en-us"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "5.06388888888888900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03888888888888889000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Email",
+      "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "snaps": "3.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.97314814814814800000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03819444444444444000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.02708333333333333400",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.69513888888889000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "7.00000000000000000000",
+      "csat": "0",
+      "resolution": "7.13095238095238100000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "10.69513888888889000000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shahnaz Talukdar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.02708333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shahnaz Talukdar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.02708333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shahnaz Talukdar",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "6.02708333333333400000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shahnaz Talukdar",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.35868055555555500000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shayanthi Rameswaram",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "8.29930555555555600000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24842,9 +28659,42 @@
     {
       "month": "2026-08",
       "name": "Shreyas Mehta",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03368055555555555400",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_call_handled"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "3.71736111111111130000",
+      "resolution": "0.03958333333333333000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_end_user_joined"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.03368055555555555400",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Messaging",
+      "tag": "snapcall_outbound_call"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.78125000000000000000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24853,9 +28703,9 @@
     {
       "month": "2026-08",
       "name": "Shreyas Mehta",
-      "snaps": "1.00000000000000000000",
+      "snaps": "2.00000000000000000000",
       "csat": "0",
-      "resolution": "3.71736111111111130000",
+      "resolution": "11.78125000000000000000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
@@ -24866,11 +28716,55 @@
       "name": "Shreyas Mehta",
       "snaps": "1.00000000000000000000",
       "csat": "0",
-      "resolution": "3.71736111111111130000",
+      "resolution": "4.85138888888888900000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_lang_en-gb"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "18.71111111111111200000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_not_stock"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "0.44513888888888890000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_outbound_clip"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "2.00000000000000000000",
+      "csat": "0",
+      "resolution": "11.78125000000000000000",
       "brand": "Cin7 Omni",
       "product": "Omni",
       "channel": "Web",
       "tag": "snapcall_public_page"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shreyas Mehta",
+      "snaps": "1.00000000000000000000",
+      "csat": "0",
+      "resolution": "18.71111111111111200000",
+      "brand": "Cin7 Omni",
+      "product": "Omni",
+      "channel": "Web",
+      "tag": "snapcall_safe"
     }
   ],
   "tt": [
@@ -24920,14 +28814,14 @@
       "month": "2026-07",
       "name": "",
       "brand": "Cin7 Core",
-      "tickets": "36.00000000000000000000",
+      "tickets": "8.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "30.00000000000000000000",
       "product": "Core"
     },
     {
@@ -24990,7 +28884,14 @@
       "month": "2026-07",
       "name": "Abinesh Jayarajan",
       "brand": "Cin7 Core",
-      "tickets": "39.00000000000000000000",
+      "tickets": "37.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Abinesh Jayarajan",
+      "brand": "Cin7 Core",
+      "tickets": "34.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25019,6 +28920,13 @@
       "name": "Adriana Demidio",
       "brand": "Cin7 Core",
       "tickets": "6.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "brand": "Cin7 Core",
+      "tickets": "5.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25067,14 +28975,14 @@
       "month": "2026-07",
       "name": "Afras Lathiff",
       "brand": "Cin7 Core",
-      "tickets": "104.00000000000000000000",
+      "tickets": "103.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Afras Lathiff",
       "brand": "Cin7 Core",
-      "tickets": "4.00000000000000000000",
+      "tickets": "56.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25089,6 +28997,13 @@
       "name": "Aishwarya Saravanan",
       "brand": "Cin7 Core",
       "tickets": "41.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aishwarya Saravanan",
+      "brand": "Cin7 Core",
+      "tickets": "63.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25113,45 +29028,10 @@
       "product": "Core"
     },
     {
-      "month": "2026-01",
-      "name": "Amy Moseman",
+      "month": "2026-08",
+      "name": "Ammu Jim",
       "brand": "Cin7 Core",
-      "tickets": "9.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-02",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Core",
-      "tickets": "9.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-03",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Core",
-      "tickets": "9.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-04",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Core",
-      "tickets": "6.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-05",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Core",
-      "tickets": "7.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-06",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Core",
-      "tickets": "9.00000000000000000000",
+      "tickets": "1.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25180,6 +29060,13 @@
       "name": "Andrew Horrocks",
       "brand": "Cin7 Core",
       "tickets": "2.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Andrew Horrocks",
+      "brand": "Cin7 Core",
+      "tickets": "1.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25228,7 +29115,14 @@
       "month": "2026-07",
       "name": "Angela Rojas",
       "brand": "Cin7 Core",
-      "tickets": "19.00000000000000000000",
+      "tickets": "20.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Angela Rojas",
+      "brand": "Cin7 Core",
+      "tickets": "14.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25281,6 +29175,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Anitra De Silva",
+      "brand": "Cin7 Core",
+      "tickets": "29.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-07",
       "name": "Anna Sukhorukova",
       "brand": "Cin7 Core",
@@ -25330,6 +29231,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "App Admin",
+      "brand": "Cin7 Core",
+      "tickets": "6.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-04",
       "name": "Aqeela Raheem",
       "brand": "Cin7 Core",
@@ -25347,14 +29255,21 @@
       "month": "2026-06",
       "name": "Aqeela Raheem",
       "brand": "Cin7 Core",
-      "tickets": "38.00000000000000000000",
+      "tickets": "39.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Aqeela Raheem",
       "brand": "Cin7 Core",
-      "tickets": "34.00000000000000000000",
+      "tickets": "36.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Aqeela Raheem",
+      "brand": "Cin7 Core",
+      "tickets": "10.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25369,6 +29284,13 @@
       "name": "Arpit Rao",
       "brand": "Cin7 Core",
       "tickets": "1.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Ashfa Ikram",
+      "brand": "Cin7 Core",
+      "tickets": "51.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25389,7 +29311,7 @@
       "month": "2026-02",
       "name": "Azhar Sadiq",
       "brand": "Cin7 Core",
-      "tickets": "81.00000000000000000000",
+      "tickets": "80.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25403,7 +29325,7 @@
       "month": "2026-04",
       "name": "Azhar Sadiq",
       "brand": "Cin7 Core",
-      "tickets": "24.00000000000000000000",
+      "tickets": "23.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25417,14 +29339,14 @@
       "month": "2026-06",
       "name": "Azhar Sadiq",
       "brand": "Cin7 Core",
-      "tickets": "39.00000000000000000000",
+      "tickets": "33.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Azhar Sadiq",
       "brand": "Cin7 Core",
-      "tickets": "25.00000000000000000000",
+      "tickets": "21.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25487,7 +29409,7 @@
       "month": "2026-06",
       "name": "Bijal Brahmbhatt",
       "brand": "Cin7 Core",
-      "tickets": "53.00000000000000000000",
+      "tickets": "54.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25501,35 +29423,7 @@
       "month": "2026-08",
       "name": "Bijal Brahmbhatt",
       "brand": "Cin7 Core",
-      "tickets": "1.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-01",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Core",
-      "tickets": "6.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-02",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Core",
-      "tickets": "5.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-03",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-04",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Core",
-      "tickets": "3.00000000000000000000",
+      "tickets": "42.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25578,7 +29472,14 @@
       "month": "2026-07",
       "name": "Bushra Mahmud",
       "brand": "Cin7 Core",
-      "tickets": "68.00000000000000000000",
+      "tickets": "71.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Bushra Mahmud",
+      "brand": "Cin7 Core",
+      "tickets": "54.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25607,6 +29508,13 @@
       "name": "Calvin Barrett",
       "brand": "Cin7 Core",
       "tickets": "9.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Calvin Barrett",
+      "brand": "Cin7 Core",
+      "tickets": "6.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25655,7 +29563,14 @@
       "month": "2026-07",
       "name": "Cari",
       "brand": "Cin7 Core",
-      "tickets": "6.00000000000000000000",
+      "tickets": "7.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Cari",
+      "brand": "Cin7 Core",
+      "tickets": "4.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25676,7 +29591,7 @@
       "month": "2026-08",
       "name": "Chamika Dodangoda",
       "brand": "Cin7 Core",
-      "tickets": "3.00000000000000000000",
+      "tickets": "73.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25736,6 +29651,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Christine L.",
+      "brand": "Cin7 Core",
+      "tickets": "12.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Dasith Seniya",
       "brand": "Cin7 Core",
@@ -25781,14 +29703,14 @@
       "month": "2026-07",
       "name": "Dasith Seniya",
       "brand": "Cin7 Core",
-      "tickets": "76.00000000000000000000",
+      "tickets": "78.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Dasith Seniya",
       "brand": "Cin7 Core",
-      "tickets": "3.00000000000000000000",
+      "tickets": "64.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25823,7 +29745,14 @@
       "month": "2026-07",
       "name": "Derika Fernando",
       "brand": "Cin7 Core",
-      "tickets": "64.00000000000000000000",
+      "tickets": "65.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Derika Fernando",
+      "brand": "Cin7 Core",
+      "tickets": "82.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25837,7 +29766,14 @@
       "month": "2026-07",
       "name": "Desitha Weligepola",
       "brand": "Cin7 Core",
-      "tickets": "44.00000000000000000000",
+      "tickets": "45.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Desitha Weligepola",
+      "brand": "Cin7 Core",
+      "tickets": "83.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25890,52 +29826,17 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Dhruv Trivedi",
+      "brand": "Cin7 Core",
+      "tickets": "15.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-05",
       "name": "Digna Trivedi",
       "brand": "Cin7 Core",
       "tickets": "1.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-01",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "7.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-02",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "4.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-04",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "6.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-05",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "6.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-06",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "3.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-07",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
       "product": "Core"
     },
     {
@@ -25971,6 +29872,13 @@
       "name": "Eduardo Perez",
       "brand": "Cin7 Core",
       "tickets": "121.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Eduardo Perez",
+      "brand": "Cin7 Core",
+      "tickets": "101.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26026,14 +29934,14 @@
       "month": "2026-07",
       "name": "Frank",
       "brand": "Cin7 Core",
-      "tickets": "76.00000000000000000000",
+      "tickets": "75.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Frank",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "52.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26082,7 +29990,14 @@
       "month": "2026-07",
       "name": "Geethanjali Chanthirasegaran",
       "brand": "Cin7 Core",
-      "tickets": "46.00000000000000000000",
+      "tickets": "50.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Geethanjali Chanthirasegaran",
+      "brand": "Cin7 Core",
+      "tickets": "31.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26097,6 +30012,13 @@
       "name": "Hannah Mackay",
       "brand": "Cin7 Core",
       "tickets": "8.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Hannah Mackay",
+      "brand": "Cin7 Core",
+      "tickets": "11.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26159,7 +30081,14 @@
       "month": "2026-07",
       "name": "Heena Trivedi",
       "brand": "Cin7 Core",
-      "tickets": "85.00000000000000000000",
+      "tickets": "84.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Heena Trivedi",
+      "brand": "Cin7 Core",
+      "tickets": "91.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26208,7 +30137,14 @@
       "month": "2026-07",
       "name": "Husni Ghaffari",
       "brand": "Cin7 Core",
-      "tickets": "18.00000000000000000000",
+      "tickets": "21.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Husni Ghaffari",
+      "brand": "Cin7 Core",
+      "tickets": "20.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26268,6 +30204,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Imaz Imthiyaz",
+      "brand": "Cin7 Core",
+      "tickets": "14.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Irfan Raheem",
       "brand": "Cin7 Core",
@@ -26278,7 +30221,7 @@
       "month": "2026-02",
       "name": "Irfan Raheem",
       "brand": "Cin7 Core",
-      "tickets": "39.00000000000000000000",
+      "tickets": "40.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26292,7 +30235,7 @@
       "month": "2026-04",
       "name": "Irfan Raheem",
       "brand": "Cin7 Core",
-      "tickets": "17.00000000000000000000",
+      "tickets": "18.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26306,14 +30249,21 @@
       "month": "2026-06",
       "name": "Irfan Raheem",
       "brand": "Cin7 Core",
-      "tickets": "58.00000000000000000000",
+      "tickets": "61.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Irfan Raheem",
       "brand": "Cin7 Core",
-      "tickets": "24.00000000000000000000",
+      "tickets": "26.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Irfan Raheem",
+      "brand": "Cin7 Core",
+      "tickets": "15.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26362,14 +30312,14 @@
       "month": "2026-07",
       "name": "Ishani Ariyapala",
       "brand": "Cin7 Core",
-      "tickets": "51.00000000000000000000",
+      "tickets": "50.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Ishani Ariyapala",
       "brand": "Cin7 Core",
-      "tickets": "1.00000000000000000000",
+      "tickets": "56.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26419,6 +30369,13 @@
       "name": "Isuru Perera",
       "brand": "Cin7 Core",
       "tickets": "8.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Isuru Perera",
+      "brand": "Cin7 Core",
+      "tickets": "17.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26576,52 +30533,31 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "John K",
+      "brand": "Cin7 Core",
+      "tickets": "20.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-06",
       "name": "Kelsey MacLean",
       "brand": "Cin7 Core",
-      "tickets": "4.00000000000000000000",
+      "tickets": "3.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Kelsey MacLean",
       "brand": "Cin7 Core",
+      "tickets": "9.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kelsey MacLean",
+      "brand": "Cin7 Core",
       "tickets": "10.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-01",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Core",
-      "tickets": "4.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-02",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Core",
-      "tickets": "1.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-03",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-05",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Core",
-      "tickets": "7.00000000000000000000",
-      "product": "Core"
-    },
-    {
-      "month": "2026-06",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Core",
-      "tickets": "1.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26670,14 +30606,14 @@
       "month": "2026-07",
       "name": "Kiyaz Muhsin",
       "brand": "Cin7 Core",
-      "tickets": "103.00000000000000000000",
+      "tickets": "104.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Kiyaz Muhsin",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "54.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26727,6 +30663,13 @@
       "name": "Kunal Jha",
       "brand": "Cin7 Core",
       "tickets": "47.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Kunal Jha",
+      "brand": "Cin7 Core",
+      "tickets": "31.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26817,7 +30760,14 @@
       "month": "2026-07",
       "name": "Luciana",
       "brand": "Cin7 Core",
-      "tickets": "95.00000000000000000000",
+      "tickets": "93.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Luciana",
+      "brand": "Cin7 Core",
+      "tickets": "57.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26870,6 +30820,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Lydia Cardinal",
+      "brand": "Cin7 Core",
+      "tickets": "4.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Maira Ballone",
       "brand": "Cin7 Core",
@@ -26901,7 +30858,14 @@
       "month": "2026-07",
       "name": "Mason Grogan",
       "brand": "Cin7 Core",
-      "tickets": "32.00000000000000000000",
+      "tickets": "31.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Mason Grogan",
+      "brand": "Cin7 Core",
+      "tickets": "59.00000000000000000000",
       "product": "Core"
     },
     {
@@ -26947,6 +30911,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Megha Acharya",
+      "brand": "Cin7 Core",
+      "tickets": "20.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-03",
       "name": "Miguel Blas",
       "brand": "Cin7 Core",
@@ -26982,6 +30953,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Miguel Blas",
+      "brand": "Cin7 Core",
+      "tickets": "2.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Minal Mohandas",
       "brand": "Cin7 Core",
@@ -27000,6 +30978,13 @@
       "name": "Minal Mohandas",
       "brand": "Cin7 Core",
       "tickets": "2.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "brand": "Cin7 Core",
+      "tickets": "4.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27041,21 +31026,21 @@
       "month": "2026-06",
       "name": "Mohd Faizaan",
       "brand": "Cin7 Core",
-      "tickets": "57.00000000000000000000",
+      "tickets": "56.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Mohd Faizaan",
       "brand": "Cin7 Core",
-      "tickets": "63.00000000000000000000",
+      "tickets": "61.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Mohd Faizaan",
       "brand": "Cin7 Core",
-      "tickets": "7.00000000000000000000",
+      "tickets": "47.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27118,14 +31103,14 @@
       "month": "2026-07",
       "name": "Muditha Jayasinghe",
       "brand": "Cin7 Core",
-      "tickets": "83.00000000000000000000",
+      "tickets": "80.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Muditha Jayasinghe",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "55.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27181,7 +31166,14 @@
       "month": "2026-07",
       "name": "Pabodha Hettige",
       "brand": "Cin7 Core",
-      "tickets": "59.00000000000000000000",
+      "tickets": "58.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Pabodha Hettige",
+      "brand": "Cin7 Core",
+      "tickets": "52.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27237,46 +31229,53 @@
       "month": "2026-08",
       "name": "Paul Beamer",
       "brand": "Cin7 Core",
-      "tickets": "4.00000000000000000000",
+      "tickets": "67.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-01",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
-      "tickets": "29.00000000000000000000",
+      "tickets": "55.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-02",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
-      "tickets": "16.00000000000000000000",
+      "tickets": "35.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-03",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
-      "tickets": "28.00000000000000000000",
+      "tickets": "41.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-04",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
-      "tickets": "17.00000000000000000000",
+      "tickets": "32.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-05",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
-      "tickets": "17.00000000000000000000",
+      "tickets": "37.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-06",
+      "name": "Permanently deleted user",
+      "brand": "Cin7 Core",
+      "tickets": "15.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-07",
       "name": "Permanently deleted user",
       "brand": "Cin7 Core",
       "tickets": "2.00000000000000000000",
@@ -27332,6 +31331,13 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Philip Mithun",
+      "brand": "Cin7 Core",
+      "tickets": "57.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Pradeep Barot",
       "brand": "Cin7 Core",
@@ -27377,7 +31383,14 @@
       "month": "2026-07",
       "name": "Pradeep Barot",
       "brand": "Cin7 Core",
-      "tickets": "35.00000000000000000000",
+      "tickets": "34.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Pradeep Barot",
+      "brand": "Cin7 Core",
+      "tickets": "28.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27419,14 +31432,21 @@
       "month": "2026-06",
       "name": "Praveen Nanayakkara",
       "brand": "Cin7 Core",
-      "tickets": "10.00000000000000000000",
+      "tickets": "12.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Praveen Nanayakkara",
       "brand": "Cin7 Core",
-      "tickets": "10.00000000000000000000",
+      "tickets": "19.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Praveen Nanayakkara",
+      "brand": "Cin7 Core",
+      "tickets": "21.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27510,7 +31530,14 @@
       "month": "2026-07",
       "name": "Raed Rassool",
       "brand": "Cin7 Core",
-      "tickets": "10.00000000000000000000",
+      "tickets": "9.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Raed Rassool",
+      "brand": "Cin7 Core",
+      "tickets": "31.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27563,6 +31590,20 @@
       "product": "Core"
     },
     {
+      "month": "2026-08",
+      "name": "Raveen Jayasena",
+      "brand": "Cin7 Core",
+      "tickets": "40.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rhys Albrecht",
+      "brand": "Cin7 Core",
+      "tickets": "1.00000000000000000000",
+      "product": "Core"
+    },
+    {
       "month": "2026-01",
       "name": "Santhushni Ellepola",
       "brand": "Cin7 Core",
@@ -27601,21 +31642,21 @@
       "month": "2026-06",
       "name": "Santhushni Ellepola",
       "brand": "Cin7 Core",
-      "tickets": "82.00000000000000000000",
+      "tickets": "81.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
       "name": "Santhushni Ellepola",
       "brand": "Cin7 Core",
-      "tickets": "118.00000000000000000000",
+      "tickets": "117.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Santhushni Ellepola",
       "brand": "Cin7 Core",
-      "tickets": "5.00000000000000000000",
+      "tickets": "95.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27657,11 +31698,18 @@
       "month": "2026-06",
       "name": "Shane Colombage",
       "brand": "Cin7 Core",
-      "tickets": "90.00000000000000000000",
+      "tickets": "91.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-07",
+      "name": "Shane Colombage",
+      "brand": "Cin7 Core",
+      "tickets": "69.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
       "name": "Shane Colombage",
       "brand": "Cin7 Core",
       "tickets": "57.00000000000000000000",
@@ -27713,7 +31761,14 @@
       "month": "2026-07",
       "name": "Shayanthi Rameswaram",
       "brand": "Cin7 Core",
-      "tickets": "33.00000000000000000000",
+      "tickets": "34.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shayanthi Rameswaram",
+      "brand": "Cin7 Core",
+      "tickets": "19.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27762,7 +31817,14 @@
       "month": "2026-07",
       "name": "Shivamsingh Rajput",
       "brand": "Cin7 Core",
-      "tickets": "140.00000000000000000000",
+      "tickets": "139.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shivamsingh Rajput",
+      "brand": "Cin7 Core",
+      "tickets": "91.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27811,7 +31873,14 @@
       "month": "2026-07",
       "name": "Somaskaran Paramanantham",
       "brand": "Cin7 Core",
-      "tickets": "56.00000000000000000000",
+      "tickets": "62.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Somaskaran Paramanantham",
+      "brand": "Cin7 Core",
+      "tickets": "34.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27819,6 +31888,13 @@
       "name": "Sudarshan Selvakumar",
       "brand": "Cin7 Core",
       "tickets": "1.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sudarshan Selvakumar",
+      "brand": "Cin7 Core",
+      "tickets": "37.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27874,7 +31950,7 @@
       "month": "2026-08",
       "name": "Suhail Azeez",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "95.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27923,14 +31999,14 @@
       "month": "2026-07",
       "name": "Suwashini Rajandran",
       "brand": "Cin7 Core",
-      "tickets": "94.00000000000000000000",
+      "tickets": "95.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Suwashini Rajandran",
       "brand": "Cin7 Core",
-      "tickets": "5.00000000000000000000",
+      "tickets": "71.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27972,7 +32048,7 @@
       "month": "2026-06",
       "name": "Tariq Rassool",
       "brand": "Cin7 Core",
-      "tickets": "8.00000000000000000000",
+      "tickets": "9.00000000000000000000",
       "product": "Core"
     },
     {
@@ -27980,6 +32056,13 @@
       "name": "Tariq Rassool",
       "brand": "Cin7 Core",
       "tickets": "6.00000000000000000000",
+      "product": "Core"
+    },
+    {
+      "month": "2026-08",
+      "name": "Tariq Rassool",
+      "brand": "Cin7 Core",
+      "tickets": "4.00000000000000000000",
       "product": "Core"
     },
     {
@@ -28042,7 +32125,7 @@
       "month": "2026-08",
       "name": "Worren Noyahr",
       "brand": "Cin7 Core",
-      "tickets": "2.00000000000000000000",
+      "tickets": "41.00000000000000000000",
       "product": "Core"
     },
     {
@@ -28091,14 +32174,14 @@
       "month": "2026-07",
       "name": "Yoga",
       "brand": "Cin7 Core",
-      "tickets": "64.00000000000000000000",
+      "tickets": "65.00000000000000000000",
       "product": "Core"
     },
     {
       "month": "2026-08",
       "name": "Yoga",
       "brand": "Cin7 Core",
-      "tickets": "1.00000000000000000000",
+      "tickets": "45.00000000000000000000",
       "product": "Core"
     },
     {
@@ -28140,14 +32223,21 @@
       "month": "2026-06",
       "name": "",
       "brand": "Cin7 Omni",
-      "tickets": "8.00000000000000000000",
+      "tickets": "7.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-07",
       "name": "",
       "brand": "Cin7 Omni",
-      "tickets": "15.00000000000000000000",
+      "tickets": "9.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "",
+      "brand": "Cin7 Omni",
+      "tickets": "19.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28196,14 +32286,14 @@
       "month": "2026-07",
       "name": "Aasim Issa",
       "brand": "Cin7 Omni",
-      "tickets": "131.00000000000000000000",
+      "tickets": "128.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Aasim Issa",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "83.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28238,7 +32328,14 @@
       "month": "2026-07",
       "name": "Adriana Demidio",
       "brand": "Cin7 Omni",
-      "tickets": "7.00000000000000000000",
+      "tickets": "8.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Adriana Demidio",
+      "brand": "Cin7 Omni",
+      "tickets": "9.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28308,7 +32405,7 @@
       "month": "2026-08",
       "name": "Amana Ajward",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "90.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28319,45 +32416,17 @@
       "product": "Omni"
     },
     {
-      "month": "2026-01",
-      "name": "Amy Moseman",
+      "month": "2026-08",
+      "name": "Amjad Khan",
       "brand": "Cin7 Omni",
-      "tickets": "13.00000000000000000000",
+      "tickets": "1.00000000000000000000",
       "product": "Omni"
     },
     {
-      "month": "2026-02",
-      "name": "Amy Moseman",
+      "month": "2026-08",
+      "name": "Amna Raheem",
       "brand": "Cin7 Omni",
-      "tickets": "7.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-03",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-04",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Omni",
-      "tickets": "6.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-05",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Omni",
-      "tickets": "11.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-06",
-      "name": "Amy Moseman",
-      "brand": "Cin7 Omni",
-      "tickets": "10.00000000000000000000",
+      "tickets": "31.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28407,6 +32476,13 @@
       "name": "Andrew Horrocks",
       "brand": "Cin7 Omni",
       "tickets": "3.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Andrew Horrocks",
+      "brand": "Cin7 Omni",
+      "tickets": "26.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28453,6 +32529,13 @@
     },
     {
       "month": "2026-07",
+      "name": "Andrew Klossner",
+      "brand": "Cin7 Omni",
+      "tickets": "8.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
       "name": "Andrew Klossner",
       "brand": "Cin7 Omni",
       "tickets": "7.00000000000000000000",
@@ -28504,7 +32587,14 @@
       "month": "2026-07",
       "name": "Angela Rojas",
       "brand": "Cin7 Omni",
-      "tickets": "23.00000000000000000000",
+      "tickets": "24.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Angela Rojas",
+      "brand": "Cin7 Omni",
+      "tickets": "13.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28567,14 +32657,14 @@
       "month": "2026-07",
       "name": "Archana Srivastava",
       "brand": "Cin7 Omni",
-      "tickets": "161.00000000000000000000",
+      "tickets": "159.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Archana Srivastava",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "190.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28686,14 +32776,14 @@
       "month": "2026-07",
       "name": "Azizbek Rakhmanov",
       "brand": "Cin7 Omni",
-      "tickets": "124.00000000000000000000",
+      "tickets": "123.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Azizbek Rakhmanov",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "131.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28763,35 +32853,14 @@
       "month": "2026-07",
       "name": "Bijal Brahmbhatt",
       "brand": "Cin7 Omni",
-      "tickets": "41.00000000000000000000",
+      "tickets": "40.00000000000000000000",
       "product": "Omni"
     },
     {
-      "month": "2026-01",
-      "name": "Bryson Keeton",
+      "month": "2026-08",
+      "name": "Bijal Brahmbhatt",
       "brand": "Cin7 Omni",
-      "tickets": "5.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-02",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Omni",
-      "tickets": "8.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-03",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Omni",
-      "tickets": "9.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-04",
-      "name": "Bryson Keeton",
-      "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
+      "tickets": "21.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28827,6 +32896,13 @@
       "name": "Calvin Barrett",
       "brand": "Cin7 Omni",
       "tickets": "26.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Calvin Barrett",
+      "brand": "Cin7 Omni",
+      "tickets": "6.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28879,6 +32955,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Cari",
+      "brand": "Cin7 Omni",
+      "tickets": "5.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-01",
       "name": "Chamal Wettasinghe",
       "brand": "Cin7 Omni",
@@ -28924,7 +33007,14 @@
       "month": "2026-07",
       "name": "Chamal Wettasinghe",
       "brand": "Cin7 Omni",
-      "tickets": "197.00000000000000000000",
+      "tickets": "200.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Chamal Wettasinghe",
+      "brand": "Cin7 Omni",
+      "tickets": "125.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -28973,7 +33063,14 @@
       "month": "2026-07",
       "name": "Chashika Ruwandi",
       "brand": "Cin7 Omni",
-      "tickets": "48.00000000000000000000",
+      "tickets": "51.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Chashika Ruwandi",
+      "brand": "Cin7 Omni",
+      "tickets": "52.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29009,6 +33106,20 @@
       "name": "Christine L.",
       "brand": "Cin7 Omni",
       "tickets": "3.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Christine L.",
+      "brand": "Cin7 Omni",
+      "tickets": "7.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Cody English",
+      "brand": "Cin7 Omni",
+      "tickets": "4.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29057,14 +33168,14 @@
       "month": "2026-07",
       "name": "Cory Harrison",
       "brand": "Cin7 Omni",
-      "tickets": "32.00000000000000000000",
+      "tickets": "35.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Cory Harrison",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "52.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29117,6 +33228,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Dennis Clarke",
+      "brand": "Cin7 Omni",
+      "tickets": "112.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-06",
       "name": "Dhruti Sonegra",
       "brand": "Cin7 Omni",
@@ -29127,14 +33245,14 @@
       "month": "2026-07",
       "name": "Dhruti Sonegra",
       "brand": "Cin7 Omni",
-      "tickets": "77.00000000000000000000",
+      "tickets": "76.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Dhruti Sonegra",
       "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
+      "tickets": "117.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29174,6 +33292,13 @@
     },
     {
       "month": "2026-07",
+      "name": "Dhruv Trivedi",
+      "brand": "Cin7 Omni",
+      "tickets": "3.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
       "name": "Dhruv Trivedi",
       "brand": "Cin7 Omni",
       "tickets": "3.00000000000000000000",
@@ -29230,55 +33355,6 @@
     },
     {
       "month": "2026-01",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "11.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-02",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "15.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-03",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "5.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-04",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "19.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-05",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "22.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-06",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "10.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-07",
-      "name": "Dipesh Singh",
-      "brand": "Cin7 Omni",
-      "tickets": "7.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-01",
       "name": "Dohie K",
       "brand": "Cin7 Omni",
       "tickets": "38.00000000000000000000",
@@ -29288,7 +33364,7 @@
       "month": "2026-02",
       "name": "Dohie K",
       "brand": "Cin7 Omni",
-      "tickets": "44.00000000000000000000",
+      "tickets": "43.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29309,7 +33385,7 @@
       "month": "2026-05",
       "name": "Dohie K",
       "brand": "Cin7 Omni",
-      "tickets": "48.00000000000000000000",
+      "tickets": "47.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29323,14 +33399,14 @@
       "month": "2026-07",
       "name": "Dohie K",
       "brand": "Cin7 Omni",
-      "tickets": "58.00000000000000000000",
+      "tickets": "49.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Dohie K",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "3.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29383,6 +33459,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Francis Suan",
+      "brand": "Cin7 Omni",
+      "tickets": "52.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-01",
       "name": "Gaindu Perera",
       "brand": "Cin7 Omni",
@@ -29428,14 +33511,14 @@
       "month": "2026-07",
       "name": "Gaindu Perera",
       "brand": "Cin7 Omni",
-      "tickets": "124.00000000000000000000",
+      "tickets": "123.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Gaindu Perera",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "84.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29457,6 +33540,13 @@
       "name": "Hannah Mackay",
       "brand": "Cin7 Omni",
       "tickets": "16.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Hannah Mackay",
+      "brand": "Cin7 Omni",
+      "tickets": "14.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29509,6 +33599,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Harsh Amlani",
+      "brand": "Cin7 Omni",
+      "tickets": "61.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-01",
       "name": "Harsh Surti",
       "brand": "Cin7 Omni",
@@ -29547,7 +33644,7 @@
       "month": "2026-06",
       "name": "Harsh Surti",
       "brand": "Cin7 Omni",
-      "tickets": "119.00000000000000000000",
+      "tickets": "118.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29561,7 +33658,7 @@
       "month": "2026-08",
       "name": "Harsh Surti",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "101.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29573,13 +33670,6 @@
     },
     {
       "month": "2026-03",
-      "name": "Harshit Pandey",
-      "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-05",
       "name": "Harshit Pandey",
       "brand": "Cin7 Omni",
       "tickets": "1.00000000000000000000",
@@ -29645,14 +33735,14 @@
       "month": "2026-07",
       "name": "Ignacio Bazan",
       "brand": "Cin7 Omni",
-      "tickets": "97.00000000000000000000",
+      "tickets": "96.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Ignacio Bazan",
       "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
+      "tickets": "83.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29729,21 +33819,28 @@
       "month": "2026-05",
       "name": "Jatrick Tablate",
       "brand": "Cin7 Omni",
-      "tickets": "58.00000000000000000000",
+      "tickets": "59.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-06",
       "name": "Jatrick Tablate",
       "brand": "Cin7 Omni",
-      "tickets": "39.00000000000000000000",
+      "tickets": "40.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-07",
       "name": "Jatrick Tablate",
       "brand": "Cin7 Omni",
-      "tickets": "36.00000000000000000000",
+      "tickets": "44.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Jatrick Tablate",
+      "brand": "Cin7 Omni",
+      "tickets": "29.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29799,7 +33896,7 @@
       "month": "2026-08",
       "name": "Javanna Pierre",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "76.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29862,14 +33959,14 @@
       "month": "2026-07",
       "name": "Jeremiah Campbell",
       "brand": "Cin7 Omni",
-      "tickets": "160.00000000000000000000",
+      "tickets": "159.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Jeremiah Campbell",
       "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
+      "tickets": "137.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -29922,6 +34019,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "John K",
+      "brand": "Cin7 Omni",
+      "tickets": "14.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-01",
       "name": "Joshua Javier",
       "brand": "Cin7 Omni",
@@ -29967,7 +34071,14 @@
       "month": "2026-07",
       "name": "Joshua Javier",
       "brand": "Cin7 Omni",
-      "tickets": "117.00000000000000000000",
+      "tickets": "120.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Joshua Javier",
+      "brand": "Cin7 Omni",
+      "tickets": "104.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30000,30 +34111,23 @@
     },
     {
       "month": "2026-07",
+      "name": "Kapil Acharya",
+      "brand": "Cin7 Omni",
+      "tickets": "1.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-07",
       "name": "Kelsey MacLean",
       "brand": "Cin7 Omni",
       "tickets": "15.00000000000000000000",
       "product": "Omni"
     },
     {
-      "month": "2026-01",
-      "name": "Kevin Jones",
+      "month": "2026-08",
+      "name": "Kelsey MacLean",
       "brand": "Cin7 Omni",
-      "tickets": "4.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-03",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Omni",
-      "tickets": "1.00000000000000000000",
-      "product": "Omni"
-    },
-    {
-      "month": "2026-05",
-      "name": "Kevin Jones",
-      "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "13.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30076,6 +34180,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Lydia Cardinal",
+      "brand": "Cin7 Omni",
+      "tickets": "9.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-01",
       "name": "Mehul Arora",
       "brand": "Cin7 Omni",
@@ -30125,6 +34236,13 @@
       "product": "Omni"
     },
     {
+      "month": "2026-08",
+      "name": "Mehul Arora",
+      "brand": "Cin7 Omni",
+      "tickets": "3.00000000000000000000",
+      "product": "Omni"
+    },
+    {
       "month": "2026-05",
       "name": "Miguel Blas",
       "brand": "Cin7 Omni",
@@ -30143,6 +34261,13 @@
       "name": "Miguel Blas",
       "brand": "Cin7 Omni",
       "tickets": "10.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Miguel Blas",
+      "brand": "Cin7 Omni",
+      "tickets": "6.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30177,7 +34302,7 @@
       "month": "2026-05",
       "name": "Minal Mohandas",
       "brand": "Cin7 Omni",
-      "tickets": "62.00000000000000000000",
+      "tickets": "63.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30191,7 +34316,14 @@
       "month": "2026-07",
       "name": "Minal Mohandas",
       "brand": "Cin7 Omni",
-      "tickets": "85.00000000000000000000",
+      "tickets": "87.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Minal Mohandas",
+      "brand": "Cin7 Omni",
+      "tickets": "73.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30240,14 +34372,14 @@
       "month": "2026-07",
       "name": "Monika Saad",
       "brand": "Cin7 Omni",
-      "tickets": "115.00000000000000000000",
+      "tickets": "114.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Monika Saad",
       "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
+      "tickets": "114.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30294,6 +34426,13 @@
     },
     {
       "month": "2026-07",
+      "name": "Noel Paul",
+      "brand": "Cin7 Omni",
+      "tickets": "2.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
       "name": "Noel Paul",
       "brand": "Cin7 Omni",
       "tickets": "2.00000000000000000000",
@@ -30345,7 +34484,14 @@
       "month": "2026-07",
       "name": "Oliver Peacock",
       "brand": "Cin7 Omni",
-      "tickets": "47.00000000000000000000",
+      "tickets": "48.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Oliver Peacock",
+      "brand": "Cin7 Omni",
+      "tickets": "24.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30394,49 +34540,63 @@
       "month": "2026-07",
       "name": "Paul Beamer",
       "brand": "Cin7 Omni",
-      "tickets": "74.00000000000000000000",
+      "tickets": "72.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Paul Beamer",
+      "brand": "Cin7 Omni",
+      "tickets": "63.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-01",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "137.00000000000000000000",
+      "tickets": "170.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-02",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "118.00000000000000000000",
+      "tickets": "148.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-03",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "130.00000000000000000000",
+      "tickets": "148.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-04",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "112.00000000000000000000",
+      "tickets": "140.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-05",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "41.00000000000000000000",
+      "tickets": "76.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-06",
       "name": "Permanently deleted user",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "22.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-07",
+      "name": "Permanently deleted user",
+      "brand": "Cin7 Omni",
+      "tickets": "7.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30444,6 +34604,13 @@
       "name": "Philip Mithun",
       "brand": "Cin7 Omni",
       "tickets": "1.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Prethan Ramesh",
+      "brand": "Cin7 Omni",
+      "tickets": "30.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30485,14 +34652,21 @@
       "month": "2026-06",
       "name": "Priya Dooley",
       "brand": "Cin7 Omni",
-      "tickets": "55.00000000000000000000",
+      "tickets": "54.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-07",
       "name": "Priya Dooley",
       "brand": "Cin7 Omni",
-      "tickets": "36.00000000000000000000",
+      "tickets": "37.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Priya Dooley",
+      "brand": "Cin7 Omni",
+      "tickets": "19.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30541,7 +34715,14 @@
       "month": "2026-07",
       "name": "Rakshithaa Rajeshkumar",
       "brand": "Cin7 Omni",
-      "tickets": "176.00000000000000000000",
+      "tickets": "175.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Rakshithaa Rajeshkumar",
+      "brand": "Cin7 Omni",
+      "tickets": "131.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30555,7 +34736,7 @@
       "month": "2026-02",
       "name": "Shahnaz Talukdar",
       "brand": "Cin7 Omni",
-      "tickets": "121.00000000000000000000",
+      "tickets": "122.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30583,19 +34764,26 @@
       "month": "2026-06",
       "name": "Shahnaz Talukdar",
       "brand": "Cin7 Omni",
-      "tickets": "114.00000000000000000000",
+      "tickets": "115.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-07",
       "name": "Shahnaz Talukdar",
       "brand": "Cin7 Omni",
-      "tickets": "62.00000000000000000000",
+      "tickets": "65.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Shahnaz Talukdar",
+      "brand": "Cin7 Omni",
+      "tickets": "68.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Shayanthi Rameswaram",
       "brand": "Cin7 Omni",
       "tickets": "1.00000000000000000000",
       "product": "Omni"
@@ -30660,14 +34848,21 @@
       "month": "2026-07",
       "name": "Shreyas Mehta",
       "brand": "Cin7 Omni",
-      "tickets": "111.00000000000000000000",
+      "tickets": "110.00000000000000000000",
       "product": "Omni"
     },
     {
       "month": "2026-08",
       "name": "Shreyas Mehta",
       "brand": "Cin7 Omni",
-      "tickets": "2.00000000000000000000",
+      "tickets": "75.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Sonu Singh",
+      "brand": "Cin7 Omni",
+      "tickets": "37.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30709,7 +34904,7 @@
       "month": "2026-06",
       "name": "Subjot Singh",
       "brand": "Cin7 Omni",
-      "tickets": "3.00000000000000000000",
+      "tickets": "4.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30717,6 +34912,13 @@
       "name": "Subjot Singh",
       "brand": "Cin7 Omni",
       "tickets": "7.00000000000000000000",
+      "product": "Omni"
+    },
+    {
+      "month": "2026-08",
+      "name": "Subjot Singh",
+      "brand": "Cin7 Omni",
+      "tickets": "2.00000000000000000000",
       "product": "Omni"
     },
     {
@@ -30871,15 +35073,18 @@
     },
     {
       "name": "Abinesh Jayarajan",
-      "initiatedCount": 0,
-      "totalCount": 10,
-      "initiatedPct": 0,
+      "initiatedCount": 1,
+      "totalCount": 14,
+      "initiatedPct": 7,
       "months": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-05"
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08"
       ]
     },
     {
@@ -30921,15 +35126,18 @@
     },
     {
       "name": "Paul Beamer",
-      "initiatedCount": 5,
-      "totalCount": 10,
-      "initiatedPct": 50,
+      "initiatedCount": 16,
+      "totalCount": 24,
+      "initiatedPct": 67,
       "months": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-05"
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08"
       ]
     },
     {
@@ -31023,14 +35231,15 @@
     {
       "name": "Mohd Faizaan",
       "initiatedCount": 13,
-      "totalCount": 32,
-      "initiatedPct": 41,
+      "totalCount": 33,
+      "initiatedPct": 39,
       "months": [
         "2026-01",
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-05"
+        "2026-05",
+        "2026-06"
       ]
     },
     {
@@ -31381,10 +35590,12 @@
     {
       "name": "Kunal Jha",
       "initiatedCount": 0,
-      "totalCount": 1,
+      "totalCount": 5,
       "initiatedPct": 0,
       "months": [
-        "2026-02"
+        "2026-02",
+        "2026-06",
+        "2026-08"
       ]
     },
     {
@@ -31401,26 +35612,32 @@
     },
     {
       "name": "Bushra Mahmud",
-      "initiatedCount": 1,
-      "totalCount": 13,
-      "initiatedPct": 8,
+      "initiatedCount": 4,
+      "totalCount": 24,
+      "initiatedPct": 17,
       "months": [
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-05"
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08"
       ]
     },
     {
       "name": "Shayanthi Rameswaram",
-      "initiatedCount": 7,
-      "totalCount": 10,
-      "initiatedPct": 70,
+      "initiatedCount": 12,
+      "totalCount": 19,
+      "initiatedPct": 63,
       "months": [
         "2026-02",
         "2026-03",
         "2026-04",
-        "2026-05"
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08"
       ]
     },
     {
@@ -31550,11 +35767,12 @@
     {
       "name": "Minal Mohandas",
       "initiatedCount": 0,
-      "totalCount": 2,
+      "totalCount": 3,
       "initiatedPct": 0,
       "months": [
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-07"
       ]
     },
     {
@@ -31564,6 +35782,24 @@
       "initiatedPct": 0,
       "months": [
         "2026-03"
+      ]
+    },
+    {
+      "name": "John K",
+      "initiatedCount": 1,
+      "totalCount": 1,
+      "initiatedPct": 100,
+      "months": [
+        "2026-08"
+      ]
+    },
+    {
+      "name": "Azizbek Rakhmanov",
+      "initiatedCount": 0,
+      "totalCount": 1,
+      "initiatedPct": 0,
+      "months": [
+        "2026-06"
       ]
     }
   ],
@@ -31684,7 +35920,7 @@
     },
     {
       "name": "Shayanthi Rameswaram",
-      "product": "Core",
+      "product": "Omni",
       "team": "Tariq",
       "email": ""
     },
@@ -32134,7 +36370,7 @@
     },
     {
       "name": "Adriana Demidio",
-      "product": "Core",
+      "product": "Omni",
       "team": "Other teams",
       "email": ""
     },
@@ -32197,6 +36433,18 @@
       "product": "Core",
       "team": "Raed",
       "email": ""
+    },
+    {
+      "name": "Hannah Mackay",
+      "product": "Core",
+      "team": "Other teams",
+      "email": ""
+    },
+    {
+      "name": "Sudarshan Selvakumar",
+      "product": "Core",
+      "team": "Raed",
+      "email": ""
     }
   ],
   "goals": {
@@ -32208,6 +36456,46 @@
   },
   "org": "Cin7",
   "uploadLogs": [
+    {
+      "id": "upload_1788152102061",
+      "timestamp": 1788152102061,
+      "sc": null,
+      "tt": null,
+      "wm": {
+        "filename": "June-30 Aug Word Count.xlsx",
+        "count": 9,
+        "months": [
+          "2026-06",
+          "2026-07",
+          "2026-08"
+        ]
+      }
+    },
+    {
+      "id": "upload_1788148033650",
+      "timestamp": 1788148033650,
+      "sc": {
+        "filename": "Aug 3 - Aug 30.csv",
+        "rows": 393,
+        "months": [
+          "2026-08"
+        ]
+      },
+      "tt": {
+        "filename": "Total Ticket Count (Jan - 30 Aug) 2026.csv",
+        "rows": 886,
+        "months": [
+          "2026-01",
+          "2026-02",
+          "2026-03",
+          "2026-04",
+          "2026-05",
+          "2026-06",
+          "2026-07",
+          "2026-08"
+        ]
+      }
+    },
     {
       "id": "upload_1785816029096",
       "timestamp": 1785816029097,
@@ -32246,25 +36534,6 @@
         "count": 37,
         "months": [
           "2026-01"
-        ]
-      }
-    },
-    {
-      "id": "upload_1785761160167",
-      "timestamp": 1785761160167,
-      "sc": null,
-      "tt": {
-        "filename": "Total Ticket Count (Jan - 2 Aug) 2026.csv",
-        "rows": 842,
-        "months": [
-          "2026-01",
-          "2026-02",
-          "2026-03",
-          "2026-04",
-          "2026-05",
-          "2026-06",
-          "2026-07",
-          "2026-08"
         ]
       }
     },
